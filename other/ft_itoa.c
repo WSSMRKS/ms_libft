@@ -6,59 +6,49 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:14:44 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 16:46:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2023/12/27 20:22:11 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static char	*_itoa(unsigned int n, int depth)
+static int	numlen(int n)
 {
-	char	*out;
+	int	len;
 
-	if (n == 0)
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
 	{
-		out = malloc(depth + 1);
-		if (!out)
-			return (0);
-		out[depth] = '\0';
-		return (out);
+		len++;
+		n /= 10;
 	}
-	out = _itoa(n / 10, depth + 1);
-	if (!out)
-		return (0);
-	out[depth] = '0' + (n % 10);
-	return (out);
-}
-
-static char	*zero()
-{
-	char	*out;
-
-	out = malloc(2);
-	if (!out)
-		return (0);
-	out[0] = '0';
-	out[1] = '\0';
-	return (out);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*out;
+	int		len;
+	long	n_long;
 
-	if (n > 0)
-		return _itoa(n, 0);
-	else if (n == 0)
-		return (zero());
-	else
+	len = numlen(n);
+	out = malloc(len + 1);
+	if (!out)
+		return (0);
+	out[len] = '\0';
+	out[0] = '0';
+	n_long = n;
+	if (n_long < 0)
 	{
-		out = _itoa(-(n / 10), 2);
-		if (!out)
-			return (0);
 		out[0] = '-';
-		out[1] = '0' + (-(n % 10));
-		return (out);
+		n_long *= -1;
+	}
+	while (n_long)
+	{
+		out[--len] = '0' + (n_long % 10);
+		n_long /= 10;
 	}
 	return (out);
 }
