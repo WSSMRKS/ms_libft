@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:12:51 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 17:20:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2023/12/27 20:25:32 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char	**ft_split(const char *s, char c)
 	if (*s)
 		return (ft_split_recursion(s, c, 0, 0));
 	out = malloc(sizeof(char *));
-	*out = 0;
+	if (out)
+		*out = 0;
 	return (out);
 }
