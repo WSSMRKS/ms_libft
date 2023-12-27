@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 19:45:08 by kwurster         ###   ########.fr       */
+/*   Updated: 2023/12/27 20:56:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 # include <stddef.h>
 
-typedef int t_bool;
-# define TRUE 1
-# define FALSE 0
+typedef enum e_bool
+{
+	FALSE,
+	TRUE
+}	t_bool;
 
 /*
 	CLIB
