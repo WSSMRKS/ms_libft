@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 20:56:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/01/01 19:37:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int		ft_atoi(const char *nptr);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+
+char	*ft_str_notchr(const char *s, int c);
+char	*ft_strr_notchr(const char *s, int c);
 
 /*
 	GNL
