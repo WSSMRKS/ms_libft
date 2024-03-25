@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:26 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 19:45:39 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:29:07 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*read_into_buf(t_state *st)
 	st->buf_pos = st->buf;
 	return (st->buf);
 }
+
 /**
  *  Creates a new string with new_len + 1 bytes,
  *  fills it from the back with max str_len bytes.
@@ -70,7 +71,7 @@ char	*read_into_buf(t_state *st)
  *  _______out
  *  ```
  */
-char	*str_create_fill_back(char *str, size_t str_len, size_t new_len)
+char	*new_str_fill_back(char *str, size_t str_len, size_t new_len)
 {
 	char	*out;
 

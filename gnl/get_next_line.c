@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:24 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 19:01:51 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:33:07 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  *
  * Example with (file = "AB" & BUFFER_SIZE = 1)
  *
- * at depth 2 -> str_create_fill_back(str = "", str_len = 0, new_len = 2)
+ * at depth 2 -> new_str_fill_back(str = "", str_len = 0, new_len = 2)
  * |  depth  |  len  |  buf  |->|  depth  |  str   |
  * |:-------:|:-----:|:-----:|--|:-------:|:------:|
  * |    0    |   0   |   A   |->|    2    |  --\0  |
@@ -29,7 +29,7 @@
  *
  * Example with (file = "ABC\n" & BUFFER_SIZE = 2)
  *
- * at depth 1 -> str_create_fill_back(str = "C\n", str_len = 2, new_len = 4)
+ * at depth 1 -> new_str_fill_back(str = "C\n", str_len = 2, new_len = 4)
  * |  depth  |  len  |  buf  |->|  depth  |    str    |
  * |:-------:|:-----:|:-----:|--|:-------:|:---------:|
  * |    0    |   0   |  AB   |->|    1    |  --C\n\0  |
@@ -37,19 +37,19 @@
 */
 char	*next_line(t_state *st, size_t len)
 {
-	t_state st_cpy;
+	t_state	st_cpy;
 	size_t	nl_len;
 	char	*str;
 
 	if ((!st->remaining || !st->buf) && !read_into_buf(st) && st->remaining < 0)
 		return (0);
 	else if (!st->remaining)
-		return (str_create_fill_back(0, 0, len));
+		return (new_str_fill_back(0, 0, len));
 	nl_len = len_until_nl(st->buf_pos, st->remaining);
 	st->remaining -= nl_len;
 	st->buf_pos += nl_len;
 	if (nl_len)
-		return (str_create_fill_back(st->buf_pos - nl_len, nl_len, len + nl_len));
+		return (new_str_fill_back(st->buf_pos - nl_len, nl_len, len + nl_len));
 	st_cpy = *st;
 	st->buf = 0;
 	str = next_line(st, len + st_cpy.remaining);
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 			return (0);
 		ft_lstadd_front(&list, state);
 	}
-	((t_state*)state->content)->fd = fd;
+	((t_state *) state->content)->fd = fd;
 	out = next_line(state->content, 0);
 	if (out && *out)
 		return (out);

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/01/01 19:37:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:41:32 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef t_bool (*t_lst_pred)(t_list *, void *);
+typedef t_bool	(*t_lst_pred)(t_list *, void *);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *node);
@@ -106,11 +106,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strdist(const char *start, const char *end);
 
+/*
 long long			ft_maxi(long long a, long long b);
 long long			ft_mini(long long a, long long b);
 unsigned long long	ft_maxu(unsigned long long a, unsigned long long b);
 unsigned long long	ft_minu(unsigned long long a, unsigned long long b);
 long long			ft_abs(long long num);
+*/
 
 size_t	ft_putchar_fd(char c, int fd);
 size_t	ft_putfill_fd(char c, int fd, size_t fill);
