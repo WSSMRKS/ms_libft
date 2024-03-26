@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   str_util_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 17:45:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 21:24:36 by kwurster         ###   ########.fr       */
+/*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
+/*   Updated: 2024/03/26 01:13:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+t_bool	str_grow(t_str *str, size_t min_growth)
 {
-	size_t	len;
-	char	*out;
+	size_t	new_capacity;
 
-	len = ft_strlen(s) + 1;
-	out = malloc(len);
-	if (out)
-		ft_memcpy(out, s, len);
-	return (out);
+	new_capacity = (str->capacity + min_growth) * ft_umax(1, LIBFT_STRING_GROW_FACTOR);
+	return (str_set_capacity(str, new_capacity));
 }
 
-char	*ft_strndup(const char *s, size_t len)
+t_bool	str_shrink_to_fit(t_str *str)
 {
-	char	*out;
+	size_t	fit_size;
 
-	out = malloc(len + 1);
-	if (out)
-		ft_memcpy(out, s, len + 1);
-	return (out);
+	fit_size = str->len + 1;
+	if (str->capacity != fit_size) {
+		return (str_set_capacity(str, fit_size));
+	}
+	return (TRUE);
 }

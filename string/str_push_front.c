@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   str_push_front.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 17:45:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 21:24:36 by kwurster         ###   ########.fr       */
+/*   Created: 2024/03/25 23:54:20 by kwurster          #+#    #+#             */
+/*   Updated: 2024/03/25 23:56:03 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+void	str_push_front(t_str *str, char c)
 {
-	size_t	len;
-	char	*out;
-
-	len = ft_strlen(s) + 1;
-	out = malloc(len);
-	if (out)
-		ft_memcpy(out, s, len);
-	return (out);
+	str_insert(str, 0, c);
 }
 
-char	*ft_strndup(const char *s, size_t len)
+void	str_pushn_front(t_str *str, char c, size_t n)
 {
-	char	*out;
+	str_insertn(str, 0, c, n);
+}
 
-	out = malloc(len + 1);
-	if (out)
-		ft_memcpy(out, s, len + 1);
-	return (out);
+void	str_pushstr_front(t_str *str, const char *s)
+{
+	str_insertstr(str, 0, s);
+}
+
+void	str_pushstrn_front(t_str *str, const char *s, size_t n)
+{
+	str_insertstrn(str, 0, s, n);
 }
