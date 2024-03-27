@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   str_grow.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 15:05:22 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 17:26:43 by kwurster         ###   ########.fr       */
+/*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
+/*   Updated: 2024/03/27 21:27:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+t_bool	str_grow(t_str *str, size_t min_growth)
 {
-	size_t	i;
+	size_t	new_capacity;
 
-	i = 0;
-	while (s1[i] != 0 && s1[i] == s2[i])
-		i++;
-	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+	new_capacity = (str_capacity(*str) + min_growth) * FT_STR_GROW;
+	return (str_set_capacity(str, new_capacity));
+}
+
+t_bool	str_shrink_to_fit(t_str *str)
+{
+	size_t	fit_size;
+
+	fit_size = str->len + 1;
+	if (str_capacity(*str) != fit_size) {
+		return (str_set_capacity(str, fit_size));
+	}
+	return (TRUE);
 }

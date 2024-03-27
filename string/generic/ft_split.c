@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:12:51 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 20:25:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:08:59 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 #include <stdlib.h>
 
 char	**ft_split_recursion(const char *s, char c, int i, size_t len)

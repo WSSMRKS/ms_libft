@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:00:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/01/01 19:35:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:09:55 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

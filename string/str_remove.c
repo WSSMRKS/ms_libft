@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/26 01:32:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:10:25 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ char	str_remove(t_str *str, size_t index)
 		return (0);
 	buf = str_get(str);
 	out = buf[index];
-	while (index + 1 < str->len)
-	{
-		buf[index] = buf[index + 1];
-		index++;
-	}
-	buf[index] = 0;
+	ft_memmove(buf + index, buf + index + 1, str->len - index);
 	str->len--;
 	return (out);
 }
@@ -47,22 +42,24 @@ char	str_remove(t_str *str, size_t index)
 void	str_remove_range(t_str *str, size_t start, size_t end)
 {
 	char	*buf;
-	size_t	skip_len;
-	size_t	index;
 
-	skip_len = ft_min(end, str->len) - start;
+	start = ft_umin(start, str->len);
+	end = ft_umin(end, str->len);
 	buf = str_get(str);
-	index = start;
-	while (index + skip_len < str->len)
-	{
-		buf[index] = buf[index + skip_len];
-		index++;
-	}
-	buf[index] = 0;
-	str->len -= skip_len;
+	ft_memmove(buf + start, buf + end, str->len - end + 1);
+	str->len -= end - start;
 }
 
-void	str_trunc(t_str *str, size_t len)
+void	str_trunc(t_str *str, size_t n)
 {
-	str_remove_range(str, str->len - len, str->len);
+	n = ft_umin(n, str->len);
+	str_get(str)[str->len - n] = 0;
+	str->len -= n;
+}
+
+void	str_clear(t_str *str)
+{
+	str_get(str)[0] = 0;
+	str->len = 0;
+	str->mem_err = FALSE;
 }

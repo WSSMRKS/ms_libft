@@ -1,81 +1,89 @@
 NAME = libft.a
 
-CLIB_DIR = clib/
-GNL_DIR = gnl/
-LST_DIR = lst/
-OTHER_DIR = other/
-PRINTF_DIR = printf/
-
-CLIB_FILES = \
-	ft_isalpha.c\
-	ft_isdigit.c\
-	ft_isalnum.c\
-	ft_isascii.c\
-	ft_isprint.c\
-	ft_strlen.c\
-	ft_memset.c\
-	ft_bzero.c\
-	ft_memcpy.c\
-	ft_memmove.c\
-	ft_strlcpy.c\
-	ft_strlcat.c\
-	ft_toupper.c\
-	ft_tolower.c\
-	ft_strchr.c\
-	ft_strrchr.c\
-	ft_strncmp.c\
-	ft_memchr.c\
-	ft_memcmp.c\
-	ft_strnstr.c\
-	ft_atoi.c\
-	ft_calloc.c\
-	ft_strcmp.c\
-	ft_strdup.c
+LIBC_FILES = \
+	libc/ft_atoi.c\
+	libc/ft_bzero.c\
+	libc/ft_calloc.c\
+	libc/ft_isalnum.c\
+	libc/ft_isalpha.c\
+	libc/ft_isascii.c\
+	libc/ft_isdigit.c\
+	libc/ft_isprint.c\
+	libc/ft_memchr.c\
+	libc/ft_memcmp.c\
+	libc/ft_memcpy.c\
+	libc/ft_memmove.c\
+	libc/ft_memset.c\
+	libc/ft_realloc.c\
+	libc/ft_tolower.c\
+	libc/ft_toupper.c\
 
 GNL_FILES = \
-	get_next_line.c\
-	get_next_line_utils.c
+	gnl/get_next_line_utils.c\
+	gnl/get_next_line.c\
 
 LST_FILES = \
-	ft_lstnew_bonus.c\
-	ft_lstadd_front_bonus.c\
-	ft_lstsize_bonus.c\
-	ft_lstlast_bonus.c\
-	ft_lstadd_back_bonus.c\
-	ft_lstdelone_bonus.c\
-	ft_lstclear_bonus.c\
-	ft_lstiter_bonus.c\
-	ft_lstmap_bonus.c\
-	ft_lst_first_where_next.c\
-	ft_lst_first_where.c\
-	ft_lstdel_first.c\
-	ft_lstswp_front_where.c\
+	lst/ft_lst_first_where_next.c\
+	lst/ft_lst_first_where.c\
+	lst/ft_lstadd_back.c\
+	lst/ft_lstadd_front.c\
+	lst/ft_lstclear.c\
+	lst/ft_lstdel_first.c\
+	lst/ft_lstdelone.c\
+	lst/ft_lstiter.c\
+	lst/ft_lstlast.c\
+	lst/ft_lstmap.c\
+	lst/ft_lstnew.c\
+	lst/ft_lstsize.c\
+	lst/ft_lstswp_front_where.c\
+
+MATH_FILES = \
+	math/ft_min_max_abs.c\
+	math/ft_safe_mult.c\
 
 OTHER_FILES = \
-	ft_substr.c\
-	ft_strjoin.c\
-	ft_strtrim.c\
-	ft_split.c\
-	ft_itoa.c\
-	ft_strmapi.c\
-	ft_striteri.c\
-	ft_putchar_fd.c\
-	ft_putstr_fd.c\
-	ft_putendl_fd.c\
-	ft_putnbr_fd.c\
-	ft_putfill_fd.c\
-	ft_strdist.c\
+	other/ft_putchar_fd.c\
+	other/ft_putendl_fd.c\
+	other/ft_putfill_fd.c\
+	other/ft_putnbr_fd.c\
+	other/ft_putstr_fd.c\
+	other/bit.c\
 
-PRINTF_FILES = \
-	# ft_printf.c\
+STRING_GENERIC_FILES = \
+	string/generic/ft_itoa.c\
+	string/generic/ft_split.c\
+	string/generic/ft_strchr.c\
+	string/generic/ft_strcmp.c\
+	string/generic/ft_strdist.c\
+	string/generic/ft_strdup.c\
+	string/generic/ft_striteri.c\
+	string/generic/ft_strjoin.c\
+	string/generic/ft_strlcat.c\
+	string/generic/ft_strlcpy.c\
+	string/generic/ft_strlen.c\
+	string/generic/ft_strmapi.c\
+	string/generic/ft_strncmp.c\
+	string/generic/ft_strnstr.c\
+	string/generic/ft_strrchr.c\
+	string/generic/ft_strtrim.c\
+	string/generic/ft_substr.c\
 
-CLIB_SRCS = $(addprefix $(CLIB_DIR), $(CLIB_FILES))
-GNL_SRCS = $(addprefix $(GNL_DIR), $(GNL_FILES))
-LST_SRCS = $(addprefix $(LST_DIR), $(LST_FILES))
-OTHER_SRCS = $(addprefix $(OTHER_DIR), $(OTHER_FILES))
-PRINTF_SRCS = $(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
+STRING_FILES = \
+	string/str_capacity.c\
+	string/str_filter_map.c\
+	string/str_get.c\
+	string/str_insert.c\
+	string/str_map.c\
+	string/str_new.c\
+	string/str_push_front.c\
+	string/str_push.c\
+	string/str_remove.c\
+	string/str_util_1.c\
+	string/str_util_2.c\
 
-SRCS = $(CLIB_SRCS) $(GNL_SRCS) $(LST_SRCS) $(OTHER_SRCS) $(PRINTF_SRCS)
+#PRINTF_FILES = \
+
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) #$(PRINTF_FILES)
 
 OBJ = $(SRCS:.c=.o)
 

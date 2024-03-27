@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdist.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 22:09:33 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 19:46:44 by kwurster         ###   ########.fr       */
+/*   Created: 2023/10/02 15:05:22 by kwurster          #+#    #+#             */
+/*   Updated: 2024/03/27 15:09:55 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-size_t	ft_strdist(const char *start, const char *end)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (end - start);
+	size_t	i;
+
+	i = 0;
+	while (i < n && s1[i] != 0 && s1[i] == s2[i])
+		i++;
+	if (i == n)
+		return (0);
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

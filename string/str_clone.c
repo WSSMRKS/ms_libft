@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_util_2.c                                       :+:      :+:    :+:   */
+/*   str_util_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/26 01:13:43 by kwurster         ###   ########.fr       */
+/*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
+/*   Updated: 2024/03/27 21:02:47 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <stdlib.h>
 
-t_bool	str_grow(t_str *str, size_t min_growth)
+t_str	str_clone(t_str str)
 {
-	size_t	new_capacity;
-
-	new_capacity = (str->capacity + min_growth) * ft_umax(1, LIBFT_STRING_GROW_FACTOR);
-	return (str_set_capacity(str, new_capacity));
+	return (str_new_clone_sized(str_get(&str), str.len));
 }
 
-t_bool	str_shrink_to_fit(t_str *str)
+t_str	str_clone_sized(t_str str, size_t len)
 {
-	size_t	fit_size;
-
-	fit_size = str->len + 1;
-	if (str->capacity != fit_size) {
-		return (str_set_capacity(str, fit_size));
-	}
-	return (TRUE);
+	return (str_new_clone_sized(str_get(&str), len));
 }
