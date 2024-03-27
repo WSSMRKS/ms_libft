@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 19:36:42 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:22:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,12 @@ size_t	ft_putendl_fd(char *s, int fd);
 size_t	ft_putfill_fd(char c, int fd, size_t fill);
 size_t	ft_putnbr_fd(int n, int fd);
 size_t	ft_putstr_fd(char *s, int fd);
-void	set_bit_as(unsigned char *byte, unsigned char pos, t_ull bool);
+void	set_bit_as(unsigned char *byte, unsigned char pos, t_ll bool);
 void	set_bit(unsigned char *byte, unsigned char pos);
 void	unset_bit(unsigned char *byte, unsigned char pos);
 void	toggle_bit(unsigned char *byte, unsigned char pos);
 t_bool	get_bit(unsigned char byte, unsigned char pos);
+t_bool	itob(t_ll i);
 
 /*
 	STRING GENERIC

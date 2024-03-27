@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:51:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 19:54:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:22:15 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void	toggle_bit(unsigned char *byte, unsigned char pos)
 	*byte ^= 1 << pos;
 }
 
-void	set_bit_as(unsigned char *byte, unsigned char pos, t_ull bool)
+void	set_bit_as(unsigned char *byte, unsigned char pos, t_ll bool)
 {
-	if (bool != 0) {
+	if (itob(bool))
+	{
 		set_bit(byte, pos);
 	} else {
 		unset_bit(byte, pos);
