@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:47:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 21:39:31 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:25 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /// @brief Creates an empty string.
 /// @note Will not malloc.
 /// @return Empty string.
-t_str	str_empty()
+t_str	str_empty(void)
 {
 	t_str	str;
 

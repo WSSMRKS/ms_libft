@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:13:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:14:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:18 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param size The size of the destination buffer (including null terminator).
  * @return The total length of the source string.
  */
-size_t	ft_strlcpy(unsigned char *dst, const unsigned char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 

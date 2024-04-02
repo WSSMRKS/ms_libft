@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:24:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:14:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:47 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	while (n > 0)
-		((unsigned char *)s)[--n] = c;
+		((char *)s)[--n] = c;
 	return (s);
 }

@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 01:14:15 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:14:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_putfill_fd(unsigned char c, int fd, size_t fill)
+size_t	ft_putfill_fd(char c, int fd, size_t fill)
 {
 	size_t	put_len;
 

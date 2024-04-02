@@ -6,15 +6,15 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:57:00 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:35 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	str_push(t_str *str, unsigned char c)
+void	str_push(t_str *str, char c)
 {
-	unsigned char	*buf;
+	char	*buf;
 
 	if (str->len + 1 >= str_capacity(*str))
 		str_grow(str, 1);
@@ -23,10 +23,10 @@ void	str_push(t_str *str, unsigned char c)
 	buf[str->len] = 0;
 }
 
-void	str_pushn(t_str *str, unsigned char c, size_t n)
+void	str_pushn(t_str *str, char c, size_t n)
 {
-	unsigned char	*buf;
-	size_t			cap;
+	char	*buf;
+	size_t	cap;
 
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)
@@ -37,9 +37,9 @@ void	str_pushn(t_str *str, unsigned char c, size_t n)
 	buf[str->len] = 0;
 }
 
-void	str_pushstr(t_str *str, const unsigned char *s)
+void	str_pushstr(t_str *str, const char *s)
 {
-	unsigned char	*buf;
+	char	*buf;
 
 	buf = str_get(str);
 	while (*s && str->len + 1 < str_capacity(*str))
@@ -55,10 +55,10 @@ void	str_pushstr(t_str *str, const unsigned char *s)
 	}
 }
 
-void	str_pushstrn(t_str *str, const unsigned char *s, size_t n)
+void	str_pushstrn(t_str *str, const char *s, size_t n)
 {
-	unsigned char	*buf;
-	size_t			cap;
+	char	*buf;
+	size_t	cap;
 
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)

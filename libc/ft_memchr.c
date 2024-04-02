@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:20:49 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 17:20:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*buf;
-	size_t				i;
+	const char	*buf;
+	size_t		i;
 
 	buf = s;
 	i = 0;
-	while (i < n && buf[i] != (unsigned char) c)
+	while (i < n && buf[i] != (char)c)
 		i++;
 	if (i == n)
 		return (0);

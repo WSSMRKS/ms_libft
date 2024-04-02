@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:26 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:53:26 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_state	*new_state(int fd)
 	return (out);
 }
 
-unsigned char	*read_into_buf(t_state *st)
+char	*read_into_buf(t_state *st)
 {
 	if (!st->buf)
 	{
@@ -71,9 +71,9 @@ unsigned char	*read_into_buf(t_state *st)
  *  _______out
  *  ```
  */
-unsigned char	*new_str_fill_back(unsigned char *str, size_t str_len, size_t new_len)
+char	*new_str_fill_back(char *str, size_t str_len, size_t new_len)
 {
-	unsigned char	*out;
+	char	*out;
 
 	out = malloc(new_len + 1);
 	if (!out)
@@ -85,10 +85,10 @@ unsigned char	*new_str_fill_back(unsigned char *str, size_t str_len, size_t new_
 
 // returns length until nl (including nl)
 // returns 0 if no nl
-size_t	len_until_nl(unsigned char *str, size_t str_len)
+size_t	len_until_nl(char *str, size_t str_len)
 {
-	size_t			len;
-	unsigned char	*nl_pos;
+	size_t	len;
+	char	*nl_pos;
 
 	len = 0;
 	nl_pos = ft_memchr(str, '\n', str_len);

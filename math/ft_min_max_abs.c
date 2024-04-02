@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:57:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 19:08:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:03 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_ull	ft_umin(t_ull a, t_ull b)
 t_ull	ft_abs(t_ll num, t_ll min)
 {
 	if (num == min)
-		return (((t_ull) -(min + 1)) + 1);
+		return (((t_ull) - (min + 1)) + 1);
 	if (num < 0)
 		return (-num);
 	return (num);

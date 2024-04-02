@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:32:56 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 17:20:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*buf1;
-	const unsigned char	*buf2;
-	size_t				i;
+	const char	*buf1;
+	const char	*buf2;
+	size_t		i;
 
 	buf1 = s1;
 	buf2 = s2;

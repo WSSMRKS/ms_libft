@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:30:20 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 18:54:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:04 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ t_bool	ft_safe_mult(t_ll a, t_ll b, t_ll max, t_ll *result)
 	*result = 0;
 	if (a == 0 || b == 0)
 		return (TRUE);
-    if (a > 0 && b > 0 && a > max / b)
+	if (a > 0 && b > 0 && a > max / b)
 		return (FALSE);
-    if (a < 0 && b > 0 && a < min / b)
+	if (a < 0 && b > 0 && a < min / b)
 		return (FALSE);
-    if (a > 0 && b < 0 && b < min / a)
+	if (a > 0 && b < 0 && b < min / a)
 		return (FALSE);
 	if (a < 0 && b < 0 && a < max / b)
 		return (FALSE);
 	*result = a * b;
-    return (TRUE);
+	return (TRUE);
 }
 
 /// @brief Safely multiplies two unsigned integers.

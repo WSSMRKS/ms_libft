@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 20:48:35 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 19:46:08 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:54 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstdel_first(t_list **lst, void (*del)(void*))
+void	ft_lstdel_first(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 

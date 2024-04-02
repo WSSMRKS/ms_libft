@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:14:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:58:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:05:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static int	numlen(int n)
 	return (len);
 }
 
-unsigned char	*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	unsigned char	*out;
-	int				len;
-	long			n_long;
+	char	*out;
+	int		len;
+	long	n_long;
 
 	len = numlen(n);
 	out = malloc(len + 1);

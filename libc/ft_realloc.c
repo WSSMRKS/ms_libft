@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:14:23 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 05:54:57 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:04:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,20 @@ void	*ft_realloc(void *ptr, size_t from, size_t to)
 /// @return Pointer to the reallocated memory block.
 void	*ft_reallocarray(void *ptr, size_t from, size_t nmemb, size_t size)
 {
-	t_ull new_size;
+	t_ull	new_size;
+
 	if (ft_safe_umult(nmemb, size, ULLONG_MAX, &new_size))
 		return (0);
-	return (ft_realloc(ptr, from, (size_t) new_size));
+	return (ft_realloc(ptr, from, (size_t)new_size));
 }
 
 /// @brief Reallocates a string.
 /// @param ptr Pointer to the string to reallocate.
 /// @param to New size of the string.
 /// @return Pointer to the reallocated string.
-unsigned char	*ft_reallocstring(unsigned char *ptr, size_t to)
+char	*ft_reallocstring(char *ptr, size_t to)
 {
-	unsigned char	*new_ptr;
+	char	*new_ptr;
 
 	new_ptr = malloc(to);
 	if (!new_ptr)
