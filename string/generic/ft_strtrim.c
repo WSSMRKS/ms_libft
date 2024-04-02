@@ -6,14 +6,14 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:47:40 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 15:09:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:01:20 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../../libft.h"
 
-static int	set_contains(const char *set, char c)
+static int	set_contains(const unsigned char *set, unsigned char c)
 {
 	while (*set)
 		if (*set++ == (unsigned char)c)
@@ -29,10 +29,10 @@ static int	set_contains(const char *set, char c)
  * @param set The set of characters to be removed.
  * @return A newly allocated trimmed string, or NULL if memory allocation fails.
  */
-char	*ft_strtrim(const char *s1, const char *set)
+unsigned char	*ft_strtrim(const unsigned char *s1, const unsigned char *set)
 {
-	size_t	len;
-	char	*out;
+	size_t			len;
+	unsigned char	*out;
 
 	while (set_contains(set, *s1))
 		s1++;

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/01 17:39:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:14:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 /// @warning May access invalid memory if the given 'len' is out of bounds.
 /// @warning The given string must be freeable.
 /// @warning The given string may not be used after wrapping.
-t_str	str_new_from(char *s, size_t len)
+t_str	str_new_from(unsigned char *s, size_t len)
 {
 	t_str	str;
 
@@ -44,7 +44,7 @@ t_str	str_new_from(char *s, size_t len)
 /// @warning The given string must be freeable.
 /// @warning The given string may not be used after wrapping.
 /// @warning Check the error flag for memory errors.
-t_str	str_new_from_sized(char *s, size_t new_len)
+t_str	str_new_from_sized(unsigned char *s, size_t new_len)
 {
 	t_str	str;
 	size_t	actual_len;

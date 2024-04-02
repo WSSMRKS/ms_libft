@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:08:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 15:09:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:00:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
  * @return The new string.
  *         NULL if the allocation fails.
  */
-char	*ft_strjoin(const char *s1, const char *s2)
+unsigned char	*ft_strjoin(const unsigned char *s1, const unsigned char *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
-	char	*out;
+	unsigned char	*out;
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:13:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 20:36:21 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:10:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /// @param new_len Max length of the resulting string.
 /// @return Cloned string or empty string if 's' is null.
 /// @warning Check the error flag for memory allocation errors.
-t_str	str_new_clone_sized(const char *s, size_t new_len)
+t_str	str_new_clone_sized(const unsigned char *s, size_t new_len)
 {
 	t_str	str;
 	size_t	cap;

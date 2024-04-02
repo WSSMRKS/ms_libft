@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:14:23 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 15:08:42 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:54:57 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	*ft_reallocarray(void *ptr, size_t from, size_t nmemb, size_t size)
 /// @param ptr Pointer to the string to reallocate.
 /// @param to New size of the string.
 /// @return Pointer to the reallocated string.
-char	*ft_reallocstring(char *ptr, size_t to)
+unsigned char	*ft_reallocstring(unsigned char *ptr, size_t to)
 {
-	char	*new_ptr;
+	unsigned char	*new_ptr;
 
 	new_ptr = malloc(to);
 	if (!new_ptr)

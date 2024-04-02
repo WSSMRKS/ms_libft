@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 21:43:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:55:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /// @brief Gives read access to the string data.
 /// @param str String to read from.
 /// @return Pointer to the string data.
-char	*str_get(t_str *str)
+unsigned char	*str_get(t_str *str)
 {
 	if (str->heap)
 		return (str->_large_string);
@@ -25,9 +25,9 @@ char	*str_get(t_str *str)
 /// @brief Destroys the given string and returns its data.
 /// @param str String to destroy.
 /// @return Pointer to the string data or null.
-char	*str_take(t_str* str)
+unsigned char	*str_take(t_str* str)
 {
-	char	*out;
+	unsigned char	*out;
 
 	if (str->heap)
 	{
@@ -42,7 +42,7 @@ char	*str_take(t_str* str)
 /// @brief Clones the data of the given string.
 /// @param str String to clone.
 /// @return Pointer to the cloned string data or null.
-char	*str_get_cloned(t_str str)
+unsigned char	*str_get_cloned(t_str str)
 {
 	return (ft_strndup(str_get(&str), str.len));
 }

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:24 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 16:33:07 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:53:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@
  * |    0    |   0   |  AB   |->|    1    |  --C\n\0  |
  * |    1    |   2   |  C\n  |->|    0    |  ABC\n\0  |
 */
-char	*next_line(t_state *st, size_t len)
+unsigned char	*next_line(t_state *st, size_t len)
 {
 	t_state	st_cpy;
 	size_t	nl_len;
-	char	*str;
+	unsigned char	*str;
 
 	if ((!st->remaining || !st->buf) && !read_into_buf(st) && st->remaining < 0)
 		return (0);
@@ -78,11 +78,11 @@ t_bool	match_fd(t_list *node, void *fd)
 	return (((t_state *)(node->content))->fd == *(int *)fd);
 }
 
-char	*get_next_line(int fd)
+unsigned char	*get_next_line(int fd)
 {
-	static t_list	*list;
-	t_list			*state;
-	char			*out;
+	static t_list			*list;
+	t_list					*state;
+	unsigned char			*out;
 
 	state = ft_lstswp_front_where(&list, match_fd, &fd);
 	if (!state)

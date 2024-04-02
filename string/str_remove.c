@@ -6,16 +6,16 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 22:10:25 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:57:19 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	str_pop(t_str *str)
+unsigned char	str_pop(t_str *str)
 {
-	char	*buf;
-	char	out;
+	unsigned char	*buf;
+	unsigned char	out;
 
 	if (str->len == 0)
 		return (0);
@@ -25,10 +25,10 @@ char	str_pop(t_str *str)
 	return (out);
 }
 
-char	str_remove(t_str *str, size_t index)
+unsigned char	str_remove(t_str *str, size_t index)
 {
-	char	*buf;
-	char	out;
+	unsigned char	*buf;
+	unsigned char	out;
 
 	if (index >= str->len)
 		return (0);
@@ -41,7 +41,7 @@ char	str_remove(t_str *str, size_t index)
 
 void	str_remove_range(t_str *str, size_t start, size_t end)
 {
-	char	*buf;
+	unsigned char	*buf;
 
 	start = ft_umin(start, str->len);
 	end = ft_umin(end, str->len);

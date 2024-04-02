@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 02:57:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:55:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 static void	heap_str_to_stack_str(t_str *str) {
-	char *temp;
+	unsigned char *temp;
 
 	temp = str->_large_string;
 	ft_strlcpy(str->_small_string, temp, FT_SMALL_STR);
@@ -24,7 +24,7 @@ static void	heap_str_to_stack_str(t_str *str) {
 }
 
 static t_bool stack_str_to_heap_str(t_str *str, size_t capacity) {
-	char *temp;
+	unsigned char *temp;
 
 	temp = malloc(capacity);
 	if (temp == 0)
@@ -36,7 +36,7 @@ static t_bool stack_str_to_heap_str(t_str *str, size_t capacity) {
 }
 
 static t_bool resize_heap_str(t_str *str, size_t n) {
-	char *temp;
+	unsigned char *temp;
 
 	temp = ft_reallocstring(str->_large_string, n);
 	if (temp == 0)

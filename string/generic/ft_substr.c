@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:30:54 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 15:09:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:01:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
  * @return The substring.
  *         NULL if the allocation fails.
  */
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+unsigned char	*ft_substr(const unsigned char *s, unsigned int start, size_t len)
 {
-	char		*out;
-	size_t		s_len;
+	unsigned char	*out;
+	size_t			s_len;
 
 	while (start && *s)
 	{

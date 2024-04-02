@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/25 16:29:44 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:54:03 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 
 typedef struct s_state
 {
-	char	*buf;
-	char	*buf_pos;
-	ssize_t	remaining;
-	int		fd;
+	unsigned char	*buf;
+	unsigned char	*buf_pos;
+	ssize_t			remaining;
+	int				fd;
 }	t_state;
 
-char	*get_next_line(int fd);
+unsigned char	*get_next_line(int fd);
 
-void	del_state(void *content);
-t_state	*new_state(int fd);
-char	*read_into_buf(t_state *st);
-char	*new_str_fill_back(char *str, size_t str_len, size_t new_len);
-size_t	len_until_nl(char *str, size_t str_len);
+void			del_state(void *content);
+t_state			*new_state(int fd);
+unsigned char	*read_into_buf(t_state *st);
+unsigned char	*new_str_fill_back(unsigned char *str, size_t str_len, size_t new_len);
+size_t			len_until_nl(unsigned char *str, size_t str_len);
 
 #endif

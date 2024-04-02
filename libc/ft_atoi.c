@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2023/12/27 17:20:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:10:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_isspace(int c)
 		|| c == '\f');
 }
 
-static int	get_and_skip_sign(const char **nptr)
+static int	get_and_skip_sign(const unsigned char **nptr)
 {
 	if (**nptr == '-')
 	{
@@ -33,7 +33,7 @@ static int	get_and_skip_sign(const char **nptr)
 	return (1);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const unsigned char *nptr)
 {
 	int	sign;
 	int	nbr;
