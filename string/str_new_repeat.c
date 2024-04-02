@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:44:07 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 20:50:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:40:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 /// @warning Check the error flag for memory allocation errors.
 t_str	str_new_repeat(const char *s, size_t len, size_t n)
 {
-	str_new_repeat_sized(s, len, len * n, n);
+	return (str_new_repeat_sized(s, len, len * n, n));
 }
 
 /// @brief Creates a string by repeating the given string 'n' times.

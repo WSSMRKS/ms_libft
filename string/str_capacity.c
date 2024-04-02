@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/03/27 21:34:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/02 02:57:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static t_bool resize_heap_str(t_str *str, size_t n) {
 /// and the string is left unchanged.
 /// @param str String to change the capacity of.
 /// @param n New capacity.
+/// @note The capacity will be at least FT_SMALL_STR.
 /// @return TRUE if the operation was successful, FALSE otherwise.
 t_bool	str_set_capacity(t_str *str, size_t n)
 {
