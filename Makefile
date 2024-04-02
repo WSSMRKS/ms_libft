@@ -42,12 +42,13 @@ MATH_FILES = \
 	math/ft_safe_mult.c\
 
 OTHER_FILES = \
+	other/bit.c\
+	other/bool.c\
 	other/ft_putchar_fd.c\
 	other/ft_putendl_fd.c\
 	other/ft_putfill_fd.c\
 	other/ft_putnbr_fd.c\
 	other/ft_putstr_fd.c\
-	other/bit.c\
 
 STRING_GENERIC_FILES = \
 	string/generic/ft_itoa.c\
@@ -70,16 +71,22 @@ STRING_GENERIC_FILES = \
 
 STRING_FILES = \
 	string/str_capacity.c\
+	string/str_clone.c\
+	string/str_cmp.c\
+	string/str_destroy.c\
+	string/str_empty.c\
 	string/str_filter_map.c\
 	string/str_get.c\
+	string/str_grow.c\
 	string/str_insert.c\
 	string/str_map.c\
-	string/str_new.c\
+	string/str_new_clone.c\
+	string/str_new_from.c\
+	string/str_new_repeat.c\
 	string/str_push_front.c\
+	string/str_push_sized.c\
 	string/str_push.c\
 	string/str_remove.c\
-	string/str_util_1.c\
-	string/str_util_2.c\
 
 #PRINTF_FILES = \
 
