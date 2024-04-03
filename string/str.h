@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:37 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/03 18:05:03 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ typedef struct s_str
 		};
 	};
 	/// @brief Heap flag.
-	char heap : 1;
+	char			heap: 1;
 	/// @brief Memory error flag.
-	char mem_err : 1;
+	char			mem_err: 1;
 }					t_str;
 
 char				*str_get(t_str *str);
@@ -128,7 +128,5 @@ void				str_trim_start_not_set(t_str *str, const char *set);
 void				str_trim_start_set(t_str *str, const char *set);
 void				str_trunc(t_str *str, size_t n);
 void				str_upper(t_str *str);
-
-// TODO: add str_pushstr_sized, str_pushstrn_sized
 
 #endif

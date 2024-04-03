@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:12:26 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/03 18:03:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include "string/str.h"
 
 typedef enum e_bool
 {
@@ -87,7 +88,6 @@ t_list						*ft_lstnew(void *content);
 int							ft_lstsize(t_list *lst);
 t_list						*ft_lstswp_front_where(t_list **lst,
 								t_lst_pred pred, void *pred_data);
-// void	ft_lstswp_front(t_list **lst, t_list *node, t_list *prev);
 
 /*
 	MATH
@@ -112,7 +112,6 @@ size_t						ft_putendl_fd(char *s, int fd);
 size_t						ft_putfill_fd(char c, int fd, size_t fill);
 size_t						ft_putnbr_fd(int n, int fd);
 size_t						ft_putstr_fd(char *s, int fd);
-// void						set_bit_as(char *byte, char pos, t_ll bool);
 void						set_bit(char *byte, char pos);
 void						unset_bit(char *byte, char pos);
 void						toggle_bit(char *byte, char pos);
@@ -148,27 +147,5 @@ char						*ft_strrchr(const char *s, int c);
 char						*ft_strtrim(const char *s1, const char *set);
 char						*ft_substr(const char *s, unsigned int start,
 								size_t len);
-// void	str_map(t_str *str, void (*f)(char*));
-// void	str_mapi(t_str *str, void (*f)(size_t, char*));
-// void	str_map_rev(t_str *str, void (*f)(char*));
-// void	str_mapi_rev(t_str *str, void (*f)(size_t, char*));
-//
-// TODO: use recursive algorithm for str_filter_map to avoid quadratic complexity and make generic (char* input)
-// void	str_filter_map(t_str *str, t_bool (*f)(char*));
-// void	str_filter_mapi(t_str *str, t_bool (*f)(size_t, char*));
-// void	str_filter_map_rev(t_str *str, t_bool (*f)(char*));
-// void	str_filter_mapi_rev(t_str *str, t_bool (*f)(size_t, char*));
-
-/*
-	STRING
-*/
-
-# include "string/str.h"
-
-/*
-	PRINTF
-*/
-
-// int		ft_printf(const char *format, ...);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/03 18:05:16 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*str_get(t_str *str)
 		return (str->_large_string);
 	return (str->_small_string);
 }
+
 /// @brief Destroys the given string and returns its data.
 /// @param str String to destroy.
 /// @return Pointer to the string data or null.
