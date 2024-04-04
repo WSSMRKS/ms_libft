@@ -75,22 +75,17 @@ STRING_FILES = \
 	string/str_cmp.c\
 	string/str_destroy.c\
 	string/str_empty.c\
-	string/str_filter_map.c\
 	string/str_get.c\
 	string/str_grow.c\
 	string/str_insert.c\
-	string/str_map.c\
 	string/str_new_clone.c\
 	string/str_new_from.c\
 	string/str_new_repeat.c\
 	string/str_push_front.c\
-	string/str_push_sized.c\
 	string/str_push.c\
 	string/str_remove.c\
 
-#PRINTF_FILES = \
-
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) #$(PRINTF_FILES)
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES)
 
 OBJ = $(SRCS:.c=.o)
 

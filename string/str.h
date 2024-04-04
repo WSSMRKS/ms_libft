@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/03 18:05:03 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/04 10:28:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void				str_insertn(t_str *str, size_t index, char c, size_t n);
 void				str_insertstr(t_str *str, size_t index, const char *s);
 void				str_insertstrn(t_str *str, size_t index, const char *s,
 						size_t n);
-void				str_lower(t_str *str);
 t_str				str_new_clone_sized(const char *s, size_t new_len);
 t_str				str_new_from(char *s, size_t len);
 t_str				str_new_from_sized(char *s, size_t new_len);
@@ -99,34 +98,8 @@ void				str_pushstrn(t_str *str, const char *s, size_t n);
 void				str_pushstrn_front(t_str *str, const char *s, size_t n);
 char				str_remove(t_str *str, size_t index);
 void				str_remove_range(t_str *str, size_t start, size_t end);
-void				str_replace(t_str *str, char pattern, char s);
-void				str_replace_first(t_str *str, char pattern, char s);
-void				str_replace_first_str(t_str *str, const char *pattern,
-						const char *s);
-void				str_replace_last(t_str *str, char pattern, char s);
-void				str_replace_last_str(t_str *str, const char *pattern,
-						const char *s);
-void				str_replace_range(t_str *str, size_t start, size_t end,
-						const char *s);
-void				str_replace_str(t_str *str, const char *pattern,
-						const char *s);
-void				str_reverse(t_str *str);
 t_bool				str_set_capacity(t_str *str, size_t n);
 t_bool				str_shrink_to_fit(t_str *str);
-t_str				str_split_off(t_str *str, size_t index);
-void				str_trim(t_str *str);
-void				str_trim_end(t_str *str);
-void				str_trim_end_not(t_str *str, char c);
-void				str_trim_end_not_set(t_str *str, const char *set);
-void				str_trim_end_set(t_str *str, const char *set);
-void				str_trim_not(t_str *str, char c);
-void				str_trim_not_set(t_str *str, const char *set);
-void				str_trim_set(t_str *str, const char *set);
-void				str_trim_start(t_str *str);
-void				str_trim_start_not(t_str *str, char c);
-void				str_trim_start_not_set(t_str *str, const char *set);
-void				str_trim_start_set(t_str *str, const char *set);
 void				str_trunc(t_str *str, size_t n);
-void				str_upper(t_str *str);
 
 #endif
