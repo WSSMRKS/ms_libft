@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:44:07 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:33 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:44:05 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,32 +24,32 @@ t_str	str_new_repeat(const char *s, size_t len, size_t n)
 }
 
 /// @brief Creates a string by repeating the given string 'n' times.
-/// @param s String to repeat.
-/// @param l Length of the given string or less.
+/// @param str String to repeat.
+/// @param str_len Length of the given string or less.
 /// @param new_len Max length of the resulting string.
 /// @param n Number of repetitions.
-/// @return Repeated string or empty string if 's' is null.
+/// @return Repeated string or empty string if 'str' is null.
 /// @warning Check the error flag for memory allocation errors.
-t_str	str_new_repeat_sized(const char *s, size_t l, size_t new_len, size_t n)
+t_str	str_new_repeat_sized(const char *str, size_t str_len, size_t new_len, size_t n)
 {
-	t_str	str;
+	t_str	out;
 	size_t	cap;
 	size_t	offset;
 	size_t	src_len;
 	char	*buf;
 
-	str = str_empty_with_capacity(new_len + 1);
-	cap = str_capacity(str);
-	if (s && cap > new_len)
+	out = str_empty_with_capacity(new_len + 1);
+	cap = str_capacity(out);
+	if (str && cap > new_len)
 	{
-		buf = str_get(&str);
+		buf = str_get(&out);
 		offset = 0;
 		while (cap > offset && n--)
 		{
-			src_len = ft_strlcpy(buf + offset, s, ft_min(cap - offset, l + 1));
-			offset += ft_min(src_len, ft_min(new_len - offset, l));
+			src_len = ft_strlcpy(buf + offset, str, ft_umin(cap - offset, str_len + 1));
+			offset += ft_umin(src_len, ft_umin(new_len - offset, str_len));
 		}
-		str.len = offset;
+		out.len = offset;
 	}
-	return (str);
+	return (out);
 }

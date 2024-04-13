@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:13:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:33:42 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_str	str_new_clone_sized(const char *s, size_t new_len)
 	cap = str_capacity(str);
 	if (s && cap > new_len)
 	{
-		str.len = ft_min(ft_strlcpy(str_get(&str), s, cap), new_len);
+		str.len = ft_umin(ft_strlcpy(str_get(&str), s, cap), new_len);
 	}
 	return (str);
 }
