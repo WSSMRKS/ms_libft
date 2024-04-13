@@ -85,7 +85,19 @@ STRING_FILES = \
 	string/str_push.c\
 	string/str_remove.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES)
+FT_PRINTF_FILES = \
+	printf/fmt_c.c\
+	printf/fmt_hex.c\
+	printf/fmt_hexup.c\
+	printf/fmt_int.c\
+	printf/fmt_ptr.c\
+	printf/fmt_str.c\
+	printf/fmt_uint.c\
+	printf/formatting.c\
+	printf/ft_printf.c\
+	printf/percent_char.c\
+
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) $(FT_PRINTF_FILES)
 
 OBJ = $(SRCS:.c=.o)
 
