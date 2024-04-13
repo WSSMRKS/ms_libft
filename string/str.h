@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/04 10:28:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:48:58 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char				*str_get_cloned(t_str str);
 size_t				str_capacity(t_str str);
 void				str_clear(t_str *str);
 t_str				str_clone(t_str str);
-t_str				str_clone_sized(t_str str, size_t len);
+t_str				str_clone_sized(t_str str, size_t new_len);
 int					str_cmp(t_str str1, t_str str2);
 void				str_destroy(t_str *str);
 t_str				str_empty(void);
@@ -85,7 +85,7 @@ t_str				str_new_clone_sized(const char *s, size_t new_len);
 t_str				str_new_from(char *s, size_t len);
 t_str				str_new_from_sized(char *s, size_t new_len);
 t_str				str_new_repeat(const char *s, size_t len, size_t n);
-t_str				str_new_repeat_sized(const char *s, size_t l,
+t_str				str_new_repeat_sized(const char *s, size_t s_len,
 						size_t new_len, size_t n);
 char				str_pop(t_str *str);
 void				str_push(t_str *str, char c);
