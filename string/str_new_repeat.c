@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:44:07 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 18:46:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:47 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ t_str	str_new_repeat(const char *s, size_t len, size_t n)
 /// @param n Number of repetitions.
 /// @return Repeated string or empty string if 's' is null.
 /// @warning Check the error flag for memory allocation errors.
-t_str	str_new_repeat_sized(const char *s, size_t s_len, size_t new_len, size_t n)
+t_str	str_new_repeat_sized(const char *s, size_t s_len, size_t new_len,
+		size_t n)
 {
 	t_str	out;
 	size_t	cap;
@@ -46,7 +47,8 @@ t_str	str_new_repeat_sized(const char *s, size_t s_len, size_t new_len, size_t n
 		offset = 0;
 		while (cap > offset && n--)
 		{
-			src_len = ft_strlcpy(buf + offset, s, ft_umin(cap - offset, s_len + 1));
+			src_len = ft_strlcpy(buf + offset, s, ft_umin(cap - offset, s_len
+						+ 1));
 			offset += ft_umin(src_len, ft_umin(new_len - offset, s_len));
 		}
 		out.len = offset;

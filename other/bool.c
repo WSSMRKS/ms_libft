@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 22:18:28 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:19 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_bool	itob(t_ll i)
+t_bool	itob(long long i)
 {
 	return (i != 0);
 }

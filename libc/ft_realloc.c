@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:14:23 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:04:49 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_realloc(void *ptr, size_t from, size_t to)
 /// @return Pointer to the reallocated memory block.
 void	*ft_reallocarray(void *ptr, size_t from, size_t nmemb, size_t size)
 {
-	t_ull	new_size;
+	unsigned long long	new_size;
 
 	if (ft_safe_umult(nmemb, size, ULLONG_MAX, &new_size))
 		return (0);

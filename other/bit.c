@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:51:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:05 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:18 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	toggle_bit(char *byte, char pos)
 	*byte ^= 1 << pos;
 }
 
-void	set_bit_as(char *byte, char pos, t_ll bool)
+void	set_bit_as(char *byte, char pos, long long bool)
 {
 	if (itob(bool))
 	{

@@ -6,34 +6,34 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:57:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/02 10:05:03 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:15 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_ll	ft_max(t_ll a, t_ll b)
+long long	ft_max(long long a, long long b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-t_ll	ft_min(t_ll a, t_ll b)
+long long	ft_min(long long a, long long b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-t_ull	ft_umax(t_ull a, t_ull b)
+unsigned long long	ft_umax(unsigned long long a, unsigned long long b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-t_ull	ft_umin(t_ull a, t_ull b)
+unsigned long long	ft_umin(unsigned long long a, unsigned long long b)
 {
 	if (a < b)
 		return (a);
@@ -44,10 +44,10 @@ t_ull	ft_umin(t_ull a, t_ull b)
 /// @param num Number to calculate the absolute value of.
 /// @param min Minimum value of the number type, e.g. INT_MIN.
 /// @return Absolute value of the number.
-t_ull	ft_abs(t_ll num, t_ll min)
+unsigned long long	ft_abs(long long num, long long min)
 {
 	if (num == min)
-		return (((t_ull) - (min + 1)) + 1);
+		return (((unsigned long long)-(min + 1)) + 1);
 	if (num < 0)
 		return (-num);
 	return (num);
