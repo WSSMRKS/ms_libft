@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 00:16:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/16 06:17:56 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	str_insertn(t_str *str, size_t index, char c, size_t n)
 		return ;
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)
-		if (!str_grow(str, str->len + n - cap))
+		if (!str_try_grow(str, str->len + n - cap))
 			return ;
 	buf = str_get(str);
 	ft_memmove(buf + index + n, buf + index, str->len - index + 1);
@@ -48,7 +48,7 @@ void	str_insertstrn(t_str *str, size_t index, const char *s, size_t n)
 		return ;
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)
-		if (!str_grow(str, str->len + n - cap))
+		if (!str_try_grow(str, str->len + n - cap))
 			return ;
 	buf = str_get(str);
 	ft_memmove(buf + index + n, buf + index, str->len - index + 1);

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/16 06:17:56 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	str_push(t_str *str, char c)
 	char	*buf;
 
 	if (str->len + 1 >= str_capacity(*str))
-		if (!str_grow(str, 1))
+		if (!str_try_grow(str, 1))
 			return ;
 	buf = str_get(str);
 	buf[str->len++] = c;
@@ -31,7 +31,7 @@ void	str_pushn(t_str *str, char c, size_t n)
 
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)
-		if (!str_grow(str, str->len + n - cap))
+		if (!str_try_grow(str, str->len + n - cap))
 			return ;
 	buf = str_get(str);
 	while (n--)
@@ -49,7 +49,7 @@ void	str_pushstr(t_str *str, const char *s)
 	buf[str->len] = 0;
 	if (*s)
 	{
-		if (!str_grow(str, ft_strlen(s)))
+		if (!str_try_grow(str, ft_strlen(s)))
 			return ;
 		str_pushstr(str, s);
 	}
@@ -62,7 +62,7 @@ void	str_pushstrn(t_str *str, const char *s, size_t n)
 
 	cap = str_capacity(*str);
 	if (str->len + n >= cap)
-		if (!str_grow(str, str->len + n - cap))
+		if (!str_try_grow(str, str->len + n - cap))
 			return ;
 	buf = str_get(str);
 	while (*s && n--)

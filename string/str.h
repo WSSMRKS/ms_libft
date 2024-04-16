@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:04:49 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/16 06:33:37 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 # ifndef FT_SMALL_STR
 /// The size of the small string buffer.
-#  define FT_SMALL_STR 16
+#  define FT_SMALL_STR 48
 # endif
 # if FT_SMALL_STR < 1
 #  error "FT_SMALL_STR must be at least 1"
@@ -38,8 +38,6 @@
 /// the string is left in a valid state.
 typedef struct s_str
 {
-	/// @brief Length of the string.
-	size_t			len;
 	union
 	{
 		/// @brief Small string buffer.
@@ -56,10 +54,12 @@ typedef struct s_str
 			size_t	_capacity;
 		};
 	};
+	/// @brief Length of the string.
+	size_t			len;
 	/// @brief Heap flag.
-	char			heap: 1;
+	int				heap : 1;
 	/// @brief Memory error flag.
-	char			mem_err: 1;
+	int				mem_err : 1;
 }					t_str;
 
 char				*str_get(t_str *str);
@@ -74,7 +74,7 @@ int					str_cmp(t_str str1, t_str str2);
 void				str_destroy(t_str *str);
 t_str				str_empty(void);
 t_str				str_empty_with_capacity(size_t n);
-t_bool				str_grow(t_str *str, size_t min_growth);
+t_bool				str_try_grow(t_str *str, size_t min_growth);
 t_bool				str_identical(t_str str1, t_str str2);
 void				str_insert(t_str *str, size_t index, char c);
 void				str_insertn(t_str *str, size_t index, char c, size_t n);
@@ -98,7 +98,7 @@ void				str_pushstrn(t_str *str, const char *s, size_t n);
 void				str_pushstrn_front(t_str *str, const char *s, size_t n);
 char				str_remove(t_str *str, size_t index);
 void				str_remove_range(t_str *str, size_t start, size_t end);
-t_bool				str_set_capacity(t_str *str, size_t n);
+t_bool				str_try_set_capacity(t_str *str, size_t n);
 t_bool				str_shrink_to_fit(t_str *str);
 void				str_trunc(t_str *str, size_t n);
 
