@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/16 06:33:37 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/16 08:02:42 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 # ifndef FT_SMALL_STR
 /// The size of the small string buffer.
-#  define FT_SMALL_STR 48
+#  define FT_SMALL_STR 24
 # endif
 # if FT_SMALL_STR < 1
 #  error "FT_SMALL_STR must be at least 1"
@@ -30,6 +30,8 @@
 # if FT_STR_GROW < 1
 #  error "FT_STR_GROW must be at least 1"
 # endif
+
+# define FT_STR_MAX_LEN ((1 << (sizeof(size_t) * 8 - 2)) - 1)
 
 /// @brief A SSO-enabled, growable, safe string type.
 /// When modifying the string only via its provided methods, reallocations,
@@ -55,11 +57,11 @@ typedef struct s_str
 		};
 	};
 	/// @brief Length of the string.
-	size_t			len;
+	size_t len : sizeof(size_t) * 8 - 2;
 	/// @brief Heap flag.
-	int				heap : 1;
+	size_t heap : 1;
 	/// @brief Memory error flag.
-	int				mem_err : 1;
+	size_t mem_err : 1;
 }					t_str;
 
 char				*str_get(t_str *str);
