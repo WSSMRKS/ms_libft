@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 22:01:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:14:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_bool	str_try_grow(t_str *str, size_t min_growth)
 /// @brief Try to set the capacity of the string to a given value.
 /// @param str The string to set the capacity of.
 /// @note The capacity can't be less than FT_SMALL_STR.
-/// @note Will free the original string if it was heap allocated.
+/// @note This function can be used to free unused memory.
 /// @return TRUE if the operation was successful, FALSE otherwise.
 /// @warning Check the error flag for memory allocation errors.
 t_bool	str_shrink_to_fit(t_str *str)
