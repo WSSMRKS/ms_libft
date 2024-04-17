@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:19:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+void				ft_memswap(void *b1, void *b2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
