@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:56:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:03:04 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ t_bool	str_identical(t_str str1, t_str str2)
 	return (ft_strcmp(str1._small_string, str2._small_string) == 0);
 }
 
+/// @brief Compare two strings.
+/// @param str1
+/// @param str2
+/// @return The difference between the first differing characters.
 int	str_cmp(t_str str1, t_str str2)
 {
 	return (ft_strcmp(str_get(&str1), str_get(&str2)));

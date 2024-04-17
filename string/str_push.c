@@ -6,12 +6,16 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/16 06:17:56 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:57:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
+/// @brief Append a character to the string.
+/// @param str The string to append to.
+/// @param c The character to append.
+/// @warning Check the error flag for memory allocation errors.
 void	str_push(t_str *str, char c)
 {
 	char	*buf;
@@ -24,6 +28,11 @@ void	str_push(t_str *str, char c)
 	buf[str->len] = 0;
 }
 
+/// @brief Append a character n times to the string.
+/// @param str The string to append to.
+/// @param c The character to append.
+/// @param n The number of times to append the character.
+/// @warning Check the error flag for memory allocation errors.
 void	str_pushn(t_str *str, char c, size_t n)
 {
 	char	*buf;
@@ -39,6 +48,10 @@ void	str_pushn(t_str *str, char c, size_t n)
 	buf[str->len] = 0;
 }
 
+/// @brief Append a string to the string.
+/// @param str The string to append to.
+/// @param s The string to append.
+/// @warning Check the error flag for memory allocation errors.
 void	str_pushstr(t_str *str, const char *s)
 {
 	char	*buf;
@@ -55,7 +68,37 @@ void	str_pushstr(t_str *str, const char *s)
 	}
 }
 
+/// @brief Append a string n times to the string.
+/// @param str The string to append to.
+/// @param s The string to append.
+/// @param n The number of times to append the string.
+/// @warning Check the error flag for memory allocation errors.
 void	str_pushstrn(t_str *str, const char *s, size_t n)
+{
+	char	*buf;
+	size_t	s_len;
+	size_t	cap;
+
+	s_len = ft_strlen(s);
+	cap = str_capacity(*str);
+	if (str->len + s_len * n >= cap)
+		if (!str_try_grow(str, str->len + s_len * n - cap))
+			return ;
+	buf = str_get(str);
+	while (n--)
+	{
+		ft_memcpy(buf + str->len, s, s_len);
+		str->len += s_len;
+	}
+	buf[str->len] = 0;
+}
+
+/// @brief Append a string of a given max size to the string.
+/// @param str The string to append to.
+/// @param s The string to append.
+/// @param n The maximum number of characters to append.
+/// @warning Check the error flag for memory allocation errors.
+void	str_pushstr_sized(t_str *str, const char *s, size_t n)
 {
 	char	*buf;
 	size_t	cap;

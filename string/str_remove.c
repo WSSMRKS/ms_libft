@@ -6,12 +6,15 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:56:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
+/// @brief Remove the last character from the string.
+/// @param str The string to remove from.
+/// @return The removed character.
 char	str_pop(t_str *str)
 {
 	char	*buf;
@@ -25,6 +28,10 @@ char	str_pop(t_str *str)
 	return (out);
 }
 
+/// @brief Remove a character at a given index from the string.
+/// @param str The string to remove from.
+/// @param index The index of the character to remove.
+/// @return The removed character.
 char	str_remove(t_str *str, size_t index)
 {
 	char	*buf;
@@ -39,6 +46,10 @@ char	str_remove(t_str *str, size_t index)
 	return (out);
 }
 
+/// @brief Remove a range of characters from the string.
+/// @param str The string to remove from.
+/// @param start The start index of the range to remove.
+/// @param end The end index of the range to remove.
 void	str_remove_range(t_str *str, size_t start, size_t end)
 {
 	char	*buf;
@@ -50,6 +61,9 @@ void	str_remove_range(t_str *str, size_t start, size_t end)
 	str->len -= end - start;
 }
 
+/// @brief Remove n characters from the end of the string.
+/// @param str The string to remove from.
+/// @param n The number of characters to remove.
 void	str_trunc(t_str *str, size_t n)
 {
 	n = ft_umin(n, str->len);
@@ -57,6 +71,8 @@ void	str_trunc(t_str *str, size_t n)
 	str->len -= n;
 }
 
+/// @brief Clear the string.
+/// @param str The string to clear.
 void	str_clear(t_str *str)
 {
 	str_get(str)[0] = 0;

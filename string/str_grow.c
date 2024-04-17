@@ -6,12 +6,17 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/16 06:18:40 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:01:48 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
+/// @brief Try to set the capacity of the string to a given value.
+/// @param str The string to set the capacity of.
+/// @param min_growth The minimum growth of the capacity.
+/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @warning Check the error flag for memory allocation errors.
 t_bool	str_try_grow(t_str *str, size_t min_growth)
 {
 	size_t	new_capacity;
@@ -20,6 +25,12 @@ t_bool	str_try_grow(t_str *str, size_t min_growth)
 	return (str_try_set_capacity(str, new_capacity));
 }
 
+/// @brief Try to set the capacity of the string to a given value.
+/// @param str The string to set the capacity of.
+/// @note The capacity can't be less than FT_SMALL_STR.
+/// @note Will free the original string if it was heap allocated.
+/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @warning Check the error flag for memory allocation errors.
 t_bool	str_shrink_to_fit(t_str *str)
 {
 	size_t	fit_size;

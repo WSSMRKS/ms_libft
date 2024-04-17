@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/16 08:02:42 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:52:09 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ t_bool				str_identical(t_str str1, t_str str2);
 void				str_insert(t_str *str, size_t index, char c);
 void				str_insertn(t_str *str, size_t index, char c, size_t n);
 void				str_insertstr(t_str *str, size_t index, const char *s);
-void				str_insertstrn(t_str *str, size_t index, const char *s,
+void				str_insertstrn(t_str *str, size_t index, const char *s, size_t n);
+void				str_insertstr_sized(t_str *str, size_t index, const char *s,
 						size_t n);
 t_str				str_new_clone_sized(const char *s, size_t new_len);
 t_str				str_new_from(char *s, size_t len);
@@ -97,7 +98,9 @@ void				str_pushn_front(t_str *str, char c, size_t n);
 void				str_pushstr(t_str *str, const char *s);
 void				str_pushstr_front(t_str *str, const char *s);
 void				str_pushstrn(t_str *str, const char *s, size_t n);
-void				str_pushstrn_front(t_str *str, const char *s, size_t n);
+void				str_pushstr_sized(t_str *str, const char *s, size_t n);
+void				str_pushstr_sized_front(t_str *str, const char *s,
+						size_t n);
 char				str_remove(t_str *str, size_t index);
 void				str_remove_range(t_str *str, size_t start, size_t end);
 t_bool				str_try_set_capacity(t_str *str, size_t n);
