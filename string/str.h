@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 21:52:09 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:42:58 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 #  error "FT_STR_GROW must be at least 1"
 # endif
 
-# define FT_STR_MAX_LEN ((1 << (sizeof(size_t) * 8 - 2)) - 1)
+# define FT_STR_MAX_LEN (SIZE_MAX >> 2)
 
 /// @brief A SSO-enabled, growable, safe string type.
 /// When modifying the string only via its provided methods, reallocations,
@@ -57,11 +57,11 @@ typedef struct s_str
 		};
 	};
 	/// @brief Length of the string.
-	size_t len : sizeof(size_t) * 8 - 2;
+	size_t			len: sizeof(size_t) * 8 - 2;
 	/// @brief Heap flag.
-	size_t heap : 1;
+	size_t			heap: 1;
 	/// @brief Memory error flag.
-	size_t mem_err : 1;
+	size_t			mem_err: 1;
 }					t_str;
 
 char				*str_get(t_str *str);
@@ -73,6 +73,10 @@ void				str_clear(t_str *str);
 t_str				str_clone(t_str str);
 t_str				str_clone_sized(t_str str, size_t new_len);
 int					str_cmp(t_str str1, t_str str2);
+void				str_copy(t_str *dst, t_str src);
+void				str_copy_sized(t_str *dst, t_str src, size_t n);
+void				str_cat(t_str *dst, t_str src);
+void				str_cat_sized(t_str *dst, t_str src, size_t n);
 void				str_destroy(t_str *str);
 t_str				str_empty(void);
 t_str				str_empty_with_capacity(size_t n);
