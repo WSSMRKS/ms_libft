@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:30:20 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:16 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:09:58 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,13 @@ t_bool	ft_safe_mult(long long a, long long b, long long max, long long *result)
 /// @param a First factor.
 /// @param b Second factor.
 /// @param max Maximum for the integer type, e.g. UINT_MAX for unsigned int.
-/// @param result Pointer to the result.
 /// @return TRUE if the multiplication is safe, FALSE if it overflows.
 t_bool	ft_safe_umult(unsigned long long a, unsigned long long b,
-		unsigned long long max, unsigned long long *result)
+		unsigned long long max)
 {
-	*result = 0;
 	if (a == 0 || b == 0)
 		return (TRUE);
 	if (a > max / b)
 		return (FALSE);
-	*result = a * b;
 	return (TRUE);
 }

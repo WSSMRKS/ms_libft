@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   vec_destroy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 18:06:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 23:42:00 by kwurster         ###   ########.fr       */
+/*   Created: 2024/03/27 21:02:06 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/17 22:12:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <stdlib.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+/// @brief Destroy the vec and free the memory.
+/// @param vec The vec to destroy.
+/// @note The vec will be empty, but still usable after this operation.
+void	vec_destroy(t_vec *vec)
 {
-	char		*d;
-	const char	*s;
-
-	d = dest;
-	s = src;
-	if (d < s)
-		while (n--)
-			*d++ = *s++;
-	else
+	if (vec->heap)
 	{
-		s += n - 1;
-		d += n - 1;
-		while (n--)
-			*d-- = *s--;
+		free(vec->_large_buf);
+		vec->heap = FALSE;
 	}
-	return (dest);
+	vec->len = 0;
+	vec->mem_err = FALSE;
 }

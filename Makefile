@@ -12,8 +12,10 @@ LIBC_FILES = \
 	libc/ft_memchr.c\
 	libc/ft_memcmp.c\
 	libc/ft_memcpy.c\
+	libc/ft_memdup.c\
 	libc/ft_memmove.c\
 	libc/ft_memset.c\
+	libc/ft_memswap.c\
 	libc/ft_realloc.c\
 	libc/ft_tolower.c\
 	libc/ft_toupper.c\
@@ -73,6 +75,7 @@ STRING_FILES = \
 	string/str_capacity.c\
 	string/str_clone.c\
 	string/str_cmp.c\
+	string/str_copy.c\
 	string/str_destroy.c\
 	string/str_empty.c\
 	string/str_get.c\
@@ -84,6 +87,26 @@ STRING_FILES = \
 	string/str_push_front.c\
 	string/str_push.c\
 	string/str_remove.c\
+
+VEC_FILES = \
+	vec/vec_capacity.c\
+	vec/vec_clone.c\
+	vec/vec_cmp.c\
+	vec/vec_copy.c\
+	vec/vec_destroy.c\
+	vec/vec_empty.c\
+	vec/vec_get.c\
+	vec/vec_grow.c\
+	vec/vec_insert.c\
+	vec/vec_new_clone.c\
+	vec/vec_new_from.c\
+	vec/vec_new_repeat.c\
+	vec/vec_push_front.c\
+	vec/vec_push.c\
+	vec/vec_pushvec_sized.c\
+	vec/vec_pushvec.c\
+	vec/vec_remove.c\
+	vec/vec_swap.c\
 
 FT_PRINTF_FILES = \
 	printf/fmt_c.c\
@@ -97,7 +120,7 @@ FT_PRINTF_FILES = \
 	printf/ft_printf.c\
 	printf/percent_char.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) $(FT_PRINTF_FILES)
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES)
 
 OBJ = $(SRCS:.c=.o)
 

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 18:06:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 23:42:00 by kwurster         ###   ########.fr       */
+/*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/18 00:47:15 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef TYPES_H
+# define TYPES_H
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+# include <stddef.h>
+
+typedef enum e_bool
 {
-	char		*d;
-	const char	*s;
+	FALSE,
+	TRUE
+}	t_bool;
 
-	d = dest;
-	s = src;
-	if (d < s)
-		while (n--)
-			*d++ = *s++;
-	else
-	{
-		s += n - 1;
-		d += n - 1;
-		while (n--)
-			*d-- = *s--;
-	}
-	return (dest);
-}
+#endif

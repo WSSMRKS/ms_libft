@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:03 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:50:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <limits.h>
 
 static int	ft_isspace(int c)
 {

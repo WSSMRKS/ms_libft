@@ -6,21 +6,18 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 23:19:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 00:48:24 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "string/str.h"
-# include <stddef.h>
+# include "types.h"
+# include <limits.h>
 
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}					t_bool;
+# include "string/str.h"
+# include "vec/vec.h"
 
 /*
 	LIBC
@@ -38,6 +35,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				ft_memswap(void *b1, void *b2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				*ft_memdup(const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_realloc(void *ptr, size_t from, size_t to);
@@ -97,7 +95,7 @@ long long			ft_min(long long a, long long b);
 t_bool				ft_safe_mult(long long a, long long b, long long max,
 						long long *result);
 t_bool				ft_safe_umult(unsigned long long a, unsigned long long b,
-						unsigned long long max, unsigned long long *result);
+						unsigned long long max);
 unsigned long long	ft_umax(unsigned long long a, unsigned long long b);
 unsigned long long	ft_umin(unsigned long long a, unsigned long long b);
 

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 22:42:58 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 00:32:42 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@
 # if FT_STR_GROW < 1
 #  error "FT_STR_GROW must be at least 1"
 # endif
-
-# define FT_STR_MAX_LEN (SIZE_MAX >> 2)
 
 /// @brief A SSO-enabled, growable, safe string type.
 /// When modifying the string only via its provided methods, reallocations,
@@ -85,7 +83,8 @@ t_bool				str_identical(t_str str1, t_str str2);
 void				str_insert(t_str *str, size_t index, char c);
 void				str_insertn(t_str *str, size_t index, char c, size_t n);
 void				str_insertstr(t_str *str, size_t index, const char *s);
-void				str_insertstrn(t_str *str, size_t index, const char *s, size_t n);
+void				str_insertstrn(t_str *str, size_t index, const char *s,
+						size_t n);
 void				str_insertstr_sized(t_str *str, size_t index, const char *s,
 						size_t n);
 t_str				str_new_clone_sized(const char *s, size_t new_len);
