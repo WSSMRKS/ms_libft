@@ -6,11 +6,16 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:13:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:55:07 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+t_str	str_new_clone(const char *s)
+{
+	return (str_new_clone_sized(s, ft_strlen(s)));
+}
 
 /// @brief Clones the given string.
 /// @param s String to clone.

@@ -72,6 +72,11 @@ STRING_GENERIC_FILES = \
 	string/generic/ft_substr.c\
 
 STRING_FILES = \
+	string/str_base2.c\
+	string/str_base8.c\
+	string/str_base10.c\
+	string/str_base16.c\
+	string/str_base64.c\
 	string/str_capacity.c\
 	string/str_clone.c\
 	string/str_cmp.c\
@@ -81,11 +86,14 @@ STRING_FILES = \
 	string/str_get.c\
 	string/str_grow.c\
 	string/str_insert.c\
+	string/str_itoa.c\
 	string/str_new_clone.c\
 	string/str_new_from.c\
 	string/str_new_repeat.c\
 	string/str_push_front.c\
 	string/str_push.c\
+	string/str_pushstr2_front.c\
+	string/str_pushstr2.c\
 	string/str_remove.c\
 
 VEC_FILES = \
@@ -94,6 +102,7 @@ VEC_FILES = \
 	vec/vec_cmp.c\
 	vec/vec_copy.c\
 	vec/vec_destroy.c\
+	vec/vec_display.c\
 	vec/vec_empty.c\
 	vec/vec_extract.c\
 	vec/vec_get.c\

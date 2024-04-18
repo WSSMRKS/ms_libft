@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:32:42 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:09:30 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@
 # if FT_STR_GROW < 1
 #  error "FT_STR_GROW must be at least 1"
 # endif
+
+# define BASE2 "01"
+# define BASE8 "01234567"
+# define BASE10 "0123456789"
+# define BASE16 "0123456789abcdef"
+# define BA64 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
 /// @brief A SSO-enabled, growable, safe string type.
 /// When modifying the string only via its provided methods, reallocations,
@@ -66,6 +72,11 @@ char				*str_get(t_str *str);
 char				*str_take(t_str *str);
 char				*str_get_cloned(t_str str);
 
+t_str				str_base2(void);
+t_str				str_base8(void);
+t_str				str_base10(void);
+t_str				str_base16(void);
+t_str				str_base64(void);
 size_t				str_capacity(t_str str);
 void				str_clear(t_str *str);
 t_str				str_clone(t_str str);
@@ -87,6 +98,9 @@ void				str_insertstrn(t_str *str, size_t index, const char *s,
 						size_t n);
 void				str_insertstr_sized(t_str *str, size_t index, const char *s,
 						size_t n);
+t_str				str_itoa(int num, t_str base);
+void				str_itoa_append(int num, t_str base, t_str *out);
+t_str				str_new_clone(const char *s);
 t_str				str_new_clone_sized(const char *s, size_t new_len);
 t_str				str_new_from(char *s, size_t len);
 t_str				str_new_from_sized(char *s, size_t new_len);
@@ -103,6 +117,16 @@ void				str_pushstr_front(t_str *str, const char *s);
 void				str_pushstrn(t_str *str, const char *s, size_t n);
 void				str_pushstr_sized(t_str *str, const char *s, size_t n);
 void				str_pushstr_sized_front(t_str *str, const char *s,
+						size_t n);
+void				str_pushstr2(t_str *str, t_str s);
+void				str_pushstr2_sized(t_str *str, t_str s, size_t len);
+void				str_pushstrn2(t_str *str, t_str s, size_t n);
+void				str_pushstrn2_sized(t_str *str, t_str s, size_t len,
+						size_t n);
+void				str_pushstr2_front(t_str *str, t_str s);
+void				str_pushstr2_sized_front(t_str *str, t_str s, size_t len);
+void				str_pushstrn2_front(t_str *str, t_str s, size_t n);
+void				str_pushstrn2_sized_front(t_str *str, t_str s, size_t len,
 						size_t n);
 char				str_remove(t_str *str, size_t index);
 void				str_remove_range(t_str *str, size_t start, size_t end);

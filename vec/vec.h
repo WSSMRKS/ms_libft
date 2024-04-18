@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:33 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:53:39 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void				vec_copy_sized(t_vec *dst, const t_vec *src,
 void				vec_cat(t_vec *dst, const t_vec *src);
 void				vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
 void				vec_destroy(t_vec *vec);
+t_str				vec_display(t_vec *vec, t_str (*display)(void *));
+t_str				vec_debug(t_vec *vec, t_str (*debug)(void *));
 t_vec				vec_empty(size_t element_size);
 t_vec				vec_empty_with_capacity(size_t element_size, size_t n);
 t_vec				vec_extract_range(t_vec *vec, size_t start, size_t end);
