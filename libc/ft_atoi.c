@@ -6,17 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 19:50:08 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:00:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-static int	ft_isspace(int c)
-{
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v'
-		|| c == '\t' || c == '\f');
-}
 
 static int	get_and_skip_sign(const char **nptr)
 {

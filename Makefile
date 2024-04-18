@@ -9,6 +9,7 @@ LIBC_FILES = \
 	libc/ft_isascii.c\
 	libc/ft_isdigit.c\
 	libc/ft_isprint.c\
+	libc/ft_isspace.c\
 	libc/ft_memchr.c\
 	libc/ft_memcmp.c\
 	libc/ft_memcpy.c\

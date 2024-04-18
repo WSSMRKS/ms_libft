@@ -6,13 +6,14 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 23:52:20 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:01:52 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
+# include "../types.h"
 # include "../libft.h"
 
 /// @brief String Pattern function type.

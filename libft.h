@@ -6,18 +6,17 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 23:48:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:00:36 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "types.h"
-# include <limits.h>
-
-# include "vec/vec.h"
 # include "string/str.h"
+# include "types.h"
+# include "vec/vec.h"
+# include <limits.h>
 
 /*
 	LIBC
@@ -31,6 +30,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				ft_memswap(void *b1, void *b2, size_t n);

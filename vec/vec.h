@@ -6,13 +6,14 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 23:49:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:02:04 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VEC_H
 # define VEC_H
 
+# include "../types.h"
 # include "../libft.h"
 
 typedef void		(*t_vec_map)(const void *from, void *to);
