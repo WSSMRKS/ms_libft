@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:53:39 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:11:30 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ typedef struct s_vec
 	size_t			mem_err: 1;
 }					t_vec;
 
+typedef void		(*t_vec_map)(const void *from, void *to);
+typedef void		(*t_vec_mapi)(const t_vec *from, t_vec *to, size_t i);
+typedef void		(*t_vec_iter)(void *element);
+typedef void		(*t_vec_iteri)(t_vec *vec, size_t i);
+
 void				*vec_get(const t_vec *vec);
 void				*vec_get_at(const t_vec *vec, size_t index);
 void				*vec_get_last(const t_vec *vec);
@@ -96,6 +101,12 @@ void				vec_insertarr(t_vec *vec, size_t index, void *arr,
 void				vec_insertvec(t_vec *vec, size_t index, const t_vec *data);
 void				vec_insertvec_sized(t_vec *vec, size_t index,
 						const t_vec *data, size_t n);
+void				vec_iter(t_vec *vec, t_vec_iter iter);
+void				vec_iteri(t_vec *vec, t_vec_iteri iteri);
+t_vec				vec_map(const t_vec *vec, t_vec_map map,
+						size_t element_size);
+t_vec				vec_mapi(const t_vec *vec, t_vec_mapi mapi,
+						size_t element_size);
 t_vec				vec_new_from(void *arr, size_t element_size, size_t len);
 t_vec				vec_new_clone(const void *arr, size_t element_size,
 						size_t len);

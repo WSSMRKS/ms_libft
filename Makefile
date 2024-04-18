@@ -108,6 +108,7 @@ VEC_FILES = \
 	vec/vec_get.c\
 	vec/vec_grow.c\
 	vec/vec_insert.c\
+	vec/vec_iter.c\
 	vec/vec_new_clone.c\
 	vec/vec_new_from.c\
 	vec/vec_new_repeat.c\
