@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 17:09:30 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:52:20 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,58 +15,10 @@
 
 # include "../libft.h"
 
-# ifndef FT_SMALL_STR
-/// The size of the small string buffer.
-#  define FT_SMALL_STR 24
-# endif
-# if FT_SMALL_STR < 1
-#  error "FT_SMALL_STR must be at least 1"
-# endif
-
-# ifndef FT_STR_GROW
-/// The factor by which the string capacity is at least increased when growing.
-#  define FT_STR_GROW 2
-# endif
-# if FT_STR_GROW < 1
-#  error "FT_STR_GROW must be at least 1"
-# endif
-
-# define BASE2 "01"
-# define BASE8 "01234567"
-# define BASE10 "0123456789"
-# define BASE16 "0123456789abcdef"
-# define BA64 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
-/// @brief A SSO-enabled, growable, safe string type.
-/// When modifying the string only via its provided methods, reallocations,
-/// out-of-bounds-access and null-terminations are handled automatically.
-/// When malloc errors happen the 'mem_err' flag is set and
-/// the string is left in a valid state.
-typedef struct s_str
-{
-	union
-	{
-		/// @brief Small string buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
-		char		_small_string[FT_SMALL_STR];
-		struct
-		{
-			/// @brief Heap allocated string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
-			char	*_large_string;
-			/// @brief Capacity of the heap string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
-			/// Use 'str_capacity()' instead for a safe read.
-			size_t	_capacity;
-		};
-	};
-	/// @brief Length of the string.
-	size_t			len: sizeof(size_t) * 8 - 2;
-	/// @brief Heap flag.
-	size_t			heap: 1;
-	/// @brief Memory error flag.
-	size_t			mem_err: 1;
-}					t_str;
+/// @brief String Pattern function type.
+/// @param str The char to match (or further into the string).
+/// @return The length of the pattern matched.
+typedef size_t		(*t_str_pattern)(char *str);
 
 char				*str_get(t_str *str);
 char				*str_take(t_str *str);
@@ -102,8 +54,8 @@ t_str				str_itoa(int num, t_str base);
 void				str_itoa_append(int num, t_str base, t_str *out);
 t_str				str_new_clone(const char *s);
 t_str				str_new_clone_sized(const char *s, size_t new_len);
-t_str				str_new_from(char *s, size_t len);
-t_str				str_new_from_sized(char *s, size_t new_len);
+t_str				str_new_from_parts(char *s, size_t len);
+t_str				str_new_from(char *s, size_t new_len);
 t_str				str_new_repeat(const char *s, size_t len, size_t n);
 t_str				str_new_repeat_sized(const char *s, size_t s_len,
 						size_t new_len, size_t n);
@@ -132,6 +84,7 @@ char				str_remove(t_str *str, size_t index);
 void				str_remove_range(t_str *str, size_t start, size_t end);
 t_bool				str_try_set_capacity(t_str *str, size_t n);
 t_bool				str_shrink_to_fit(t_str *str);
+t_vec				str_split(const t_str *str, t_str_pattern pattern);
 void				str_trunc(t_str *str, size_t n);
 
 #endif

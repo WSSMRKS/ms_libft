@@ -95,6 +95,7 @@ STRING_FILES = \
 	string/str_pushstr2_front.c\
 	string/str_pushstr2.c\
 	string/str_remove.c\
+	string/str_split.c\
 
 VEC_FILES = \
 	vec/vec_capacity.c\

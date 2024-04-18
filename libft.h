@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:48:24 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:48:59 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "types.h"
 # include <limits.h>
 
-# include "string/str.h"
 # include "vec/vec.h"
+# include "string/str.h"
 
 /*
 	LIBC
@@ -58,12 +58,6 @@ char				*get_next_line(int fd);
 /*
 	LIST
 */
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 typedef t_bool		(*t_lst_pred)(t_list *, void *);
 

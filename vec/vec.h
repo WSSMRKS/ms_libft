@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 18:11:30 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:49:53 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,6 @@
 # define VEC_H
 
 # include "../libft.h"
-
-# ifndef FT_SMALL_VEC
-/// The size of the small vec buffer.
-#  define FT_SMALL_VEC 48
-# endif
-# if FT_SMALL_VEC < 1
-#  error "FT_SMALL_VEC must be at least 1"
-# endif
-
-# ifndef FT_VEC_GROW
-/// The factor by which the vec capacity is at least increased when growing.
-#  define FT_VEC_GROW 2
-# endif
-# if FT_VEC_GROW < 1
-#  error "FT_VEC_GROW must be at least 1"
-# endif
-
-/// @brief A Vec supporting small buffer optimization.
-/// When modifying the vec only via its provided methods, reallocations and
-/// out-of-bounds-access are handled automatically.
-/// When malloc errors happen the 'mem_err' flag is set and
-/// the vec is left in a valid state.
-/// @warning Mixing vecs/arrays with different element sizes leads to UB.
-typedef struct s_vec
-{
-	union
-	{
-		/// @brief Small vec buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
-		char		_small_buf[FT_SMALL_VEC];
-		struct
-		{
-			/// @brief Heap allocated vec buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
-			char	*_large_buf;
-			/// @brief Capacity of the heap vec buffer (number of elements).
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
-			/// Use 'vec_capacity()' instead for a safe read.
-			size_t	_capacity;
-		};
-	};
-	/// @brief Length of the vec.
-	size_t			len;
-	/// @brief Size of a single element in the vec.
-	size_t			element_size: sizeof(size_t) * 8 - 2;
-	/// @brief Heap flag.
-	size_t			heap: 1;
-	/// @brief Memory error flag.
-	size_t			mem_err: 1;
-}					t_vec;
 
 typedef void		(*t_vec_map)(const void *from, void *to);
 typedef void		(*t_vec_mapi)(const t_vec *from, t_vec *to, size_t i);
