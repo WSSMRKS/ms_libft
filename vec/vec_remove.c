@@ -6,26 +6,18 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 21:19:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:10:14 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-/// @brief Remove the last element from the vec.
-/// @param vec  The vec to remove the element from.
-void	vec_pop(t_vec *vec)
-{
-	if (vec->len)
-		vec->len--;
-}
 
 /// @brief Remove the element at the given index from the vec.
 /// @param vec The vec to remove the element from.
 /// @param index The index of the element to remove.
 void	vec_remove(t_vec *vec, size_t index)
 {
-	char	*buf;
+	void	*buf;
 
 	if (index >= vec->len)
 		return ;
@@ -36,13 +28,21 @@ void	vec_remove(t_vec *vec, size_t index)
 	vec->len--;
 }
 
+/// @brief Remove the last element from the vec.
+/// @param vec The vec to remove the element from.
+void	vec_remove_last(t_vec *vec)
+{
+	if (vec->len)
+		vec->len--;
+}
+
 /// @brief Remove elements in the range [start, end) from the vec.
 /// @param vec The vec to remove elements from.
 /// @param start The start index of the range.
 /// @param end The end index of the range.
 void	vec_remove_range(t_vec *vec, size_t start, size_t end)
 {
-	char	*buf;
+	void	*buf;
 
 	if (start >= vec->len || end <= start)
 		return ;

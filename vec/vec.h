@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:42:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:10:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_vec
 }					t_vec;
 
 void				*vec_get(const t_vec *vec);
+void				*vec_get_at(const t_vec *vec, size_t index);
+void				*vec_get_last(const t_vec *vec);
 void				*vec_take(t_vec *vec);
 void				*vec_get_cloned(const t_vec *vec);
 
@@ -81,6 +83,7 @@ void				vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
 void				vec_destroy(t_vec *vec);
 t_vec				vec_empty(size_t element_size);
 t_vec				vec_empty_with_capacity(size_t element_size, size_t n);
+t_vec				vec_extract_range(t_vec *vec, size_t start, size_t end);
 t_bool				vec_try_grow(t_vec *vec, size_t min_growth);
 t_bool				vec_identical(const t_vec *vec1, const t_vec *vec2);
 t_bool				vec_cmp(const t_vec *vec1, const t_vec *vec2);
@@ -92,12 +95,13 @@ void				vec_insertvec(t_vec *vec, size_t index, const t_vec *data);
 void				vec_insertvec_sized(t_vec *vec, size_t index,
 						const t_vec *data, size_t n);
 t_vec				vec_new_from(void *arr, size_t element_size, size_t len);
-t_vec				vec_new_clone(const void *arr,
-						size_t element_size, size_t len);
+t_vec				vec_new_clone(const void *arr, size_t element_size,
+						size_t len);
 t_vec				vec_new_repeat(void *arr, size_t element_size, size_t len,
 						size_t n);
 
-void				vec_pop(t_vec *vec);
+t_vec				vec_pop(t_vec *vec);
+t_vec				vec_pop_front(t_vec *vec);
 void				vec_push(t_vec *vec, void *data);
 void				vec_push_front(t_vec *vec, void *data);
 void				vec_pushn(t_vec *vec, void *data, size_t n);
@@ -120,7 +124,12 @@ void				vec_pushvecn_sized(t_vec *vec, const t_vec *data,
 void				vec_pushvecn_front_sized(t_vec *vec, const t_vec *data,
 						size_t len, size_t n);
 void				vec_remove(t_vec *vec, size_t index);
+void				vec_remove_last(t_vec *vec);
 void				vec_remove_range(t_vec *vec, size_t start, size_t end);
+void				vec_shiftleft(t_vec *vec, size_t n);
+void				vec_shiftright(t_vec *vec, size_t n);
+t_bool				vec_rotate(t_vec *vec, size_t n);
+t_bool				vec_rrotate(t_vec *vec, size_t n);
 t_bool				vec_try_set_capacity(t_vec *vec, size_t n);
 t_bool				vec_shrink_to_fit(t_vec *vec);
 void				vec_swap(t_vec *vec1, t_vec *vec2);

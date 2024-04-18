@@ -95,17 +95,20 @@ VEC_FILES = \
 	vec/vec_copy.c\
 	vec/vec_destroy.c\
 	vec/vec_empty.c\
+	vec/vec_extract.c\
 	vec/vec_get.c\
 	vec/vec_grow.c\
 	vec/vec_insert.c\
 	vec/vec_new_clone.c\
 	vec/vec_new_from.c\
 	vec/vec_new_repeat.c\
+	vec/vec_pop.c\
 	vec/vec_push_front.c\
 	vec/vec_push.c\
 	vec/vec_pushvec_sized.c\
 	vec/vec_pushvec.c\
 	vec/vec_remove.c\
+	vec/vec_rotate.c\
 	vec/vec_swap.c\
 
 FT_PRINTF_FILES = \
