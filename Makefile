@@ -122,6 +122,7 @@ VEC_FILES = \
 	vec/vec_pushvec_sized.c\
 	vec/vec_pushvec.c\
 	vec/vec_remove.c\
+	vec/vec_reverse.c\
 	vec/vec_rotate.c\
 	vec/vec_swap.c\
 
