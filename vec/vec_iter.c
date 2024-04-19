@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:02:47 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 18:12:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 03:49:23 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,15 @@ void	vec_iter(t_vec *vec, t_vec_iter iter)
 /// @brief Iterates over the vec with index.
 /// @param vec Vec to iterate over.
 /// @param iteri Function to call for each element.
-void	vec_iteri(t_vec *vec, t_vec_iteri iteri)
+/// @param extra Extra data to pass to the iteri function.
+void	vec_iteri(t_vec *vec, t_vec_iteri iteri, void *extra)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < vec->len)
 	{
-		iteri(vec, i);
+		iteri(vec, i, extra);
 		++i;
 	}
 }
@@ -75,9 +76,11 @@ t_vec	vec_map(const t_vec *vec, t_vec_map map, size_t element_size)
 /// @param vec Vec to map.
 /// @param mapi Function to map the elements.
 /// @param element_size Size of a single element in the new vec.
+/// @param extra Extra data to pass to the mapi function.
 /// @return New vec with mapped elements.
 /// @warning Check the error flag for memory allocation errors.
-t_vec	vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size)
+t_vec	vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size,
+		void *extra)
 {
 	t_vec	out;
 	size_t	i;
@@ -88,7 +91,7 @@ t_vec	vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size)
 	i = 0;
 	while (i < vec->len)
 	{
-		mapi(vec, &out, i);
+		mapi(vec, &out, i, extra);
 		++i;
 	}
 	return (out);
