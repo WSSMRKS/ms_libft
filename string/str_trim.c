@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_trim.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 01:11:55 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/19 01:18:10 by kwurster         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../libft.h"
+
+/// @brief Remove leading and trailing whitespace from the string.
+/// @param str The string to trim.
+/// @note see ft_isspace
+void	str_trim(t_str *str)
+{
+	str_trim_end(str);
+	str_trim_start(str);
+}
+
+/// @brief Remove leading whitespace from the string.
+/// @param str The string to trim.
+/// @note see ft_isspace
+void	str_trim_start(t_str *str)
+{
+	char	*buf;
+	size_t	i;
+
+	buf = str_get(str);
+	i = 0;
+	while (ft_isspace(buf[i]))
+		i++;
+	str_remove_range(str, 0, i);
+}
+
+/// @brief Remove trailing whitespace from the string.
+/// @param str The string to trim.
+/// @note see ft_isspace
+void	str_trim_end(t_str *str)
+{
+	char	*buf;
+	size_t	i;
+
+	i = 0;
+	buf = str_get(str);
+	while (ft_isspace(buf[str->len - i - 1]))
+		i++;
+	str_trunc(str, i);
+}

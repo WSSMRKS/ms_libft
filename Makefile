@@ -73,6 +73,7 @@ STRING_GENERIC_FILES = \
 	string/generic/ft_substr.c\
 
 STRING_FILES = \
+	string/str_atoi.c\
 	string/str_base2.c\
 	string/str_base8.c\
 	string/str_base10.c\
@@ -97,6 +98,7 @@ STRING_FILES = \
 	string/str_pushstr2.c\
 	string/str_remove.c\
 	string/str_split.c\
+	string/str_trim.c\
 
 VEC_FILES = \
 	vec/vec_capacity.c\

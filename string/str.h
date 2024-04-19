@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 00:01:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 01:38:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char				*str_get(t_str *str);
 char				*str_take(t_str *str);
 char				*str_get_cloned(t_str str);
 
+t_bool				str_atoi(t_str str, t_str base, int *out);
 t_str				str_base2(void);
 t_str				str_base8(void);
 t_str				str_base10(void);
@@ -86,6 +87,9 @@ void				str_remove_range(t_str *str, size_t start, size_t end);
 t_bool				str_try_set_capacity(t_str *str, size_t n);
 t_bool				str_shrink_to_fit(t_str *str);
 t_vec				str_split(const t_str *str, t_str_pattern pattern);
+void				str_trim(t_str *str);
+void				str_trim_end(t_str *str);
+void				str_trim_start(t_str *str);
 void				str_trunc(t_str *str, size_t n);
 
 #endif
