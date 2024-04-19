@@ -109,6 +109,7 @@ VEC_FILES = \
 	vec/vec_display.c\
 	vec/vec_empty.c\
 	vec/vec_extract.c\
+	vec/vec_fold.c\
 	vec/vec_get.c\
 	vec/vec_grow.c\
 	vec/vec_insert.c\

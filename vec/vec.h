@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 05:28:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 05:57:05 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void			vec_insertvec_sized(t_vec *vec, size_t index, const t_vec *data,
 					size_t n);
 void			vec_iter(t_vec *vec, t_vec_iter iter);
 void			vec_iteri(t_vec *vec, t_vec_iteri iteri, void *extra);
+t_str			vec_join_strs(const t_vec *vec, const t_str *seperator);
 t_vec			vec_map(const t_vec *vec, t_vec_map map, size_t element_size);
 t_vec			vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size,
 					void *extra);
