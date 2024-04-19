@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 00:44:55 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 02:06:39 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:56:24 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	handle_sign(char **str)
 	return (sign);
 }
 
-static t_bool	handle_next_char(int *out, char *buf, int sign, t_str base)
+static int	handle_next_char(int *out, char *buf, int sign, t_str base)
 {
 	char	*base_str;
 	char	*base_current;
@@ -45,7 +45,7 @@ static t_bool	handle_next_char(int *out, char *buf, int sign, t_str base)
 			*out = INT_MIN;
 		else
 			*out = INT_MAX;
-		return (FALSE);
+		return (2);
 	}
 	*out *= base.len;
 	*out += digit;
@@ -66,33 +66,36 @@ static void	skip_base(char **str, char *base)
 
 /// @brief Convert a string to an integer.
 /// @param str The string to convert.
+/// @param base The base to use for the conversion.
 /// @param out The integer to write to.
+/// @param ofb The overflow behavior.
 /// @return True if the conversion was successful, false otherwise.
 /// @note Will skip leading/trailing whitespace and accept an optional sign.
 /// @note Will return false if the string is empty or contains invalid chars.
-/// @note Outputs INT_MIN/INT_MAX on overflow.
-t_bool	str_atoi(t_str str, t_str base, int *out)
+t_bool	str_atoi(t_str str, t_str base, int *out, t_overflow_behavior ofb)
 {
 	char	*buf;
 	int		sign;
 	t_bool	ok;
+	int		code;
 
 	buf = str_get(&str);
 	while (ft_isspace(*buf))
 		buf++;
 	sign = handle_sign(&buf);
 	skip_whitespace(&buf);
-	out = 0;
+	*out = 0;
 	ok = FALSE;
+	code = 1;
 	if (ft_isdigit(*buf))
 		ok = TRUE;
-	while (*buf && handle_next_char(out, buf, sign, base))
-		buf++;
-	skip_base(&buf, str_get(&base));
+	while (*buf && code == 1)
+		code = handle_next_char(out, buf++, sign, base);
 	if (*out != INT_MAX && *out != INT_MIN)
 		*out *= sign;
+	skip_base(&buf, str_get(&base));
 	skip_whitespace(&buf);
 	if (*buf)
 		return (FALSE);
-	return (ok);
+	return (ok && (ofb == ofb_truncate || !(ofb == ofb_error && code == 2)));
 }

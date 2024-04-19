@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 23:49:03 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:40:01 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef enum e_overflow_behavior
+{
+	ofb_truncate,
+	ofb_error
+}					t_overflow_behavior;
 
 # ifndef FT_SMALL_VEC
 /// The size of the small vec buffer.
