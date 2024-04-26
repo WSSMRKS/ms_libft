@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 02:31:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:06:21 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void			str_remove_range(t_str *str, size_t start, size_t end);
 t_bool			str_try_set_capacity(t_str *str, size_t n);
 t_bool			str_shrink_to_fit(t_str *str);
 t_vec			str_split(const t_str *str, t_str_pattern pattern);
+t_vec			str_splitstr(const t_str *str, const t_str *pattern);
 void			str_trim(t_str *str);
 void			str_trim_end(t_str *str);
 void			str_trim_start(t_str *str);
