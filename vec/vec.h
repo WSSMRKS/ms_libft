@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/26 20:44:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/27 05:08:31 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ size_t			vec_capacity(const t_vec *vec);
 void			vec_clear(t_vec *vec);
 t_vec			vec_clone(const t_vec *vec);
 t_vec			vec_clone_sized(const t_vec *vec, size_t new_len);
-t_bool			vec_contains(const t_vec *vec, t_bool (*test)(void *));
+t_bool			vec_contains(const t_vec *vec, t_bool (*test)(const void *));
 void			vec_copy(t_vec *dst, const t_vec *src);
 void			vec_copy_sized(t_vec *dst, const t_vec *src, size_t new_len);
-size_t			vec_count(const t_vec *vec, size_t (*count)(void *));
+size_t			vec_count(const t_vec *vec, size_t (*count)(const void *));
 void			vec_cat(t_vec *dst, const t_vec *src);
 void			vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
 t_bool			vec_cmp(const t_vec *vec1, const t_vec *vec2);
-t_str			vec_debug(t_vec *vec, t_str (*debug)(void *));
+t_str			vec_debug(t_vec *vec, t_str (*debug)(const void *));
 void			vec_destroy(t_vec *vec, t_vec_iter destroy);
-t_str			vec_display(t_vec *vec, t_str (*display)(void *));
+t_str			vec_display(t_vec *vec, t_str (*display)(const void *));
 t_vec			vec_empty(size_t element_size);
 t_vec			vec_empty_with_capacity(size_t element_size, size_t n);
 t_vec			vec_extract_range(t_vec *vec, size_t start, size_t end);

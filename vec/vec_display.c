@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:53:51 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 17:01:22 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/27 05:09:39 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_str	vec_display(t_vec *vec, t_str (*display)(void *))
+t_str	vec_display(t_vec *vec, t_str (*display)(const void *))
 {
 	t_str	out;
 	size_t	i;
@@ -30,7 +30,7 @@ t_str	vec_display(t_vec *vec, t_str (*display)(void *))
 	return (out);
 }
 
-t_str	vec_debug(t_vec *vec, t_str (*debug)(void *))
+t_str	vec_debug(t_vec *vec, t_str (*debug)(const void *))
 {
 	t_str	out;
 	size_t	i;
