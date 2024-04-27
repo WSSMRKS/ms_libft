@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/27 05:01:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 /// @brief Gives read access to the string data.
 /// @param str String to read from.
 /// @return Pointer to the string data.
-char	*str_get(t_str *str)
+char	*str_get(const t_str *str)
 {
 	if (str->heap)
 		return (str->_large_string);
-	return (str->_small_string);
+	return ((char *)str->_small_string);
 }
 
 /// @brief Destroys the given string and returns its data.

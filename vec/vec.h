@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 05:57:05 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:44:59 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ size_t			vec_capacity(const t_vec *vec);
 void			vec_clear(t_vec *vec);
 t_vec			vec_clone(const t_vec *vec);
 t_vec			vec_clone_sized(const t_vec *vec, size_t new_len);
+t_bool			vec_contains(const t_vec *vec, t_bool (*test)(void *));
 void			vec_copy(t_vec *dst, const t_vec *src);
 void			vec_copy_sized(t_vec *dst, const t_vec *src, size_t new_len);
+size_t			vec_count(const t_vec *vec, size_t (*count)(void *));
 void			vec_cat(t_vec *dst, const t_vec *src);
 void			vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
 t_bool			vec_cmp(const t_vec *vec1, const t_vec *vec2);

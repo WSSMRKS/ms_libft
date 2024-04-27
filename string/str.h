@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/26 20:06:21 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/27 05:00:20 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 /// @return The length of the pattern matched.
 typedef size_t	(*t_str_pattern)(char *str);
 
-char			*str_get(t_str *str);
+char			*str_get(const t_str *str);
 char			*str_take(t_str *str);
 char			*str_get_cloned(t_str str);
 
