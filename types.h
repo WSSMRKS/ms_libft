@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 02:40:01 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:44:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,14 @@ typedef struct s_vec
 #  error "FT_STR_GROW must be at least 1"
 # endif
 
+# define ATOZ_UPPER "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# define ATOZ_LOWER "abcdefghijklmnopqrstuvwxyz"
+
 # define BASE2 "01"
 # define BASE8 "01234567"
 # define BASE10 "0123456789"
 # define BASE16 "0123456789abcdef"
-# define BA64 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+# define BASE16_UPPER "0123456789ABCDEF"
 
 /// @brief A SSO-enabled, growable, safe string type.
 /// When modifying the string only via its provided methods, reallocations,
