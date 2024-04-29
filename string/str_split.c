@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:19:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/26 19:40:19 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:28:05 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static t_str_view	splitstr_next(t_str *str, size_t *i, const t_str *pattern)
 		if (!ft_strncmp(buf + *i, pattern_buf, pattern->len))
 			*i += pattern->len;
 		else
-			break;
+			break ;
 	}
 	out = str_new_from_parts(buf + *i, 0);
 	while (*i < str->len && ft_strncmp(buf + *i, pattern_buf, pattern->len))

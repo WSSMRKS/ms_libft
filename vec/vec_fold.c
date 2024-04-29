@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:56:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/27 05:09:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:28:01 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_str	vec_join_strs(const t_vec *vec, const t_str *seperator)
 	return (out);
 }
 
-size_t			vec_count(const t_vec *vec, size_t (*count)(const void *))
+size_t	vec_count(const t_vec *vec, size_t (*count)(const void *))
 {
 	size_t	out;
 	size_t	i;
@@ -53,7 +53,7 @@ size_t			vec_count(const t_vec *vec, size_t (*count)(const void *))
 	return (out);
 }
 
-t_bool			vec_contains(const t_vec *vec, t_bool (*test)(const void *))
+t_bool	vec_contains(const t_vec *vec, t_bool (*test)(const void *))
 {
 	size_t	i;
 
