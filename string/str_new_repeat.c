@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:44:07 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:18:57 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:31 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Creates a string by repeating the given string 'n' times.
 /// @param s String to repeat.

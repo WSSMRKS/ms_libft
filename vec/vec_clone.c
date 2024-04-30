@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:42:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:19 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "vec.h"
 
 /// @brief Clones a vec.
 /// @param vec Vec to clone.

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:56:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:39:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:04:55 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Checks if the given string is identical to another string.
 /// Strings can be equal but not be identical

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:57:01 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:31:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:35 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Append a string to the string.
 /// @param str The string to append to.

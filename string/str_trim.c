@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 01:11:55 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:06:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:55 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Remove leading and trailing whitespace from the string.
 /// @param str The string to trim.
@@ -42,7 +42,7 @@ void	str_trim_start(t_str *str)
 void	str_trim_end(t_str *str)
 {
 	const char	*cstr;
-	size_t	i;
+	size_t		i;
 
 	i = 0;
 	cstr = cstr_ref(str);

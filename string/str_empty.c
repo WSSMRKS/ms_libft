@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:47:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:13:54 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:09 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str.h"
 
 /// @brief Creates an empty string.
 /// @note Will not malloc.

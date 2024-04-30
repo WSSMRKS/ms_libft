@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:18 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Try to set the capacity of the vec to a given value.
 /// @param vec The vec to modify.

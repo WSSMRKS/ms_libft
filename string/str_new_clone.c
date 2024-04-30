@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:13:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:52:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:17 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Clones the given string slice into a new string.
 /// @param s The string slice to clone.

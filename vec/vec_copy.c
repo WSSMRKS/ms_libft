@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 06:48:43 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:31:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Copies the data of the source vec to the destination vec.
 /// @param dst Destination vec.

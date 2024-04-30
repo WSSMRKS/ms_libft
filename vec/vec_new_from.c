@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:35 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "vec.h"
 
 /// @brief Wraps the given array in a t_vec.
 /// @note Will not malloc.

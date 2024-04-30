@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:50:33 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 23:57:04 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:52 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Pushes a single element to the front of the vec.
 /// @param vec The vec to push to.

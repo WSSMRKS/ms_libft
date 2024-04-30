@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:04:39 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 #include <stdlib.h>
 
 static void	heap_arr_to_stack_arr(t_str *str)

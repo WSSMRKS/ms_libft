@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:02:47 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 03:49:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:24 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Iterates over the vec.
 /// @param vec Vec to iterate over.

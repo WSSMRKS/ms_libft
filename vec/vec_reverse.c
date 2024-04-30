@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 03:04:08 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 03:09:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:08:17 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Reverse the order of the elements in the vec.
 /// @param vec The vec to reverse.

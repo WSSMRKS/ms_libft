@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:04:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:08:07 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Pushes an element to the end of the vec.
 /// @param vec Vec to push to.

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:53:51 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:00:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 t_str	vec_display(t_vec *vec, void (*display)(const void *, t_str *))
 {

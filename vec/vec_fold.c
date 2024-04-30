@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:56:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:03:32 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:53 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 static void	iter_total_len(t_vec *vec, size_t i, void *total_len)
 {

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:33:32 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:09 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Extracts elements in the range [start, end) from the vec.
 /// @param vec The vec to extract elements from.

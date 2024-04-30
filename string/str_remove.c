@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:07:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:48 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Remove the last character from the string.
 /// @param str The string to remove from.

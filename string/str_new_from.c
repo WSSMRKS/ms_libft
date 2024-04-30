@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:00:44 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str.h"
 
 /// @brief Wraps the given string in a t_str.
 /// @param str String to wrap.

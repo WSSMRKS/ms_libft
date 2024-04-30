@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:05:03 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:12 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Remove the last element from the vec.
 /// @param vec  The vec to remove the element from.

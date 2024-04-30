@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:16:49 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:40:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:16 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Converts an integer to a string and appends it to the output string.
 /// @param num The integer to convert.

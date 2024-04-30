@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:54:05 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:06:25 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Checks if the given vec is identical to another vec.
 /// Vecs can be equal but not be identical

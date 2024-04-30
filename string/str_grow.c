@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:27:44 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:36:15 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str.h"
 
 /// @brief Try to set the capacity of the string to a given value.
 /// @param str The string to set the capacity of.

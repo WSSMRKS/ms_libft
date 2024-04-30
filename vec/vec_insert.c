@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:04:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:43:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:21 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Inserts a single element at the given index.
 /// @param vec The vec to insert into.

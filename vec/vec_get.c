@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:15 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "vec.h"
 
 /// @brief Gives read access to the vec data.
 /// @param vec Vec to read from.

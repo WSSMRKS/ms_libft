@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:44:07 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:20:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Creates a vec by repeating the given array 'n' times.
 /// @param arr Array to repeat.

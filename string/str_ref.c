@@ -6,12 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:05:22 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:05:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str.h"
 
 /// @brief Gives read access to the string data.
 /// @param str String to read from.

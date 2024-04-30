@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:11:10 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 23:25:35 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:08:28 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "vec.h"
 
 /// @brief Swaps the two vecs.
 /// @param vec1
