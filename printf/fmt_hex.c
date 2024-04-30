@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 21:40:51 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:04:48 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
 	else
 	{
 		if (fmt.pad.fill_char == '0' && num != 0 && fmt.alternate_form)
-			str_get(str)[1] = '0';
+			cstr_mut(str)[1] = '0';
 		str_pushn_front(str, fmt.pad.fill_char, fmt.pad.min_width - str->len);
 		if (fmt.pad.fill_char == '0' && num != 0 && fmt.alternate_form)
-			str_get(str)[1] = 'x';
+			cstr_mut(str)[1] = 'x';
 	}
 }
 
@@ -42,9 +42,9 @@ t_str	fmt_hex(va_list *args, t_fmt fmt)
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789abcdef", 16);
-	add_precision_leading_zeroes(&out, fmt, FALSE);
+	add_precision_leading_zeroes(&out, fmt, false);
 	if (num != 0 && fmt.alternate_form)
-		str_pushstr_front(&out, "0x");
-	add_padding_hex(&out, fmt, TRUE, num);
+		str_pushstr_front(&out, cstr_slice("0x", 2));
+	add_padding_hex(&out, fmt, true, num);
 	return (out);
 }

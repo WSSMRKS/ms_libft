@@ -26,10 +26,10 @@ static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
 	else
 	{
 		if (fmt.pad.fill_char == '0' && num != 0 && fmt.alternate_form)
-			str_get(str)[1] = '0';
+			cstr_mut(str)[1] = '0';
 		str_pushn_front(str, fmt.pad.fill_char, fmt.pad.min_width - str->len);
 		if (fmt.pad.fill_char == '0' && num != 0 && fmt.alternate_form)
-			str_get(str)[1] = 'X';
+			cstr_mut(str)[1] = 'X';
 	}
 }
 
@@ -42,9 +42,9 @@ t_str	fmt_hexup(va_list *args, t_fmt fmt)
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789ABCDEF", 16);
-	add_precision_leading_zeroes(&out, fmt, FALSE);
+	add_precision_leading_zeroes(&out, fmt, false);
 	if (num != 0 && fmt.alternate_form)
-		str_pushstr_front(&out, "0X");
-	add_padding_hex(&out, fmt, TRUE, num);
+		str_pushstr_front(&out, cstr_slice("0X", 2));
+	add_padding_hex(&out, fmt, true, num);
 	return (out);
 }

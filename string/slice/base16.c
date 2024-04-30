@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_base2.c                                        :+:      :+:    :+:   */
+/*   base16.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:40:20 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 17:08:37 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:15:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "str_slice.h"
 
-#if FT_SMALL_STR >= 3
-
-t_str	str_base2(void)
+t_str_slice	base16(void)
 {
-	return ((t_str){.len = 2, .heap = 0, .mem_err = 0, ._small_string = BASE2});
+	return (cstr_slice(BASE16, 16));
 }
 
-#else
-
-t_str	str_base2(void)
+t_str_slice	base16_upper(void)
 {
-	return (str_new_clone_sized(BASE2, 2));
+	return (cstr_slice(BASE16_UPPER, 16));
 }
-
-#endif

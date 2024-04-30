@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 01:11:55 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 01:18:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:06:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	str_trim(t_str *str)
 /// @note see ft_isspace
 void	str_trim_start(t_str *str)
 {
-	char	*buf;
-	size_t	i;
+	const char	*cstr;
+	size_t		i;
 
-	buf = str_get(str);
+	cstr = cstr_ref(str);
 	i = 0;
-	while (ft_isspace(buf[i]))
+	while (ft_isspace(cstr[i]))
 		i++;
 	str_remove_range(str, 0, i);
 }
@@ -41,12 +41,12 @@ void	str_trim_start(t_str *str)
 /// @note see ft_isspace
 void	str_trim_end(t_str *str)
 {
-	char	*buf;
+	const char	*cstr;
 	size_t	i;
 
 	i = 0;
-	buf = str_get(str);
-	while (ft_isspace(buf[str->len - i - 1]))
+	cstr = cstr_ref(str);
+	while (ft_isspace(cstr[str->len - i - 1]))
 		i++;
 	str_trunc(str, i);
 }

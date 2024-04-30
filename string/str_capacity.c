@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 22:03:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static void	heap_arr_to_stack_arr(t_str *str)
 {
 	char	*temp;
 
-	temp = str->_large_string;
-	ft_strlcpy(str->_small_string, temp, FT_SMALL_STR);
+	temp = str->_large_str;
+	ft_strlcpy(str->_small_str, temp, FT_SMALL_STR);
 	str->len = ft_umin(str->len, FT_SMALL_STR - 1);
-	str->heap = FALSE;
+	str->heap = false;
 	free(temp);
 }
 
@@ -30,36 +30,36 @@ static t_bool	stack_arr_to_heap_arr(t_str *str, size_t capacity)
 
 	temp = malloc(capacity);
 	if (temp == 0)
-		return (FALSE);
-	ft_strlcpy(temp, str->_small_string, capacity);
-	str->_large_string = temp;
-	str->heap = TRUE;
-	return (TRUE);
+		return (false);
+	ft_strlcpy(temp, str->_small_str, capacity);
+	str->_large_str = temp;
+	str->heap = true;
+	return (true);
 }
 
 static t_bool	resize_heap_arr(t_str *str, size_t n)
 {
 	char	*temp;
 
-	temp = ft_reallocstring(str->_large_string, n);
+	temp = ft_reallocstring(str->_large_str, n);
 	if (temp == 0)
-		return (FALSE);
-	free(str->_large_string);
-	str->_large_string = temp;
-	return (TRUE);
+		return (false);
+	free(str->_large_str);
+	str->_large_str = temp;
+	return (true);
 }
 
 /// @brief Changes the capacity of the string.
 /// @param str String to change the capacity of.
 /// @param n New capacity.
 /// @note The capacity can't be less than FT_SMALL_STR.
-/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @return true if the operation was successful, false otherwise.
 /// @warning Check the error flag for memory allocation errors.
 t_bool	str_try_set_capacity(t_str *str, size_t n)
 {
 	t_bool	success;
 
-	success = TRUE;
+	success = true;
 	n = ft_umax(n, FT_SMALL_STR);
 	if (n == FT_SMALL_STR)
 	{
@@ -77,16 +77,16 @@ t_bool	str_try_set_capacity(t_str *str, size_t n)
 		str->len = ft_umin(str->len, n - 1);
 	}
 	else
-		str->mem_err = TRUE;
+		str->mem_err = true;
 	return (success);
 }
 
 /// @brief Get the capacity of the string.
 /// @param str String to get the capacity of.
 /// @return The capacity of the string.
-size_t	str_capacity(t_str str)
+size_t	str_capacity(const t_str *str)
 {
-	if (str.heap)
-		return (str._capacity);
+	if (str->heap)
+		return (str->_capacity);
 	return (FT_SMALL_STR);
 }

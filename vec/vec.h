@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/27 05:08:31 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:03:17 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ size_t			vec_count(const t_vec *vec, size_t (*count)(const void *));
 void			vec_cat(t_vec *dst, const t_vec *src);
 void			vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
 t_bool			vec_cmp(const t_vec *vec1, const t_vec *vec2);
-t_str			vec_debug(t_vec *vec, t_str (*debug)(const void *));
+t_str			vec_debug(t_vec *vec, void (*debug)(const void *, t_str *));
 void			vec_destroy(t_vec *vec, t_vec_iter destroy);
-t_str			vec_display(t_vec *vec, t_str (*display)(const void *));
+t_str			vec_display(t_vec *vec, void (*display)(const void *, t_str *));
 t_vec			vec_empty(size_t element_size);
 t_vec			vec_empty_with_capacity(size_t element_size, size_t n);
 t_vec			vec_extract_range(t_vec *vec, size_t start, size_t end);
@@ -54,7 +54,7 @@ void			vec_insertvec_sized(t_vec *vec, size_t index, const t_vec *data,
 					size_t n);
 void			vec_iter(t_vec *vec, t_vec_iter iter);
 void			vec_iteri(t_vec *vec, t_vec_iteri iteri, void *extra);
-t_str			vec_join_strs(const t_vec *vec, const t_str *seperator);
+t_str			vec_join_strs(const t_vec *vec, const t_str_slice *seperator);
 t_vec			vec_map(const t_vec *vec, t_vec_map map, size_t element_size);
 t_vec			vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size,
 					void *extra);

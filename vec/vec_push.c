@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:45:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:04:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	vec_pusharr(t_vec *vec, void *arr, size_t len)
 	if (!arr)
 		return ;
 	cap = vec_capacity(vec);
-	buf = vec_get(vec);
 	if (vec->len + len > cap)
 		if (!vec_try_grow(vec, vec->len + len - cap))
 			return ;
@@ -88,7 +87,6 @@ void	vec_pusharrn(t_vec *vec, void *arr, size_t len, size_t n)
 	if (!arr)
 		return ;
 	cap = vec_capacity(vec);
-	buf = vec_get(vec);
 	if (vec->len + len * n > cap)
 		if (!vec_try_grow(vec, vec->len + len * n - cap))
 			return ;

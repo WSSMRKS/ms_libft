@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:47:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/16 06:18:40 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:13:54 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ t_str	str_empty(void)
 	t_str	str;
 
 	str.len = 0;
-	str.heap = FALSE;
-	str.mem_err = FALSE;
-	str._small_string[0] = 0;
+	str.heap = false;
+	str.mem_err = false;
+	str._small_str[0] = 0;
 	return (str);
 }
 

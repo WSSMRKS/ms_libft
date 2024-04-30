@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:16:36 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_vec	vec_new_from(void *arr, size_t element_size, size_t len)
 		vec.len = len;
 		vec._capacity = len;
 		vec._large_buf = arr;
-		vec.heap = TRUE;
+		vec.heap = true;
 	}
 	return (vec);
 }

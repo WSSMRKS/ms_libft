@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:33:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	heap_arr_to_stack_arr(t_vec *vec)
 	void	*temp;
 
 	temp = vec->_large_buf;
-	vec->heap = FALSE;
+	vec->heap = false;
 	vec->len = ft_umin(vec->len, vec_capacity(vec));
 	ft_memcpy(vec->_small_buf, temp, vec->len * vec->element_size);
 	free(temp);
@@ -30,11 +30,11 @@ static t_bool	stack_arr_to_heap_arr(t_vec *vec, size_t capacity)
 
 	temp = malloc(capacity * vec->element_size);
 	if (temp == 0)
-		return (FALSE);
+		return (false);
 	ft_memcpy(temp, vec->_small_buf, vec->len * vec->element_size);
 	vec->_large_buf = temp;
-	vec->heap = TRUE;
-	return (TRUE);
+	vec->heap = true;
+	return (true);
 }
 
 static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
@@ -44,10 +44,10 @@ static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
 	temp = ft_reallocarray(vec->_large_buf, vec->len, capacity,
 			vec->element_size);
 	if (temp == 0)
-		return (FALSE);
+		return (false);
 	free(vec->_large_buf);
 	vec->_large_buf = temp;
-	return (TRUE);
+	return (true);
 }
 
 /// @brief Changes the capacity of the vec.
@@ -55,7 +55,7 @@ static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
 /// @param n New capacity.
 /// @note The capacity can't be less than `FT_SMALL_VEC`.
 /// @warning Check the error flag for memory allocation errors.
-/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @return true if the operation was successful, false otherwise.
 t_bool	vec_try_set_capacity(t_vec *vec, size_t n)
 {
 	t_bool	success;
@@ -78,7 +78,7 @@ t_bool	vec_try_set_capacity(t_vec *vec, size_t n)
 			vec->len = ft_umin(vec->len, n);
 		}
 		else
-			vec->mem_err = TRUE;
+			vec->mem_err = true;
 	}
 	return (success);
 }

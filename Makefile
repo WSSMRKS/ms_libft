@@ -53,51 +53,61 @@ OTHER_FILES = \
 	other/ft_putnbr_fd.c\
 	other/ft_putstr_fd.c\
 
-STRING_GENERIC_FILES = \
-	string/generic/ft_itoa.c\
-	string/generic/ft_split.c\
-	string/generic/ft_strchr.c\
-	string/generic/ft_strcmp.c\
-	string/generic/ft_strdist.c\
-	string/generic/ft_strdup.c\
-	string/generic/ft_striteri.c\
-	string/generic/ft_strjoin.c\
-	string/generic/ft_strlcat.c\
-	string/generic/ft_strlcpy.c\
-	string/generic/ft_strlen.c\
-	string/generic/ft_strmapi.c\
-	string/generic/ft_strncmp.c\
-	string/generic/ft_strnstr.c\
-	string/generic/ft_strrchr.c\
-	string/generic/ft_strtrim.c\
-	string/generic/ft_substr.c\
+CSTR_FILES = \
+	string/cstr/ft_itoa.c\
+	string/cstr/ft_split.c\
+	string/cstr/ft_strchr.c\
+	string/cstr/ft_strcmp.c\
+	string/cstr/ft_strdist.c\
+	string/cstr/ft_strdup.c\
+	string/cstr/ft_striteri.c\
+	string/cstr/ft_strjoin.c\
+	string/cstr/ft_strlcat.c\
+	string/cstr/ft_strlcpy.c\
+	string/cstr/ft_strlen.c\
+	string/cstr/ft_strmapi.c\
+	string/cstr/ft_strncmp.c\
+	string/cstr/ft_strnstr.c\
+	string/cstr/ft_strrchr.c\
+	string/cstr/ft_strtrim.c\
+	string/cstr/ft_substr.c\
+
+STRING_SLICE_FILES = \
+	string/slice/base2.c\
+	string/slice/base8.c\
+	string/slice/base10.c\
+	string/slice/base16.c\
+	string/slice/base64.c\
+	string/slice/str_slice.c\
+	string/slice/strsl_atoi.c\
+	string/slice/strsl_chr.c\
+	string/slice/strsl_cmp.c\
+	string/slice/strsl_move.c\
+	string/slice/strsl_pop.c\
+	string/slice/strsl_split.c\
+	string/slice/strsl_trim_inplace.c\
+	string/slice/strsl_trim.c\
+	string/slice/strsl_trunc.c\
 
 STRING_FILES = \
 	string/str_atoi.c\
-	string/str_base2.c\
-	string/str_base8.c\
-	string/str_base10.c\
-	string/str_base16.c\
-	string/str_base64.c\
 	string/str_capacity.c\
+	string/str_chr.c\
 	string/str_clone.c\
 	string/str_cmp.c\
 	string/str_copy.c\
 	string/str_destroy.c\
 	string/str_empty.c\
-	string/str_get.c\
 	string/str_grow.c\
 	string/str_insert.c\
 	string/str_itoa.c\
 	string/str_new_clone.c\
 	string/str_new_from.c\
 	string/str_new_repeat.c\
-	string/str_push_front.c\
 	string/str_push.c\
-	string/str_pushstr2_front.c\
-	string/str_pushstr2.c\
+	string/str_pushstr.c\
+	string/str_ref.c\
 	string/str_remove.c\
-	string/str_split.c\
 	string/str_trim.c\
 
 VEC_FILES = \
@@ -139,11 +149,11 @@ FT_PRINTF_FILES = \
 	printf/ft_printf.c\
 	printf/percent_char.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(STRING_GENERIC_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES)
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES)
 
 OBJ = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -flto -O3
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
@@ -152,6 +162,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+
+debug: CFLAGS = -Wall -Wextra -Werror -g -Og -fanalyzer -fsanitize=address -fsanitize=leak -fsanitize=undefined
+debug: $(NAME)
 
 clean:
 	rm -f $(OBJ)

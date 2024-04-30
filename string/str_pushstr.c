@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_pushstr2.c                                     :+:      :+:    :+:   */
+/*   str_pushstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:57:01 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 16:03:07 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:31:48 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@
 /// @param str The string to append to.
 /// @param s The string to append.
 /// @warning Check the error flag for memory allocation errors.
-void	str_pushstr2(t_str *str, t_str s)
+void	str_pushstr(t_str *str, t_str_slice s)
 {
-	str_pushstr2_sized(str, s, s.len);
+	str_insertstr(str, str->len, s);
 }
 
-/// @brief Append a string to the string.
-/// @param str The string to append to.
-/// @param s The string to append.
-/// @param len Length of the string to append.
+/// @brief Insert a string at the start of the string.
+/// @param str The string to insert into.
+/// @param s The string to insert.
 /// @warning Check the error flag for memory allocation errors.
-void	str_pushstr2_sized(t_str *str, t_str s, size_t len)
+void	str_pushstr_front(t_str *str, t_str_slice s)
 {
-	str_pushstrn2_sized(str, s, len, s.len);
+	str_insertstr(str, 0, s);
 }
 
 /// @brief Append a string to the string.
@@ -36,20 +35,17 @@ void	str_pushstr2_sized(t_str *str, t_str s, size_t len)
 /// @param s The string to append.
 /// @param n Number of times to append the string.
 /// @warning Check the error flag for memory allocation errors.
-void	str_pushstrn2(t_str *str, t_str s, size_t n)
+void	str_pushstrn(t_str *str, t_str_slice s, size_t n)
 {
-	str_pushstrn2_sized(str, s, s.len, n);
+	str_insertstrn(str, str->len, s, n);
 }
 
-/// @brief Append a string to the string.
-/// @param str The string to append to.
-/// @param s The string to append.
-/// @param len Length of the string to append.
-/// @param n Number of times to append the string.
-/// @note Unoptimized (TODO)
+/// @brief Insert a string at the start of the string.
+/// @param str The string to insert into.
+/// @param s The string to insert.
+/// @param n Number of times to insert the string.
 /// @warning Check the error flag for memory allocation errors.
-void	str_pushstrn2_sized(t_str *str, t_str s, size_t len, size_t n)
+void	str_pushstrn_front(t_str *str, t_str_slice s, size_t n)
 {
-	while (n--)
-		str_insertstr_sized(str, str->len, str_get(&s), len);
+	str_insertstrn(str, 0, s, n);
 }

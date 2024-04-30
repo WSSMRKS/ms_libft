@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:56:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 22:03:04 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:39:23 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,32 @@
 /// if the data location is different.
 /// @param str1
 /// @param str2
-/// @return TRUE if the strings are identical, FALSE otherwise.
-t_bool	str_identical(t_str str1, t_str str2)
+/// @return true if the strings are identical, false otherwise.
+t_bool	str_identical(const t_str *str1, const t_str *str2)
 {
-	if (str1.heap)
-		return (str2.heap && str1._large_string == str2._large_string);
-	return (ft_strcmp(str1._small_string, str2._small_string) == 0);
+	if (str1->heap)
+		return (str2->heap && str1->_large_str == str2->_large_str);
+	return (ft_strcmp(str1->_small_str, str2->_small_str) == 0);
 }
 
-/// @brief Compare two strings.
+/// @brief Checks if the given string is equal to another string.
 /// @param str1
 /// @param str2
-/// @return The difference between the first differing characters.
-int	str_cmp(t_str str1, t_str str2)
+/// @return true if the strings are equal, false otherwise.
+t_bool	str_eq(const t_str *str1, const t_str *str2)
 {
-	return (ft_strcmp(str_get(&str1), str_get(&str2)));
+	if (str1->len != str2->len)
+		return (false);
+	return (ft_strcmp(cstr_ref(str1), cstr_ref(str2)));
+}
+
+/// @brief Checks if the given string starts with a given pattern.
+/// @param str The string to check.
+/// @param pattern The pattern to check for.
+/// @return true if the string starts with the pattern, false otherwise.
+t_bool	str_starts_with(t_str str, const t_str *pattern)
+{
+	if (str.len < pattern->len)
+		return (false);
+	return (ft_memcmp(cstr_ref(&str), cstr_ref(pattern), pattern->len) == 0);
 }

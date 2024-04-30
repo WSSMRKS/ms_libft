@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:37:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:24 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:10:23 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_str	fmt_str(va_list *args, t_fmt fmt)
 	if (!s)
 	{
 		if (fmt.precision < 0 || fmt.precision >= 6)
-			out = str_new_clone_sized("(null)", 6);
+			out = str_clone_from(cstr_slice("(null)", 6));
 		else
 			out = str_empty();
 	}
@@ -31,8 +31,8 @@ t_str	fmt_str(va_list *args, t_fmt fmt)
 		out_len = ft_strlen(s);
 		if (fmt.precision >= 0 && (size_t)fmt.precision < out_len)
 			out_len = fmt.precision;
-		out = str_new_clone_sized(s, out_len);
+		out = str_clone_from(cstr_slice(s, out_len));
 	}
-	add_padding(&out, fmt, FALSE);
+	add_padding(&out, fmt, false);
 	return (out);
 }

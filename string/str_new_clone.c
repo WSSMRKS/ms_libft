@@ -6,32 +6,28 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:13:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 15:55:07 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:52:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_str	str_new_clone(const char *s)
-{
-	return (str_new_clone_sized(s, ft_strlen(s)));
-}
-
-/// @brief Clones the given string.
-/// @param s String to clone.
-/// @param new_len Max length of the resulting string.
-/// @return Cloned string or empty string if 's' is null.
+/// @brief Clones the given string slice into a new string.
+/// @param s The string slice to clone.
+/// @return The new string.
 /// @warning Check the error flag for memory allocation errors.
-t_str	str_new_clone_sized(const char *s, size_t new_len)
+t_str	str_clone_from(t_str_slice s)
 {
 	t_str	str;
-	size_t	cap;
+	char	*cstr;
 
-	str = str_empty_with_capacity(new_len + 1);
-	cap = str_capacity(str);
-	if (s && cap > new_len)
+	str = str_empty_with_capacity(s.len + 1);
+	if (str_capacity(&str) > s.len)
 	{
-		str.len = ft_umin(ft_strlcpy(str_get(&str), s, cap), new_len);
+		cstr = cstr_mut(&str);
+		str.len = s.len;
+		ft_memcpy(cstr, s.str, s.len);
+		cstr[s.len] = 0;
 	}
 	return (str);
 }

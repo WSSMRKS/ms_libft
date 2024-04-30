@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:30:20 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 20:09:58 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /// @param b Second factor.
 /// @param max Maximum for the integer type, e.g. INT_MAX for int.
 /// @param result Pointer to the result.
-/// @return TRUE if the multiplication is safe, FALSE if it overflows.
+/// @return true if the multiplication is safe, false if it overflows.
 t_bool	ft_safe_mult(long long a, long long b, long long max, long long *result)
 {
 	long long	min;
@@ -25,30 +25,30 @@ t_bool	ft_safe_mult(long long a, long long b, long long max, long long *result)
 	min = -max - 1;
 	*result = 0;
 	if (a == 0 || b == 0)
-		return (TRUE);
+		return (true);
 	if (a > 0 && b > 0 && a > max / b)
-		return (FALSE);
+		return (false);
 	if (a < 0 && b > 0 && a < min / b)
-		return (FALSE);
+		return (false);
 	if (a > 0 && b < 0 && b < min / a)
-		return (FALSE);
+		return (false);
 	if (a < 0 && b < 0 && a < max / b)
-		return (FALSE);
+		return (false);
 	*result = a * b;
-	return (TRUE);
+	return (true);
 }
 
 /// @brief Safely multiplies two unsigned integers.
 /// @param a First factor.
 /// @param b Second factor.
 /// @param max Maximum for the integer type, e.g. UINT_MAX for unsigned int.
-/// @return TRUE if the multiplication is safe, FALSE if it overflows.
+/// @return true if the multiplication is safe, false if it overflows.
 t_bool	ft_safe_umult(unsigned long long a, unsigned long long b,
 		unsigned long long max)
 {
 	if (a == 0 || b == 0)
-		return (TRUE);
+		return (true);
 	if (a > max / b)
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }

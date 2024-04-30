@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_clone.c                                        :+:      :+:    :+:   */
+/*   strsl_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:52:48 by kwurster         ###   ########.fr       */
+/*   Created: 2024/04/30 13:50:44 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/30 15:09:38 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str_slice.h"
 
-/// @brief Clone a string.
-/// @param str The string to clone.
-/// @return The cloned string.
-/// @warning Check the error flag for memory allocation errors.
-t_str	str_clone(const t_str *str)
+/// @brief Removes the last character from the stringview.
+/// @param s The stringview to remove from.
+/// @return The removed character.
+char	strsl_pop(t_str_slice *s)
 {
-	return (str_clone_from(str_view(str)));
+	if (!s->len)
+		return (0);
+	return (s->str[--s->len]);
 }

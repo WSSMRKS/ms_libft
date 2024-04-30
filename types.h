@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/29 11:44:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:14:53 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef enum e_bool
 {
-	FALSE,
-	TRUE
+	false,
+	true
 }					t_bool;
 
 typedef struct s_list
@@ -60,15 +60,15 @@ typedef struct s_vec
 	union
 	{
 		/// @brief Small vec buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
+		/// @warning May only be modified/read directly if 'heap' = false.
 		char		_small_buf[FT_SMALL_VEC];
 		struct
 		{
 			/// @brief Heap allocated vec buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			char	*_large_buf;
 			/// @brief Capacity of the heap vec buffer (number of elements).
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			/// Use 'vec_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};
@@ -118,15 +118,15 @@ typedef struct s_str
 	union
 	{
 		/// @brief Small string buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
-		char		_small_string[FT_SMALL_STR];
+		/// @warning May only be modified/read directly if 'heap' = false.
+		char		_small_str[FT_SMALL_STR];
 		struct
 		{
 			/// @brief Heap allocated string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
-			char	*_large_string;
+			/// @warning May only be modified/read directly if 'heap' = true.
+			char	*_large_str;
 			/// @brief Capacity of the heap string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			/// Use 'str_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};
@@ -139,13 +139,16 @@ typedef struct s_str
 	size_t			mem_err: 1;
 }					t_str;
 
-/// A string view is a non-owning reference to a string.
-/// It is used to pass strings around without copying them.
-/// It is not safe to use a string view after the string it references has been
-/// modified or destroyed.
-/// @warning A string view is not null-terminated.
-/// @warning Do not modify the string view.
-/// @warning Do not destroy the string view.
-typedef t_str		t_str_view;
+/// @brief A view into a part of a t_str or char *.
+/// @warning It is not safe to use a string view after the string it references
+/// has been modified or destroyed.
+/// @warning A stringview's null-terminater is not guaranteed to be at str[len].
+typedef struct s_str_slice
+{
+	/// @brief Pointer to the start of the string view.
+	const char		*str;
+	/// @brief Length of the string view.
+	size_t			len;
+}					t_str_slice;
 
 #endif

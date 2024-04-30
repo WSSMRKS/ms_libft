@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_clone.c                                        :+:      :+:    :+:   */
+/*   base64.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:52:48 by kwurster         ###   ########.fr       */
+/*   Created: 2024/04/29 12:30:43 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/30 13:20:18 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str_slice.h"
 
-/// @brief Clone a string.
-/// @param str The string to clone.
-/// @return The cloned string.
-/// @warning Check the error flag for memory allocation errors.
-t_str	str_clone(const t_str *str)
+t_str_slice	base64(void)
 {
-	return (str_clone_from(str_view(str)));
+	return (cstr_slice(ATOZ_UPPER ATOZ_LOWER BASE10 "+/", 64));
+}
+t_str_slice	base64_url(void)
+{
+	return (cstr_slice(ATOZ_UPPER ATOZ_LOWER BASE10 "-_", 64));
 }

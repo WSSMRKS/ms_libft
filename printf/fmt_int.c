@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 23:27:33 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:07:47 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	swap_sign_with_leading_zero(t_str *str, t_fmt fmt, t_bool is_neg)
 		sign = "-";
 	if (!*sign)
 		return ;
-	buf = str_get(str);
+	buf = cstr_mut(str);
 	buf_sign = ft_strchr(buf, *sign);
 	if (buf_sign)
 		*buf_sign = '0';
@@ -59,27 +59,19 @@ void	swap_sign_with_leading_zero(t_str *str, t_fmt fmt, t_bool is_neg)
 t_str	fmt_int(va_list *args, t_fmt fmt)
 {
 	t_str	out;
-	char	*num_str;
 	int		num;
 
 	num = va_arg(*args, int);
 	out = str_empty();
-	num_str = ft_itoa(num);
-	if (num_str)
-	{
-		str_pushstr(&out, num_str);
-		free(num_str);
-	}
-	else
-		out.mem_err = TRUE;
+	str_itoa_cat(num, base10(), &out);
 	if (!(num == 0 && fmt.precision == 0))
 	{
 		if (num >= 0)
-			str_pushstr_front(&out, fmt.pos_nbr_sign);
+			str_pushstr_front(&out, cstr_view(fmt.pos_nbr_sign));
 		add_precision_leading_zeroes(&out, fmt, num < 0
 			|| *fmt.pos_nbr_sign != 0);
 	}
-	add_padding(&out, fmt, TRUE);
+	add_padding(&out, fmt, true);
 	if (fmt.precision < 0 && fmt.pad.fill_char == '0' && !fmt.pad.pad_end)
 		swap_sign_with_leading_zero(&out, fmt, num < 0);
 	return (out);

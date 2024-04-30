@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_clone.c                                        :+:      :+:    :+:   */
+/*   str_chr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:52:48 by kwurster         ###   ########.fr       */
+/*   Created: 2024/04/30 14:01:32 by kwurster          #+#    #+#             */
+/*   Updated: 2024/04/30 14:37:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdlib.h>
+#include "str.h"
 
-/// @brief Clone a string.
-/// @param str The string to clone.
-/// @return The cloned string.
-/// @warning Check the error flag for memory allocation errors.
-t_str	str_clone(const t_str *str)
+const char	*str_chr(const t_str *str, char c)
 {
-	return (str_clone_from(str_view(str)));
+	return (ft_strchr(cstr_ref(str), c));
+}
+
+const char	*str_rchr(const t_str *str, char c)
+{
+	size_t		i;
+	const char	*cstr;
+
+	i = str->len + 1;
+	cstr = cstr_ref(str);
+	while (i--)
+		if (cstr[i] == c)
+			return (cstr + i);
+	return (0);
 }

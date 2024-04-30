@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:25:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/18 00:31:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:27:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,58 +16,27 @@
 /// @param dst The destination string.
 /// @param src The source string.
 /// @warning Check the error flag for memory allocation errors.
-void	str_copy(t_str *dst, t_str src)
+void	str_replace(t_str *dst, t_str_slice src)
 {
-	str_copy_sized(dst, src, src.len);
-}
-
-/// @brief Copy a string with a given max size.
-/// @param dst The destination string.
-/// @param src The source string.
-/// @param n The max size of the copied string.
-/// @warning Check the error flag for memory allocation errors.
-void	str_copy_sized(t_str *dst, t_str src, size_t n)
-{
-	char	*buf;
-	size_t	cap;
-
-	cap = str_capacity(*dst);
-	n = ft_umin(n, src.len);
-	if (n >= cap)
-		if (!str_try_grow(dst, n - cap + 1))
-			return ;
-	buf = str_get(dst);
-	ft_memcpy(buf, str_get(&src), n);
-	dst->len = n;
-	buf[n] = 0;
+	str_clear(dst);
+	str_cat(dst, src);
 }
 
 /// @brief Concatenate a string.
 /// @param dst The destination string.
 /// @param src The source string.
 /// @warning Check the error flag for memory allocation errors.
-void	str_cat(t_str *dst, t_str src)
+void	str_cat(t_str *dst, t_str_slice src)
 {
-	str_cat_sized(dst, src, src.len);
-}
-
-/// @brief Concatenate a string with a given max size.
-/// @param dst The destination string.
-/// @param src The source string.
-/// @param n The max size of the source string.
-/// @warning Check the error flag for memory allocation errors.
-void	str_cat_sized(t_str *dst, t_str src, size_t n)
-{
-	char	*buf;
+	char	*cstr;
 	size_t	cap;
 
-	cap = str_capacity(*dst);
-	n = ft_umin(n, src.len);
-	if (dst->len + n >= cap)
-		if (!str_try_grow(dst, dst->len + n - cap + 1))
+	cap = str_capacity(dst);
+	if (dst->len + src.len >= cap)
+		if (!str_try_grow(dst, dst->len + src.len - cap + 1))
 			return ;
-	buf = str_get(dst);
-	ft_memcpy(buf + dst->len, str_get(&src), n);
-	dst->len += n;
-	buf[dst->len] = 0;
+	cstr = cstr_mut(dst);
+	ft_memcpy(cstr + dst->len, src.str, src.len);
+	dst->len += src.len;
+	cstr[dst->len] = 0;
 }

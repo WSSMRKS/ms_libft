@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:47:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/17 22:20:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:13:54 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_vec	vec_empty(size_t element_size)
 	t_vec	vec;
 
 	vec.len = 0;
-	vec.heap = FALSE;
-	vec.mem_err = FALSE;
+	vec.heap = false;
+	vec.mem_err = false;
 	vec._small_buf[0] = 0;
 	vec.element_size = element_size;
 	return (vec);

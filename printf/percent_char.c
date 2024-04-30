@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 08:32:18 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:25 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:11:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ t_str	percent_char(va_list *args, t_fmt fmt)
 {
 	(void)args;
 	(void)fmt;
-	return (str_new_clone_sized("%", 1));
+	return (str_clone_from(cstr_slice("%", 1)));
 }
