@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 00:16:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:17:20 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /// @brief Insert a character at a given index into the string.
 /// @param str The string to insert into.
-/// @param index The index to insert the character at.
+/// @param at The index to insert the character at.
 /// @param c The character to insert.
 /// @warning Check the error flag for memory allocation errors.
 void	str_insert(t_str *str, size_t at, char c)
@@ -24,7 +24,7 @@ void	str_insert(t_str *str, size_t at, char c)
 
 /// @brief Insert a character n times at a given index into the string.
 /// @param str The string to insert into.
-/// @param index The index to insert the character at.
+/// @param at The index to insert the character at.
 /// @param c The character to insert.
 /// @param n The number of times to insert the character.
 /// @warning Check the error flag for memory allocation errors.
@@ -47,7 +47,7 @@ void	str_insertn(t_str *str, size_t at, char c, size_t n)
 
 /// @brief Insert a string at a given index into the string.
 /// @param str The string to insert into.
-/// @param index The index to insert the string at.
+/// @param at The index to insert the string at.
 /// @param s The string to insert.
 /// @warning Check the error flag for memory allocation errors.
 void	str_insertstr(t_str *str, size_t at, t_str_slice s)
@@ -71,7 +71,7 @@ void	str_insertstr(t_str *str, size_t at, t_str_slice s)
 
 /// @brief Insert a string n times at a given index into the string.
 /// @param str The string to insert into.
-/// @param index The index to insert the string at.
+/// @param at The index to insert the string at.
 /// @param s The string to insert.
 /// @param n The number of times to insert the string.
 /// @warning Check the error flag for memory allocation errors.

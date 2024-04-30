@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:18:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	str_pop(t_str *str)
 
 /// @brief Remove a character at a given index from the string.
 /// @param str The string to remove from.
-/// @param index The index of the character to remove.
+/// @param at The index of the character to remove.
 /// @return The removed character.
 char	str_remove(t_str *str, size_t at)
 {

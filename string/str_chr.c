@@ -6,17 +6,25 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:01:32 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:37:08 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:16:44 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 
+/// @brief Find the first occurrence of a character in the string.
+/// @param str The string to search.
+/// @param c The character to search for.
+/// @return A pointer to the first occurrence of the character or NULL.
 const char	*str_chr(const t_str *str, char c)
 {
 	return (ft_strchr(cstr_ref(str), c));
 }
 
+/// @brief Find the last occurrence of a character in the string.
+/// @param str The string to search.
+/// @param c The character to search for.
+/// @return A pointer to the last occurrence of the character or NULL.
 const char	*str_rchr(const t_str *str, char c)
 {
 	size_t		i;
