@@ -6,11 +6,12 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:15:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:38:22 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:30:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str_slice.h"
+#include <stdlib.h>
 
 /// @brief Creates a stringview from a cstr.
 /// @param str The string to view.
@@ -48,4 +49,19 @@ t_str_slice	str_slice(const t_str *str, size_t start, size_t end)
 	start = ft_umin(start, str->len);
 	end = ft_umax(start, ft_umin(end, str->len));
 	return ((t_str_slice){.len = end - start, .str = cstr_ref(str) + start});
+}
+
+/// @brief Clones a stringview into a cstr.
+/// @param s The stringview to clone.
+/// @return The cloned cstr or null.
+char	*cstr_clone_from(t_str_slice s)
+{
+	char	*out;
+
+	out = malloc(s.len + 1);
+	if (out == 0)
+		return (0);
+	ft_memcpy(out, s.str, s.len);
+	out[s.len] = 0;
+	return (out);
 }

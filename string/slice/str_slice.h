@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:02:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:11:56 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:28:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_str_slice	cstr_view(const char *str);
 t_str_slice	cstr_slice(const char *str, size_t len);
 t_str_slice	str_view(const t_str *str);
 t_str_slice	str_slice(const t_str *str, size_t start, size_t end);
+char		*cstr_clone_from(t_str_slice s);
 
 t_str_slice	strsl_move(t_str_slice s, size_t n);
 t_bool		strsl_move_inplace(t_str_slice *s, size_t n);
