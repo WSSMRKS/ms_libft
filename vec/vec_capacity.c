@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:09 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:18:45 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
 			vec->element_size);
 	if (temp == 0)
 		return (false);
-	free(vec->_large_buf);
 	vec->_large_buf = temp;
 	return (true);
 }
