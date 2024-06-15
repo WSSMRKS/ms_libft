@@ -52,6 +52,7 @@ OTHER_FILES = \
 	other/ft_putfill_fd.c\
 	other/ft_putnbr_fd.c\
 	other/ft_putstr_fd.c\
+	other/util.c\
 
 CSTR_FILES = \
 	string/cstr/ft_itoa.c\

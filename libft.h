@@ -102,11 +102,13 @@ size_t				ft_putendl_fd(char *s, int fd);
 size_t				ft_putfill_fd(char c, int fd, size_t fill);
 size_t				ft_putnbr_fd(int n, int fd);
 size_t				ft_putstr_fd(char *s, int fd);
+size_t				ft_putstrsl_fd(t_str_slice strsl, int fd);
 void				set_bit(char *byte, char pos);
 void				unset_bit(char *byte, char pos);
 void				toggle_bit(char *byte, char pos);
 t_bool				get_bit(char byte, char pos);
 t_bool				itob(long long i);
+t_bool				ptr_is_null(const void *ptr);
 
 /*
 	STRING GENERIC
