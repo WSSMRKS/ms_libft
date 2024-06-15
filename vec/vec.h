@@ -45,6 +45,8 @@ t_str			vec_display(t_vec *vec, void (*display)(const void *, t_str *));
 t_vec			vec_empty(size_t element_size);
 t_vec			vec_empty_with_capacity(size_t element_size, size_t n);
 t_vec			vec_extract_range(t_vec *vec, size_t start, size_t end);
+t_bool			vec_find(const t_vec *vec, t_bool (*test)(const void *),
+					size_t *at);
 t_bool			vec_identical(const t_vec *vec1, const t_vec *vec2);
 void			vec_insert(t_vec *vec, size_t index, void *data);
 void			vec_insertarr(t_vec *vec, size_t index, void *arr, size_t len);

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:56:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:39:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_str	vec_join_strs(const t_vec *vec, const t_str_slice *seperator)
 		str_cat(&out, str_view(strs + i));
 		if (seperator && i + 1 < vec->len)
 			str_cat(&out, *seperator);
-		++i;
+		i++;
 	}
 	return (out);
 }
@@ -62,7 +62,27 @@ t_bool	vec_contains(const t_vec *vec, t_bool (*test)(const void *))
 	{
 		if (test(vec_get_at(vec, i)))
 			return (true);
-		++i;
+		i++;
 	}
 	return (false);
+}
+
+t_bool	vec_find(const t_vec *vec, t_bool (*test)(const void *), size_t *at)
+{
+	size_t		i;
+	const void	*current;
+
+	i = 0;
+	current = vec_get(vec);
+	while (i < vec->len)
+	{
+		if (test(current))
+		{
+			*at = i;
+			return (true);
+		}
+		current += vec->element_size;
+		i++;
+	}
+	return (0);
 }
