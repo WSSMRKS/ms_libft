@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:14:19 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ void		str_trim(t_str *str);
 void		str_trim_end(t_str *str);
 void		str_trim_start(t_str *str);
 void		str_trunc(t_str *str, size_t new_len);
+
+t_bool		str_mem_err(const void *str);
 
 #endif

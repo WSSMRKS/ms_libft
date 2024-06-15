@@ -111,6 +111,7 @@ STRING_FILES = \
 	string/str_ref.c\
 	string/str_remove.c\
 	string/str_trim.c\
+	string/str_util.c\
 
 VEC_FILES = \
 	vec/vec_capacity.c\
