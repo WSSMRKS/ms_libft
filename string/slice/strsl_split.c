@@ -6,14 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:19:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:12:01 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:22:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str_slice.h"
 
-static t_str_slice	split_next(t_str_slice *s,
-		size_t (*pattern)(t_str_slice s))
+static t_str_slice	split_next(t_str_slice *s, size_t (*pattern)(t_str_slice s))
 {
 	t_str_slice	out;
 
@@ -42,6 +41,7 @@ t_vec	strsl_split_where(t_str_slice s, size_t (*pattern)(t_str_slice s))
 	{
 		next = split_next(&s, pattern);
 		vec_push(&out, &next);
+		i++;
 	}
 	if (out.len > 0 && ((t_str_slice *)vec_get_last(&out))->len == 0)
 		vec_remove_last(&out);
@@ -51,13 +51,19 @@ t_vec	strsl_split_where(t_str_slice s, size_t (*pattern)(t_str_slice s))
 static t_str_slice	splitstr_next(t_str_slice *s, t_str_slice pattern)
 {
 	t_str_slice	out;
+	size_t		tmp;
 
 	while (strsl_starts_with(*s, pattern) && strsl_move_inplace(s, pattern.len))
 		;
 	out = strsl_trunc(*s, 0);
-	while (out.len < s->len && !strsl_starts_with(strsl_move(*s, out.len),
-			pattern))
+	tmp = s->len;
+	while (out.len < tmp)
+	{
 		out.len++;
+		strsl_move_inplace(s, 1);
+		if (strsl_starts_with(*s, pattern))
+			break ;
+	}
 	return (out);
 }
 
@@ -78,6 +84,7 @@ t_vec	strsl_split(t_str_slice s, t_str_slice pattern)
 	{
 		next = splitstr_next(&s, pattern);
 		vec_push(&out, &next);
+		i++;
 	}
 	if (out.len > 0 && ((t_str_slice *)vec_get_last(&out))->len == 0)
 		vec_remove_last(&out);
