@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:04:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:07:21 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:54:38 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	vec_insert(t_vec *vec, size_t index, void *data)
 /// @param n The number of elements to insert.
 void	vec_insertn(t_vec *vec, size_t index, void *data, size_t n)
 {
-	void	*buf;
+	char	*buf;
 	size_t	cap;
 
 	if (!data || index > vec->len)
@@ -40,10 +40,10 @@ void	vec_insertn(t_vec *vec, size_t index, void *data, size_t n)
 	buf = vec_get(vec);
 	ft_memmove(buf + (index + n) * vec->element_size, buf + index
 		* vec->element_size, (vec->len - index) * vec->element_size);
+	vec->len += n;
 	while (n--)
 		ft_memcpy(buf + (index + n) * vec->element_size, data,
 			vec->element_size);
-	vec->len += n;
 }
 
 /// @brief Inserts an array at the given index.
