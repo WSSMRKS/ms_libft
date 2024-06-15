@@ -157,7 +157,15 @@ FT_PRINTF_FILES = \
 	printf/ft_printf.c\
 	printf/percent_char.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES)
+FS_FILES = \
+	fs/file.c\
+	fs/find_perror.c\
+	fs/find.c\
+
+ENV_FILES = \
+	env/env.c\
+
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES) $(FS_FILES) $(ENV_FILES)
 
 OBJ = $(SRCS:.c=.o)
 

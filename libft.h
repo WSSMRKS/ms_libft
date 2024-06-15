@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 00:00:36 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/15 07:59:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "string/str.h"
 # include "types.h"
+# include "env/env.h"
+# include "fs/fs.h"
 # include "vec/vec.h"
 # include <limits.h>
 
