@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:04:39 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:52:54 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static t_bool	resize_heap_arr(t_str *str, size_t n)
 	temp = ft_reallocstring(str->_large_str, n);
 	if (temp == 0)
 		return (false);
-	free(str->_large_str);
 	str->_large_str = temp;
 	return (true);
 }
