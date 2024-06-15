@@ -118,6 +118,7 @@ VEC_FILES = \
 	vec/vec_clone.c\
 	vec/vec_cmp.c\
 	vec/vec_copy.c\
+	vec/vec_cstr.c\
 	vec/vec_destroy.c\
 	vec/vec_display.c\
 	vec/vec_empty.c\
@@ -128,8 +129,6 @@ VEC_FILES = \
 	vec/vec_insert.c\
 	vec/vec_iter.c\
 	vec/vec_new_clone.c\
-	vec/vec_new_from.c\
-	vec/vec_new_repeat.c\
 	vec/vec_pop.c\
 	vec/vec_push_front.c\
 	vec/vec_push.c\
@@ -138,7 +137,13 @@ VEC_FILES = \
 	vec/vec_remove.c\
 	vec/vec_reverse.c\
 	vec/vec_rotate.c\
+	vec/vec_str_append_to_all.c\
+	vec/vec_str.c\
+	vec/vec_str2.c\
+	vec/vec_strsl.c\
 	vec/vec_swap.c\
+	vec/vec_uninit.c\
+	vec/vec_util.c\
 
 FT_PRINTF_FILES = \
 	printf/fmt_c.c\
