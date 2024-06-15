@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:15:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/05/01 10:30:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:08:18 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 /// @return The stringview.
 t_str_slice	cstr_view(const char *str)
 {
+	if (str == 0)
+		return (strsl_null());
 	return ((t_str_slice){.len = ft_strlen(str), .str = str});
 }
 

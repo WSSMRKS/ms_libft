@@ -84,6 +84,7 @@ STRING_SLICE_FILES = \
 	string/slice/strsl_chr.c\
 	string/slice/strsl_cmp.c\
 	string/slice/strsl_move.c\
+	string/slice/strsl_null.c\
 	string/slice/strsl_pop.c\
 	string/slice/strsl_split.c\
 	string/slice/strsl_trim_inplace.c\

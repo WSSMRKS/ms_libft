@@ -22,6 +22,7 @@ t_str_slice	str_view(const t_str *str);
 t_str_slice	str_slice(const t_str *str, size_t start, size_t end);
 char		*cstr_clone_from(t_str_slice s);
 
+t_str_slice	strsl_null(void);
 t_str_slice	strsl_move(t_str_slice s, size_t n);
 t_bool		strsl_move_inplace(t_str_slice *s, size_t n);
 const char	*strsl_ref_move(t_str_slice *s, size_t n);
