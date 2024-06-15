@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:14:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/15 07:36:57 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ typedef enum e_overflow_behavior
 # endif
 # if FT_VEC_GROW < 1
 #  error "FT_VEC_GROW must be at least 1"
+# endif
+
+# ifndef FT_VEC_MIN_HEAP_CAPACITY
+/// The minimum capacity of the heap vec buffer.
+#  define FT_VEC_MIN_HEAP_CAPACITY 8
 # endif
 
 /// @brief A Vec supporting small buffer optimization.
