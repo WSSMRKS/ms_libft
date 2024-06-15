@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:02:47 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:07:24 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:56:05 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ t_vec	vec_map(const t_vec *vec, t_vec_map map, size_t element_size)
 	{
 		map(buf + i * vec->element_size, out_buf + i * element_size);
 		++i;
+		out.len++;
 	}
 	return (out);
 }
@@ -91,6 +92,7 @@ t_vec	vec_mapi(const t_vec *vec, t_vec_mapi mapi, size_t element_size,
 	i = 0;
 	while (i < vec->len)
 	{
+		out.len++;
 		mapi(vec, &out, i, extra);
 		++i;
 	}
