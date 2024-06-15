@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:40:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:46 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/15 07:34:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,16 @@ t_bool	strsl_starts_with(t_str_slice s, t_str_slice pattern)
 	if (s.len < pattern.len)
 		return (0);
 	return (ft_memcmp(s.str, pattern.str, pattern.len) == 0);
+}
+
+/// @brief Check if a string slice ends with a pattern.
+/// @param s The string slice to check.
+/// @param pattern The pattern to check for.
+/// @return True if the string slice ends with the pattern.
+t_bool	strsl_ends_with(t_str_slice s, t_str_slice pattern)
+{
+	if (s.len < pattern.len)
+		return (0);
+	return (ft_memcmp(s.str + s.len - pattern.len, pattern.str,
+			pattern.len) == 0);
 }

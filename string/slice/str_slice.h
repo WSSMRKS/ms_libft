@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:02:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/05/01 10:28:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:06:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ t_str_slice	base64_url(void);
 const char	*strsl_chr(t_str_slice s, char c);
 const char	*strsl_rchr(t_str_slice s, char c);
 t_bool		strsl_eq(t_str_slice s1, t_str_slice s2);
+t_bool		strsl_ends_with(t_str_slice s, t_str_slice pattern);
 t_bool		strsl_starts_with(t_str_slice s, t_str_slice pattern);
 t_bool		strsl_atoi(t_str_slice s, t_str_slice base, int *out,
 				t_overflow_behavior ofb);
-t_vec		strsl_split_where(t_str_slice s,
-				size_t (*pattern)(t_str_slice s));
+t_vec		strsl_split_where(t_str_slice s, size_t (*pattern)(t_str_slice s));
 t_vec		strsl_split(t_str_slice s, t_str_slice pattern);
 
 #endif
