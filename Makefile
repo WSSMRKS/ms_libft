@@ -100,6 +100,7 @@ STRING_FILES = \
 	string/str_copy.c\
 	string/str_destroy.c\
 	string/str_empty.c\
+	string/str_fold.c\
 	string/str_grow.c\
 	string/str_insert.c\
 	string/str_itoa.c\
