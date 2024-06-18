@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:00 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:37:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ typedef struct s_state
 	int		fd;
 }			t_state;
 
+char		*_get_next_line(int fd, t_bool destroy);
 char		*get_next_line(int fd);
+void		get_next_line_finish(int fd);
 
 void		del_state(void *content);
 t_state		*new_state(int fd);

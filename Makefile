@@ -24,6 +24,7 @@ LIBC_FILES = \
 GNL_FILES = \
 	gnl/get_next_line_utils.c\
 	gnl/get_next_line.c\
+	gnl/get_next_line_finish.c\
 
 LST_FILES = \
 	lst/ft_lst_first_where_next.c\

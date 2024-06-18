@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:24 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:00 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:37:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
  * |    0    |   0   |  AB   |->|    1    |  --C\n\0  |
  * |    1    |   2   |  C\n  |->|    0    |  ABC\n\0  |
  */
-char	*next_line(t_state *st, size_t len)
+static char	*next_line(t_state *st, size_t len)
 {
 	t_state	st_cpy;
 	size_t	nl_len;
@@ -59,7 +59,7 @@ char	*next_line(t_state *st, size_t len)
 	return (str);
 }
 
-t_list	*new_state_node(int fd)
+static t_list	*new_state_node(int fd)
 {
 	t_list	*out;
 	t_state	*state;
@@ -73,12 +73,12 @@ t_list	*new_state_node(int fd)
 	return (out);
 }
 
-t_bool	match_fd(t_list *node, void *fd)
+static t_bool	match_fd(t_list *node, void *fd)
 {
 	return (((t_state *)(node->content))->fd == *(int *)fd);
 }
 
-char	*get_next_line(int fd)
+char	*_get_next_line(int fd, t_bool destroy)
 {
 	static t_list	*list;
 	t_list			*state;
@@ -92,6 +92,11 @@ char	*get_next_line(int fd)
 			return (0);
 		ft_lstadd_front(&list, state);
 	}
+	if (destroy)
+	{
+		ft_lstdel_first(&list, del_state);
+		return (0);
+	}
 	((t_state *)state->content)->fd = fd;
 	out = next_line(state->content, 0);
 	if (out && *out)
@@ -100,4 +105,9 @@ char	*get_next_line(int fd)
 	if (out && !*out)
 		free(out);
 	return (0);
+}
+
+char	*get_next_line(int fd)
+{
+	return (_get_next_line(fd, false));
 }

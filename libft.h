@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/15 07:59:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:37:49 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int					ft_toupper(int c);
 # endif
 
 char				*get_next_line(int fd);
+void				get_next_line_finish(int fd);
 
 /*
 	LIST
