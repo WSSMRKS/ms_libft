@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:56:04 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 18:54:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,6 @@ char				*ft_substr(const char *s, unsigned int start, size_t len);
 */
 
 int					ft_printf(const char *s, ...);
+int					ft_printf_fd(int fd, const char *s, ...);
 
 #endif

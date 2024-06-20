@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:30:05 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:25 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 18:54:24 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ typedef struct s_fmt
 typedef t_str	(*t_fmt_fn)(va_list *, t_fmt);
 
 int				ft_printf(const char *s, ...);
+
+int				ft_printf_fd(int fd, const char *s, ...);
+
+int				print_formatted_arg(const char **fmt_begin, va_list *arg,
+					int fd);
+int				return_with_va_end(int code, va_list *args);
 
 t_str			fmt_c(va_list *args, t_fmt fmt);
 t_str			fmt_str(va_list *args, t_fmt fmt);

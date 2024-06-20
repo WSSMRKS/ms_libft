@@ -158,6 +158,7 @@ FT_PRINTF_FILES = \
 	printf/fmt_uint.c\
 	printf/formatting.c\
 	printf/ft_printf.c\
+	printf/ft_printf_fd.c\
 	printf/percent_char.c\
 
 FS_FILES = \

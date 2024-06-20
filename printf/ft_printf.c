@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:29:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:35:01 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 18:55:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_spec	find_specifier(const char *s)
 	return (specifier);
 }
 
-int	print_formatted_arg(const char **fmt_begin, va_list *arg)
+int	print_formatted_arg(const char **fmt_begin, va_list *arg, int fd)
 {
 	t_fmt					fmt;
 	t_str					formatted_arg;
@@ -63,12 +63,12 @@ int	print_formatted_arg(const char **fmt_begin, va_list *arg)
 		return (-1);
 	}
 	*fmt_begin = fmt.specifier.spec_str + 1;
-	put_width = write(1, cstr_ref(&formatted_arg), formatted_arg.len);
+	put_width = write(fd, cstr_ref(&formatted_arg), formatted_arg.len);
 	str_destroy(&formatted_arg);
 	return (put_width);
 }
 
-static int	return_with_va_end(int code, va_list *args)
+int	return_with_va_end(int code, va_list *args)
 {
 	va_end(*args);
 	return (code);
@@ -92,7 +92,7 @@ int	ft_printf(const char *s, ...)
 			s++;
 			continue ;
 		}
-		put_width = print_formatted_arg((const char **)&s, &args);
+		put_width = print_formatted_arg((const char **)&s, &args, 1);
 		if (put_width == -1)
 			return (return_with_va_end(-1, &args));
 		total_put_width += put_width;
