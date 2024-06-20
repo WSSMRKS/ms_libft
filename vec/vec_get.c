@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:11:36 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:07:15 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 20:04:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	*vec_take(t_vec *vec)
 		out = vec->_large_buf;
 	else
 		out = ft_memdup(vec->_small_buf, vec->len * vec->element_size);
-	*vec = vec_empty(vec->element_size);
+	if (out != 0)
+		*vec = vec_empty(vec->element_size);
 	return (out);
 }
 
