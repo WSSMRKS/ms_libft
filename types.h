@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/15 07:36:57 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:01:28 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef enum e_overflow_behavior
 /// The size of the small vec buffer.
 #  define FT_SMALL_VEC 48
 # endif
-# if FT_SMALL_VEC < 1
-#  error "FT_SMALL_VEC must be at least 1"
+# if FT_SMALL_VEC < 8
+#  error "FT_SMALL_VEC must be at least 8"
 # endif
 
 # ifndef FT_VEC_GROW

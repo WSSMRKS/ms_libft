@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:08:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 12:52:19 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /// @brief Remove the element at the given index from the vec.
 /// @param vec The vec to remove the element from.
 /// @param index The index of the element to remove.
-void	vec_remove(t_vec *vec, size_t index)
+void	vec_remove_at(t_vec *vec, size_t index)
 {
 	void	*buf;
 

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 14:43:20 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:06:30 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,13 @@ void			vec_pushvecn_front_sized(t_vec *vec, const t_vec *data,
 					size_t len, size_t n);
 void			vec_pushvecn_sized(t_vec *vec, const t_vec *data, size_t len,
 					size_t n);
-void			vec_remove(t_vec *vec, size_t index);
+void			vec_remove(t_vec *vec, const void *element);
+void			vec_remove_first_n_iterative(t_vec *vec, const void *element,
+					size_t n);
+void			vec_remove_first_n_recursive(t_vec *vec, const void *element,
+					size_t n);
+void			vec_remove_last_n(t_vec *vec, const void *element, size_t n);
+void			vec_remove_at(t_vec *vec, size_t index);
 void			vec_remove_last(t_vec *vec);
 void			vec_remove_range(t_vec *vec, size_t start, size_t end);
 void			vec_reverse(t_vec *vec);
