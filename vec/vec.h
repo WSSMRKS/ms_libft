@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:56:40 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:55:40 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ void			map_str_to_aliased_cstr(const void *from, void *to);
 void			map_str_to_str_slice(const void *from, void *to);
 void			map_strsl_to_cloned_cstr(const void *from, void *to);
 void			map_strsl_to_cloned_str(const void *from, void *to);
+void			map_cstr_clone(const void *from, void *to);
+void			map_str_clone(const void *from, void *to);
 t_bool			vec_cstrs_into_strs(t_vec *cstrs);
 t_bool			vec_cstrs_to_cloned_strs(const t_vec *cstrs, t_vec *out);
 t_bool			vec_strs_into_cstrs(t_vec *strs);
@@ -127,6 +129,8 @@ t_bool			vec_strs_to_str_slices(const t_vec *strs, t_vec *out);
 t_bool			vec_strs_to_aliased_cstrs(const t_vec *strs, t_vec *out);
 t_bool			vec_strsls_to_cloned_cstrs(const t_vec *slices, t_vec *out);
 t_bool			vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out);
+t_bool			vec_cstrs_clone(const t_vec *cstrs, t_vec *out);
+t_bool			vec_strs_clone(const t_vec *strs, t_vec *out);
 
 void			iter_str_append(t_vec *vec, size_t i, void *to_append);
 t_bool			vec_strs_append_to_all(t_vec *strs, t_str_slice to_append);

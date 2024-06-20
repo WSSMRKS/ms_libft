@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 12:01:28 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 12:49:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:55:02 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,27 @@ t_bool	vec_strs_to_str_slices(const t_vec *strs, t_vec *out)
 	if (out->mem_err)
 	{
 		vec_destroy(out, 0);
+		return (false);
+	}
+	return (true);
+}
+
+void	map_str_clone(const void *from, void *to)
+{
+	*(t_str *)to = str_clone(from);
+}
+
+/// @brief Transforms a vec of cstrings to a vec of cloned cstrings.
+/// @param cstrs Vec of cstrings.
+/// @param out Vec of cloned cstrings.
+/// @warning `out` may *NOT* be an alias of `cstrs`.
+/// @return True if successful, false otherwise.
+t_bool	vec_strs_clone(const t_vec *strs, t_vec *out)
+{
+	*out = vec_map(strs, map_str_clone, sizeof(t_str));
+	if (out->mem_err || vec_contains(out, str_mem_err))
+	{
+		vec_destroy(out, iter_str_destroy);
 		return (false);
 	}
 	return (true);

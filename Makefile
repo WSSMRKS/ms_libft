@@ -121,6 +121,7 @@ VEC_FILES = \
 	vec/vec_cmp.c\
 	vec/vec_copy.c\
 	vec/vec_cstr.c\
+	vec/vec_cstr2.c\
 	vec/vec_destroy.c\
 	vec/vec_display.c\
 	vec/vec_empty.c\
