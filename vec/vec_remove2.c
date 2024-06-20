@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:54:13 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:58:25 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 23:08:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	vec_remove(t_vec *vec, const void *element)
 	if (vec->len == 0)
 		return ;
 	buf = vec_get(vec);
-	i = vec->len - i;
+	i = vec->len - 1;
 	while (true)
 	{
 		if (!ft_memcmp(buf + i * vec->element_size, element, vec->element_size))
@@ -108,7 +108,7 @@ void	vec_remove_last_n(t_vec *vec, const void *element, size_t n)
 	if (vec->len == 0)
 		return ;
 	buf = vec_get(vec);
-	i = vec->len - i;
+	i = vec->len - 1;
 	while (n)
 	{
 		if (!ft_memcmp(buf + i * vec->element_size, element, vec->element_size))

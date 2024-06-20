@@ -132,6 +132,7 @@ VEC_FILES = \
 	vec/vec_insert.c\
 	vec/vec_iter.c\
 	vec/vec_new_clone.c\
+	vec/vec_new_from.c\
 	vec/vec_pop.c\
 	vec/vec_push_front.c\
 	vec/vec_push.c\
