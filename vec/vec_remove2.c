@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:54:13 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 14:04:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:58:25 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,6 @@ void	vec_remove_first_n_iterative(t_vec *vec, const void *element, size_t n)
 	vec_destroy(&to_remove, 0);
 }
 
-/// @brief Remove the first 'n' elements matching the given element.
-/// @param vec The vec to remove the element from.
-/// @param element The element to remove.
-/// @param n The number of elements to remove.
-/// @warning NEEDS TESTING
-void	vec_remove_first_n_recursive(t_vec *vec, const void *element, size_t n)
-{
-	vec_remove_first_n_recursive_inner(vec, element, n, 0);
-}
-
 static void	vec_remove_first_n_recursive_inner(t_vec *vec, const void *element,
 			size_t n, size_t i)
 {
@@ -94,6 +84,16 @@ static void	vec_remove_first_n_recursive_inner(t_vec *vec, const void *element,
 		}
 		i++;
 	}
+}
+
+/// @brief Remove the first 'n' elements matching the given element.
+/// @param vec The vec to remove the element from.
+/// @param element The element to remove.
+/// @param n The number of elements to remove.
+/// @warning NEEDS TESTING
+void	vec_remove_first_n_recursive(t_vec *vec, const void *element, size_t n)
+{
+	vec_remove_first_n_recursive_inner(vec, element, n, 0);
 }
 
 /// @brief Remove the last 'n' elements matching the given element.

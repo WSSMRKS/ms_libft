@@ -6,18 +6,19 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/18 21:37:49 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:56:04 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "string/str.h"
 # include "types.h"
+# include "string/str.h"
 # include "env/env.h"
 # include "fs/fs.h"
 # include "vec/vec.h"
+# include "array/array.h"
 # include <limits.h>
 
 /*

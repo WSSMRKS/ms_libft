@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:02:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/05/07 16:06:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:56:20 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define STR_SLICE_H
 
 # include "../../libft.h"
-# include "../../types.h"
 
 t_str_slice	cstr_view(const char *str);
 t_str_slice	cstr_slice(const char *str, size_t len);

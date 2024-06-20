@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/18 16:43:48 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:56:14 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define STR_H
 
 # include "../libft.h"
-# include "../types.h"
 # include "slice/str_slice.h"
 
 const char	*cstr_ref(const t_str *str);

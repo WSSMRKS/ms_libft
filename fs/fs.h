@@ -6,9 +6,12 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:16:25 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 15:42:25 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:57:11 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FS_H
+# define FS_H
 
 #include "../libft.h"
 #include <unistd.h>
@@ -32,3 +35,5 @@ t_bool	find_file_on_path(t_str_slice path, char *const *envp, int mode,
 t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int mode,
 			t_str *out);
 t_bool	dirs_join_file(const t_vec *dirs, t_str_slice file, t_vec *out);
+
+#endif

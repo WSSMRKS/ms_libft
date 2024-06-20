@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 14:06:30 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:56:40 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define VEC_H
 
 # include "../libft.h"
-# include "../types.h"
 
 typedef void	(*t_vec_map)(const void *from, void *to);
 typedef void	(*t_vec_mapi)(const t_vec *from, t_vec *to, size_t i,
