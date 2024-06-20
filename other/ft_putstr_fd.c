@@ -6,14 +6,14 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:34:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 13:25:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:24:09 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <unistd.h>
 
-size_t	ft_putstr_fd(char *s, int fd)
+size_t	ft_putstr_fd(const char *s, int fd)
 {
 	size_t	len;
 

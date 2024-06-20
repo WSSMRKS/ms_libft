@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 18:54:34 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:24:06 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,10 @@ unsigned long long	ft_umin(unsigned long long a, unsigned long long b);
 */
 
 size_t				ft_putchar_fd(char c, int fd);
-size_t				ft_putendl_fd(char *s, int fd);
+size_t				ft_putendl_fd(const char *s, int fd);
 size_t				ft_putfill_fd(char c, int fd, size_t fill);
 size_t				ft_putnbr_fd(int n, int fd);
-size_t				ft_putstr_fd(char *s, int fd);
+size_t				ft_putstr_fd(const char *s, int fd);
 size_t				ft_putstrsl_fd(t_str_slice strsl, int fd);
 void				set_bit(char *byte, char pos);
 void				unset_bit(char *byte, char pos);
