@@ -6,15 +6,15 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:16:25 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:57:11 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/21 01:01:58 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FS_H
 # define FS_H
 
-#include "../libft.h"
-#include <unistd.h>
+# include "../libft.h"
+# include <unistd.h>
 
 // t_bool	path_exists(const char *path);
 // t_bool	file_exists(const char *file);
