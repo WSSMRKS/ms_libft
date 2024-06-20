@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:33:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:19 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 23:28:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /// @warning Check the error flag for memory allocation errors.
 t_vec	vec_clone(const t_vec *vec)
 {
-	return (vec_new_clone(vec_get(vec), vec->len, vec->element_size));
+	return (vec_new_clone(vec_get(vec), vec->element_size, vec->len));
 }
 
 /// @brief Clones a vec with a new length.
@@ -28,6 +28,6 @@ t_vec	vec_clone(const t_vec *vec)
 /// @warning Check the error flag for memory allocation errors.
 t_vec	vec_clone_sized(const t_vec *vec, size_t new_len)
 {
-	return (vec_new_clone(vec_get(vec), ft_umin(vec->len, new_len),
-			vec->element_size));
+	return (vec_new_clone(vec_get(vec), vec->element_size,
+				ft_umin(vec->len, new_len)));
 }

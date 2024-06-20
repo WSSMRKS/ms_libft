@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 12:52:19 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/20 23:45:59 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	vec_remove_at(t_vec *vec, size_t index)
 		return ;
 	buf = vec_get(vec);
 	if (index + 1 < vec->len)
-		ft_memmove(buf + index, buf + index + 1, (vec->len - index - 1)
-			* vec->element_size);
+		ft_memmove(buf + index * vec->element_size,
+				buf + (index + 1) * vec->element_size,
+				(vec->len - index - 1) * vec->element_size);
 	vec->len--;
 }
 
