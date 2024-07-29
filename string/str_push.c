@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:27:59 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:33 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 /// @brief Append a character to the string.
 /// @param str The string to append to.
 /// @param c The character to append.

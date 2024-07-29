@@ -12,6 +12,8 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# pragma once
+
 # include "../libft.h"
 # include <stdarg.h>
 

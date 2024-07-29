@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:54:13 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 23:08:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 12:18:38 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Remove the elements matching the given element.
 /// @param vec The vec to remove the element from.
@@ -24,7 +24,7 @@ void	vec_remove(t_vec *vec, const void *element)
 		return ;
 	buf = vec_get(vec);
 	i = vec->len - 1;
-	while (true)
+	while (TRUE)
 	{
 		if (!ft_memcmp(buf + i * vec->element_size, element, vec->element_size))
 			vec_remove_at(vec, i);

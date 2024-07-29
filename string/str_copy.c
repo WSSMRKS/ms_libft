@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:25:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:04:57 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 /// @brief Copy a string.
 /// @param dst The destination string.

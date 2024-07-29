@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str.h                                              :+:      :+:    :+:   */
+/*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:56:14 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/16 17:23:43 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STR_H
-# define STR_H
+#ifndef FT_STR_H
+# define FT_STR_H
+# pragma once
 
 # include "../libft.h"
-# include "slice/str_slice.h"
+# include "slice/ft_str_slice.h"
 
 const char	*cstr_ref(const t_str *str);
 char		*cstr_mut(t_str *str);

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:47:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Creates an empty vec.
 /// @param element_size Size of a single element in the vec (sizeof(T)).
@@ -21,8 +21,8 @@ t_vec	vec_empty(size_t element_size)
 	t_vec	vec;
 
 	vec.len = 0;
-	vec.heap = false;
-	vec.mem_err = false;
+	vec.heap = FALSE;
+	vec.mem_err = FALSE;
 	vec._small_buf[0] = 0;
 	vec.element_size = element_size;
 	return (vec);

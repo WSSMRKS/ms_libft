@@ -42,12 +42,15 @@ LST_FILES = \
 	lst/ft_lstswp_front_where.c\
 
 MATH_FILES = \
-	math/ft_min_max_abs.c\
-	math/ft_safe_mult.c\
+	math/iabs.c\
+	math/imax.c\
+	math/imin.c\
+	math/imult.c\
+	math/umax.c\
+	math/umin.c\
+	math/umult.c\
 
 OTHER_FILES = \
-	other/bit.c\
-	other/bool.c\
 	other/ft_putchar_fd.c\
 	other/ft_putendl_fd.c\
 	other/ft_putfill_fd.c\
@@ -179,6 +182,7 @@ SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(CS
 OBJ = $(SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror -flto -O3
+# CFLAGS = -Wall -Wextra -Werror -g -Og -fanalyzer
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
@@ -187,9 +191,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-
-debug: CFLAGS = -Wall -Wextra -Werror -g -Og -fanalyzer -fsanitize=address -fsanitize=leak -fsanitize=undefined
-debug: $(NAME)
 
 clean:
 	rm -f $(OBJ)

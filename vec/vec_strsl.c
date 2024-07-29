@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:37:51 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 13:00:21 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 #include <stdlib.h>
 
 void	map_strsl_to_cloned_str(const void *from, void *to)
@@ -28,7 +28,7 @@ void	map_strsl_to_cloned_cstr(const void *from, void *to)
 /// @param out Vec of cloned strings.
 /// @note `out` may be an alias of `slices`,
 /// in which case `slices` is destroyed.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out)
 {
 	t_vec	tmp;
@@ -37,12 +37,12 @@ t_bool	vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out)
 	if (tmp.mem_err || vec_contains(&tmp, str_mem_err))
 	{
 		vec_destroy(&tmp, iter_str_destroy);
-		return (false);
+		return (FALSE);
 	}
 	if (slices == out)
 		vec_destroy(out, 0);
 	*out = tmp;
-	return (true);
+	return (TRUE);
 }
 
 /// @brief Transforms a vec of t_str_slice to a vec of cloned cstrings.
@@ -50,7 +50,7 @@ t_bool	vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out)
 /// @param out Vec of cloned cstrings.
 /// @note `out` may be an alias of `slices`,
 /// in which case `slices` is destroyed.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_strsls_to_cloned_cstrs(const t_vec *slices, t_vec *out)
 {
 	t_vec	tmp;
@@ -59,10 +59,10 @@ t_bool	vec_strsls_to_cloned_cstrs(const t_vec *slices, t_vec *out)
 	if (tmp.mem_err || vec_contains(&tmp, ptr_is_null))
 	{
 		vec_destroy(&tmp, iter_ptr_free);
-		return (false);
+		return (FALSE);
 	}
 	if (slices == out)
 		vec_destroy(out, 0);
 	*out = tmp;
-	return (true);
+	return (TRUE);
 }

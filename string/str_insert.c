@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 00:16:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:17:20 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 /// @brief Insert a character at a given index into the string.
 /// @param str The string to insert into.

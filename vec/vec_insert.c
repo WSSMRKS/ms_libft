@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:04:38 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 18:54:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:45:09 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Inserts a single element at the given index.
 /// @param vec The vec to insert into.
@@ -86,5 +86,5 @@ void	vec_insertvec(t_vec *vec, size_t index, const t_vec *data)
 void	vec_insertvec_sized(t_vec *vec, size_t index, const t_vec *data,
 		size_t n)
 {
-	vec_insertarr(vec, index, vec_get(data), ft_umin(n, data->len));
+	vec_insertarr(vec, index, vec_get(data), usizemin(n, data->len));
 }

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:14:23 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/12 19:30:19 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 03:32:09 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_realloc(void *ptr, size_t from, size_t to)
 		return (0);
 	if (ptr)
 	{
-		ft_memcpy(new_ptr, ptr, ft_umin(from, to));
+		ft_memcpy(new_ptr, ptr, usizemin(from, to));
 		free(ptr);
 	}
 	return (new_ptr);
@@ -41,9 +41,11 @@ void	*ft_realloc(void *ptr, size_t from, size_t to)
 /// @return Pointer to the reallocated memory block.
 void	*ft_reallocarray(void *ptr, size_t from, size_t nmemb, size_t size)
 {
-	if (!ft_safe_umult(nmemb, size, ~(size_t)0))
+	size_t	len;
+
+	if (!usizemult(nmemb, size, &len))
 		return (0);
-	return (ft_realloc(ptr, from * size, nmemb * size));
+	return (ft_realloc(ptr, from * size, len));
 }
 
 /// @brief Reallocates a string.

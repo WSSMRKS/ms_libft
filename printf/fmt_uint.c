@@ -46,11 +46,11 @@ t_str	fmt_uint(va_list *args, t_fmt fmt)
 	ulltoa_base_radix(&out, num, "0123456789", 10);
 	if (!(num == 0 && fmt.precision == 0))
 	{
-		add_precision_leading_zeroes(&out, fmt, false);
+		add_precision_leading_zeroes(&out, fmt, FALSE);
 		str_pushstr_front(&out, cstr_view(fmt.pos_nbr_sign));
 	}
-	add_padding(&out, fmt, true);
+	add_padding(&out, fmt, TRUE);
 	if (fmt.precision < 0 && fmt.pad.fill_char == '0' && !fmt.pad.pad_end)
-		swap_sign_with_leading_zero(&out, fmt, false);
+		swap_sign_with_leading_zero(&out, fmt, FALSE);
 	return (out);
 }

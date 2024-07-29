@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:18:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:43:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 /// @brief Remove the last character from the string.
 /// @param str The string to remove from.
@@ -54,8 +54,8 @@ void	str_remove_range(t_str *str, size_t start, size_t end)
 {
 	char	*cstr;
 
-	start = ft_umin(start, str->len);
-	end = ft_umin(end, str->len);
+	start = usizemin(start, str->len);
+	end = usizemin(end, str->len);
 	cstr = cstr_mut(str);
 	ft_memmove(cstr + start, cstr + end, str->len - end + 1);
 	str->len -= end - start;
@@ -66,7 +66,7 @@ void	str_remove_range(t_str *str, size_t start, size_t end)
 /// @param new_len The new length of the string.
 void	str_trunc(t_str *str, size_t new_len)
 {
-	new_len = ft_umin(new_len, str->len);
+	new_len = usizemin(new_len, str->len);
 	cstr_mut(str)[new_len] = 0;
 	str->len = new_len;
 }
@@ -77,5 +77,5 @@ void	str_clear(t_str *str)
 {
 	cstr_mut(str)[0] = 0;
 	str->len = 0;
-	str->mem_err = false;
+	str->mem_err = FALSE;
 }

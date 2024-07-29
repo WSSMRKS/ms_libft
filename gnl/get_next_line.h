@@ -12,6 +12,7 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# pragma once
 
 # include "../libft.h"
 # include <stdlib.h>

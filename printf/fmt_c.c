@@ -18,6 +18,6 @@ t_str	fmt_c(va_list *args, t_fmt fmt)
 
 	out = str_empty();
 	str_push(&out, va_arg(*args, int));
-	add_padding(&out, fmt, false);
+	add_padding(&out, fmt, FALSE);
 	return (out);
 }

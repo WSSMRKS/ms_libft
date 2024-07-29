@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/12 19:18:45 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/30 06:31:23 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 #include <stdlib.h>
 
 static void	heap_arr_to_stack_arr(t_vec *vec)
@@ -18,8 +18,8 @@ static void	heap_arr_to_stack_arr(t_vec *vec)
 	void	*temp;
 
 	temp = vec->_large_buf;
-	vec->heap = false;
-	vec->len = ft_umin(vec->len, vec_capacity(vec));
+	vec->heap = FALSE;
+	vec->len = usizemin(vec->len, vec_capacity(vec));
 	ft_memcpy(vec->_small_buf, temp, vec->len * vec->element_size);
 	free(temp);
 }
@@ -27,14 +27,17 @@ static void	heap_arr_to_stack_arr(t_vec *vec)
 static t_bool	stack_arr_to_heap_arr(t_vec *vec, size_t capacity)
 {
 	void	*temp;
+	size_t	len;
 
-	temp = malloc(capacity * vec->element_size);
+	if (!usizemult(capacity, vec->element_size, &len))
+		return (FALSE);
+	temp = malloc(len);
 	if (temp == 0)
-		return (false);
+		return (FALSE);
 	ft_memcpy(temp, vec->_small_buf, vec->len * vec->element_size);
 	vec->_large_buf = temp;
-	vec->heap = true;
-	return (true);
+	vec->heap = TRUE;
+	return (TRUE);
 }
 
 static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
@@ -44,9 +47,9 @@ static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
 	temp = ft_reallocarray(vec->_large_buf, vec->len, capacity,
 			vec->element_size);
 	if (temp == 0)
-		return (false);
+		return (FALSE);
 	vec->_large_buf = temp;
-	return (true);
+	return (TRUE);
 }
 
 /// @brief Changes the capacity of the vec.
@@ -54,31 +57,28 @@ static t_bool	resize_heap_arr(t_vec *vec, size_t capacity)
 /// @param n New capacity.
 /// @note The capacity can't be less than `FT_SMALL_VEC`.
 /// @warning Check the error flag for memory allocation errors.
-/// @return true if the operation was successful, false otherwise.
+/// @return TRUE if the operation was successful, FALSE otherwise.
 t_bool	vec_try_set_capacity(t_vec *vec, size_t n)
 {
 	t_bool	success;
 	t_bool	to_stack;
 
-	success = ft_safe_umult(n, vec->element_size, ~(size_t)0);
+	success = TRUE;
+	to_stack = n <= FT_SMALL_VEC / vec->element_size;
+	if (vec->heap && to_stack)
+		heap_arr_to_stack_arr(vec);
+	else if (!to_stack && !vec->heap)
+		success = stack_arr_to_heap_arr(vec, n);
+	else if (!to_stack && vec->heap)
+		success = resize_heap_arr(vec, n);
 	if (success)
 	{
-		to_stack = n <= FT_SMALL_VEC / vec->element_size;
-		if (vec->heap && to_stack)
-			heap_arr_to_stack_arr(vec);
-		else if (!to_stack && !vec->heap)
-			success = stack_arr_to_heap_arr(vec, n);
-		else if (!to_stack && vec->heap)
-			success = resize_heap_arr(vec, n);
-		if (success)
-		{
-			if (vec->heap)
-				vec->_capacity = n;
-			vec->len = ft_umin(vec->len, n);
-		}
-		else
-			vec->mem_err = true;
+		if (vec->heap)
+			vec->_capacity = n;
+		vec->len = usizemin(vec->len, n);
 	}
+	else
+		vec->mem_err = TRUE;
 	return (success);
 }
 

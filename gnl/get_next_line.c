@@ -109,5 +109,5 @@ char	*_get_next_line(int fd, t_bool destroy)
 
 char	*get_next_line(int fd)
 {
-	return (_get_next_line(fd, false));
+	return (_get_next_line(fd, FALSE));
 }

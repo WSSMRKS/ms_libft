@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/19 00:00:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:21:55 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	ft_atoi(const char *nptr)
 	nbr = 0;
 	while (ft_isdigit(*nptr))
 	{
-		if (nbr > INT_MAX / 10 || (nbr == INT_MAX / 10 && *nptr > '7'))
+		if (nbr > INT32_MAX / 10 || (nbr == INT32_MAX / 10 && *nptr > '7'))
 		{
 			if (sign == -1)
-				return (INT_MIN);
-			return (INT_MAX);
+				return (INT32_MIN);
+			return (INT32_MAX);
 		}
 		nbr = (nbr * 10) + *nptr - '0';
 		nptr++;

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:40:20 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 13:15:12 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 
 t_str_slice	base2(void)
 {

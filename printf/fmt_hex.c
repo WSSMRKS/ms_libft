@@ -42,9 +42,9 @@ t_str	fmt_hex(va_list *args, t_fmt fmt)
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789abcdef", 16);
-	add_precision_leading_zeroes(&out, fmt, false);
+	add_precision_leading_zeroes(&out, fmt, FALSE);
 	if (num != 0 && fmt.alternate_form)
 		str_pushstr_front(&out, cstr_slice("0x", 2));
-	add_padding_hex(&out, fmt, true, num);
+	add_padding_hex(&out, fmt, TRUE, num);
 	return (out);
 }

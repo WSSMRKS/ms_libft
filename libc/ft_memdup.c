@@ -19,6 +19,6 @@ void	*ft_memdup(const void *src, size_t n)
 
 	out = malloc(n);
 	if (!out)
-		return (NULL);
+		return (0);
 	return (ft_memcpy(out, src, n));
 }

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:05:15 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:08:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:45:28 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Pushes a vec to the end of the vec.
 /// @param vec Vec to push to.
@@ -19,7 +19,7 @@
 /// @warning Check the error flag for memory allocation errors.
 void	vec_pushvec_sized(t_vec *vec, const t_vec *data, size_t len)
 {
-	vec_pusharr(vec, vec_get(data), ft_umin(len, data->len));
+	vec_pusharr(vec, vec_get(data), usizemin(len, data->len));
 }
 
 /// @brief Pushes a vec to the front of the vec.
@@ -29,7 +29,7 @@ void	vec_pushvec_sized(t_vec *vec, const t_vec *data, size_t len)
 /// @warning Check the error flag for memory allocation errors.
 void	vec_pushvec_front_sized(t_vec *vec, const t_vec *data, size_t len)
 {
-	vec_pusharr_front(vec, vec_get(data), ft_umin(len, data->len));
+	vec_pusharr_front(vec, vec_get(data), usizemin(len, data->len));
 }
 
 /// @brief Pushes n vecs to the end of the vec.
@@ -40,7 +40,7 @@ void	vec_pushvec_front_sized(t_vec *vec, const t_vec *data, size_t len)
 /// @warning Check the error flag for memory allocation errors.
 void	vec_pushvecn_sized(t_vec *vec, const t_vec *data, size_t len, size_t n)
 {
-	vec_pusharrn(vec, vec_get(data), ft_umin(len, data->len), n);
+	vec_pusharrn(vec, vec_get(data), usizemin(len, data->len), n);
 }
 
 /// @brief Pushes n vecs to the front of the vec.
@@ -52,5 +52,5 @@ void	vec_pushvecn_sized(t_vec *vec, const t_vec *data, size_t len, size_t n)
 void	vec_pushvecn_front_sized(t_vec *vec, const t_vec *data, size_t len,
 		size_t n)
 {
-	vec_pusharrn_front(vec, vec_get(data), ft_umin(len, data->len), n);
+	vec_pusharrn_front(vec, vec_get(data), usizemin(len, data->len), n);
 }

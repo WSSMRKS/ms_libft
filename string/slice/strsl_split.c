@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:19:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/12 19:22:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 
 static t_str_slice	split_next(t_str_slice *s, size_t (*pattern)(t_str_slice s))
 {

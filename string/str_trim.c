@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 01:11:55 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 /// @brief Remove leading and trailing whitespace from the string.
 /// @param str The string to trim.

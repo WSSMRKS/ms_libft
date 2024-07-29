@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 21:02:06 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 #include <stdlib.h>
 
 /// @brief Destroy the vec and free the memory.
@@ -24,8 +24,8 @@ void	vec_destroy(t_vec *vec, t_vec_iter destroy)
 	if (vec->heap)
 	{
 		free(vec->_large_buf);
-		vec->heap = false;
+		vec->heap = FALSE;
 	}
 	vec->len = 0;
-	vec->mem_err = false;
+	vec->mem_err = FALSE;
 }

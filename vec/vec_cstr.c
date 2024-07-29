@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:53:49 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/15 07:34:11 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 void	map_cstr_into_str(const void *from, void *to)
 {
@@ -28,7 +28,7 @@ void	map_cstr_to_cloned_str(const void *from, void *to)
 /// @brief Transforms a vec of cstrings to a vec of strings.
 /// @param cstrs Vec of cstrings to be turned into a vec of strings.
 /// @warning `cstrs` must be made of owned, freeable cstrs.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_cstrs_into_strs(t_vec *cstrs)
 {
 	t_vec	tmp;
@@ -37,18 +37,18 @@ t_bool	vec_cstrs_into_strs(t_vec *cstrs)
 	if (tmp.mem_err)
 	{
 		vec_destroy(&tmp, 0);
-		return (false);
+		return (FALSE);
 	}
 	vec_destroy(cstrs, 0);
 	*cstrs = tmp;
-	return (true);
+	return (TRUE);
 }
 
 /// @brief Transforms a vec of cstrings to a vec of cloned strings.
 /// @param cstrs Vec of cstrings.
 /// @param out Vec of cloned strings.
 /// @warning `out` may *NOT* be an alias of `cstrs`.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_cstrs_to_cloned_strs(const t_vec *cstrs, t_vec *out)
 {
 	t_vec	tmp;
@@ -57,8 +57,8 @@ t_bool	vec_cstrs_to_cloned_strs(const t_vec *cstrs, t_vec *out)
 	if (tmp.mem_err || vec_contains(&tmp, str_mem_err))
 	{
 		vec_destroy(&tmp, iter_str_destroy);
-		return (false);
+		return (FALSE);
 	}
 	*out = tmp;
-	return (true);
+	return (TRUE);
 }

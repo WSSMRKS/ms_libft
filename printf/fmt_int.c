@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 23:27:33 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:07:47 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 12:18:38 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_str	fmt_int(va_list *args, t_fmt fmt)
 		add_precision_leading_zeroes(&out, fmt, num < 0
 			|| *fmt.pos_nbr_sign != 0);
 	}
-	add_padding(&out, fmt, true);
+	add_padding(&out, fmt, TRUE);
 	if (fmt.precision < 0 && fmt.pad.fill_char == '0' && !fmt.pad.pad_end)
 		swap_sign_with_leading_zero(&out, fmt, num < 0);
 	return (out);

@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_slice.h                                        :+:      :+:    :+:   */
+/*   ft_str_slice.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:02:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 15:56:20 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:07:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STR_SLICE_H
-# define STR_SLICE_H
+#ifndef FT_STR_SLICE_H
+# define FT_STR_SLICE_H
+# pragma once
 
 # include "../../libft.h"
 

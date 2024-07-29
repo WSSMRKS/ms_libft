@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:07:00 by kwurster          #+#    #+#             */
-/*   Updated: 2024/05/07 16:13:54 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 
 /// @brief Creates a null stringview.
 /// @return A null stringview.

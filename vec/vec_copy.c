@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 06:48:43 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:44:35 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Copies the data of the source vec to the destination vec.
 /// @param dst Destination vec.
@@ -36,7 +36,7 @@ void	vec_copy_sized(t_vec *dst, const t_vec *src, size_t new_len)
 		if (!vec_try_grow(dst, new_len - cap))
 			return ;
 	}
-	new_len = ft_umin(new_len, src->len);
+	new_len = usizemin(new_len, src->len);
 	ft_memcpy(vec_get(dst), vec_get(src), new_len * src->element_size);
 	dst->len = new_len;
 }
@@ -60,7 +60,7 @@ void	vec_cat_sized(t_vec *dst, const t_vec *src, size_t n)
 	size_t	new_len;
 	size_t	cap;
 
-	n = ft_umin(n, src->len);
+	n = usizemin(n, src->len);
 	new_len = dst->len + n;
 	cap = vec_capacity(dst);
 	if (new_len > cap)

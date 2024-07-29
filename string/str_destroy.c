@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 21:02:06 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:01 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 #include <stdlib.h>
 
 /// @brief Destroy the string and free the memory.
@@ -21,9 +21,9 @@ void	str_destroy(t_str *str)
 	if (str->heap)
 	{
 		free(str->_large_str);
-		str->heap = false;
+		str->heap = FALSE;
 	}
 	str->len = 0;
 	str->_small_str[0] = 0;
-	str->mem_err = false;
+	str->mem_err = FALSE;
 }

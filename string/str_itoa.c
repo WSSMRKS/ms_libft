@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:16:49 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:16 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:20:13 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 /// @brief Converts an integer to a string and appends it to the output string.
 /// @param num The integer to convert.
@@ -26,7 +26,7 @@ static void	_str_itoa_recursive(unsigned int num, t_str_slice base, t_str *out)
 
 static void	_str_itoa(int num, t_str_slice base, t_str *out)
 {
-	if (num == INT_MIN)
+	if (num == INT32_MIN)
 		str_pushstr(out, cstr_slice("-2147483648", 11));
 	else if (num < 0)
 	{

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:32:40 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 14:02:37 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 
 /// @brief Find the first occurence of a character in a string.
 /// @param s The string to search in.

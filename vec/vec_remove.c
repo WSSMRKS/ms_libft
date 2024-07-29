@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/21 01:01:42 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:45:38 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Remove the element at the given index from the vec.
 /// @param vec The vec to remove the element from.
@@ -47,7 +47,7 @@ void	vec_remove_range(t_vec *vec, size_t start, size_t end)
 
 	if (start >= vec->len || end <= start)
 		return ;
-	end = ft_umin(end, vec->len);
+	end = usizemin(end, vec->len);
 	buf = vec_get(vec);
 	if (end < vec->len)
 		ft_memmove(buf + start, buf + end, (vec->len - end)
@@ -60,7 +60,7 @@ void	vec_remove_range(t_vec *vec, size_t start, size_t end)
 /// @param n The number of elements to remove.
 void	vec_trunc(t_vec *vec, size_t n)
 {
-	vec->len -= ft_umin(n, vec->len);
+	vec->len -= usizemin(n, vec->len);
 }
 
 /// @brief Remove all elements from the vec.
@@ -69,5 +69,5 @@ void	vec_trunc(t_vec *vec, size_t n)
 void	vec_clear(t_vec *vec)
 {
 	vec->len = 0;
-	vec->mem_err = false;
+	vec->mem_err = FALSE;
 }

@@ -33,6 +33,6 @@ t_str	fmt_str(va_list *args, t_fmt fmt)
 			out_len = fmt.precision;
 		out = str_clone_from(cstr_slice(s, out_len));
 	}
-	add_padding(&out, fmt, false);
+	add_padding(&out, fmt, FALSE);
 	return (out);
 }

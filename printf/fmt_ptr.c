@@ -41,14 +41,14 @@ t_str	fmt_ptr(va_list *args, t_fmt fmt)
 	if (!ptr)
 	{
 		out = str_clone_from(cstr_slice("(nil)", 5));
-		add_padding(&out, fmt, false);
+		add_padding(&out, fmt, FALSE);
 	}
 	else
 	{
 		out = str_clone_from(cstr_slice("0x", 2));
 		ulltoa_base_radix(&out, (unsigned long long)ptr, "0123456789abcdef",
 			16);
-		add_padding_hex(&out, fmt, true);
+		add_padding_hex(&out, fmt, TRUE);
 	}
 	return (out);
 }

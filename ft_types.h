@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   ft_types.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/20 14:01:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/30 05:57:59 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#ifndef FT_TYPES_H
+# define FT_TYPES_H
 
 # include <stddef.h>
+# include <stdint.h>
+# include <unistd.h>
 
-typedef enum e_bool
-{
-	false,
-	true
-}					t_bool;
+# define FALSE	0
+# define TRUE	1
+
+/// bool is defined as int32 for maximum compatibility
+typedef int32_t	t_bool;
 
 typedef struct s_list
 {
@@ -29,8 +31,8 @@ typedef struct s_list
 
 typedef enum e_overflow_behavior
 {
-	ofb_truncate,
-	ofb_error
+	OFB_TRUNCATE,
+	OFB_ERROR
 }					t_overflow_behavior;
 
 # ifndef FT_SMALL_VEC
@@ -65,15 +67,15 @@ typedef struct s_vec
 	union
 	{
 		/// @brief Small vec buffer.
-		/// @warning May only be modified/read directly if 'heap' = false.
+		/// @warning May only be modified/read directly if 'heap' = FALSE.
 		char		_small_buf[FT_SMALL_VEC];
 		struct
 		{
 			/// @brief Heap allocated vec buffer.
-			/// @warning May only be modified/read directly if 'heap' = true.
+			/// @warning May only be modified/read directly if 'heap' = TRUE.
 			char	*_large_buf;
 			/// @brief Capacity of the heap vec buffer (number of elements).
-			/// @warning May only be modified/read directly if 'heap' = true.
+			/// @warning May only be modified/read directly if 'heap' = TRUE.
 			/// Use 'vec_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};
@@ -123,15 +125,15 @@ typedef struct s_str
 	union
 	{
 		/// @brief Small string buffer.
-		/// @warning May only be modified/read directly if 'heap' = false.
+		/// @warning May only be modified/read directly if 'heap' = FALSE.
 		char		_small_str[FT_SMALL_STR];
 		struct
 		{
 			/// @brief Heap allocated string buffer.
-			/// @warning May only be modified/read directly if 'heap' = true.
+			/// @warning May only be modified/read directly if 'heap' = TRUE.
 			char	*_large_str;
 			/// @brief Capacity of the heap string buffer.
-			/// @warning May only be modified/read directly if 'heap' = true.
+			/// @warning May only be modified/read directly if 'heap' = TRUE.
 			/// Use 'str_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};
@@ -155,5 +157,119 @@ typedef struct s_str_slice
 	/// @brief Length of the string view.
 	size_t			len;
 }					t_str_slice;
+
+/*
+	GEO
+*/
+
+typedef struct s_point
+{
+	int32_t	x;
+	int32_t	y;
+}			t_point;
+
+typedef union u_upoint
+{
+	struct
+	{
+		uint32_t	x;
+		uint32_t	y;
+	};
+	t_point			point;
+}					t_upoint;
+
+typedef struct s_size
+{
+	uint32_t	width;
+	uint32_t	height;
+}				t_size;
+
+typedef struct s_rect
+{
+	t_point				from;
+	t_point				to;
+	union
+	{
+		t_size			size;
+		struct
+		{
+			uint32_t	width;
+			uint32_t	height;
+		};
+	};
+}						t_rect;
+
+typedef union s_urect
+{
+	struct
+	{
+		t_upoint			from;
+		t_upoint			to;
+		union
+		{
+			t_size			size;
+			struct
+			{
+				uint32_t	width;
+				uint32_t	height;
+			};
+		};
+	};
+	t_rect					rect;
+}							t_urect;
+
+/*
+	IMG
+*/
+
+typedef struct s_img
+{
+	/// Pixels
+	uint32_t					*px;
+	size_t						px_len;
+	union
+	{
+		struct
+		{
+			t_upoint			from;
+			t_upoint			to;
+			union
+			{
+				t_size			size;
+				struct
+				{
+					uint32_t	width;
+					uint32_t	height;
+				};
+			};
+		};
+		t_urect					urect;
+		t_rect					rect;
+	};
+}								t_img;
+
+typedef struct s_imgview
+{
+	const t_img					*img;
+	union
+	{
+		struct
+		{
+			t_upoint			from;
+			t_upoint			to;
+			union
+			{
+				t_size			size;
+				struct
+				{
+					uint32_t	width;
+					uint32_t	height;
+				};
+			};
+		};
+		t_urect					urect;
+		t_rect					rect;
+	};
+}								t_imgview;
 
 #endif

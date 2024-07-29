@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 13:22:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/15 07:32:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:22 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fs.h"
+#include "ft_fs.h"
 #include <errno.h>
 #include <stdio.h>
 
@@ -21,9 +21,9 @@
 /// @param mode The mode to check the file access with.
 /// @param out The resulting full path to the file.
 /// @return True if the file was found and the access was successful,
-/// false otherwise.
+/// FALSE otherwise.
 /// @note Different from `find_file` in that `out` will only
-/// be set when returning true.
+/// be set when returning TRUE.
 t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
 		t_str *out)
 {
@@ -40,9 +40,9 @@ t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
 			ft_putstr_fd(": ", 2);
 			perror(0);
 		}
-		return (false);
+		return (FALSE);
 	}
-	return (true);
+	return (TRUE);
 }
 
 /// @brief Searches for a file in the PATH directories and
@@ -52,9 +52,9 @@ t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
 /// @param mode The mode to check the file access with.
 /// @param out The resulting full path to the file.
 /// @return True if the file was found and the access was successful,
-/// false otherwise.
+/// FALSE otherwise.
 /// @note Different from `find_file` in that `out` will only
-/// be set when returning true.
+/// be set when returning TRUE.
 t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int mode,
 		t_str *out)
 {
@@ -71,7 +71,7 @@ t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int mode,
 			ft_putstr_fd(": ", 2);
 			perror(0);
 		}
-		return (false);
+		return (FALSE);
 	}
-	return (true);
+	return (TRUE);
 }

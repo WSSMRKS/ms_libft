@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:33:32 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 17:06:49 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:44:40 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 /// @brief Extracts elements in the range [start, end) from the vec.
 /// @param vec The vec to extract elements from.
@@ -26,7 +26,7 @@ t_vec	vec_extract_range(t_vec *vec, size_t start, size_t end)
 
 	if (start >= vec->len || end <= start)
 		return (vec_empty(vec->element_size));
-	end = ft_umin(end, vec->len);
+	end = usizemin(end, vec->len);
 	out = vec_new_clone(vec_get(vec) + start * vec->element_size,
 			vec->element_size, end - start);
 	if (!out.mem_err)

@@ -6,8 +6,8 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:47:02 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/13 15:50:17 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:22 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fs.h"
+#include "ft_fs.h"

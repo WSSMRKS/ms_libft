@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:56:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/12 19:39:13 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 
 static void	iter_total_len(t_vec *vec, size_t i, void *total_len)
 {
@@ -61,10 +61,10 @@ t_bool	vec_contains(const t_vec *vec, t_bool (*test)(const void *))
 	while (i < vec->len)
 	{
 		if (test(vec_get_at(vec, i)))
-			return (true);
+			return (TRUE);
 		i++;
 	}
-	return (false);
+	return (FALSE);
 }
 
 t_bool	vec_find(const t_vec *vec, t_bool (*test)(const void *), size_t *at)
@@ -79,7 +79,7 @@ t_bool	vec_find(const t_vec *vec, t_bool (*test)(const void *), size_t *at)
 		if (test(current))
 		{
 			*at = i;
-			return (true);
+			return (TRUE);
 		}
 		current += vec->element_size;
 		i++;

@@ -1,6 +1,6 @@
 # GDB CHEAT SHEET
 
-1. Compile your program with cc -g ... to include debug info
+1. Compile your program with cc -g [-Og] ... to include debug info
 2. Run your program with 'gdb (binary file, e.g. ./a.out)'
 3. Happy debugging!
    1. layout src

@@ -6,20 +6,24 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/21 00:24:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/20 15:21:53 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+// clangd seems to not recognize classic header guards
+# pragma once
 
-# include "types.h"
-# include "string/str.h"
-# include "env/env.h"
-# include "fs/fs.h"
-# include "vec/vec.h"
-# include "array/array.h"
-# include <limits.h>
+# include "ft_types.h"
+# include "string/ft_str.h"
+# include "env/ft_env.h"
+# include "fs/ft_fs.h"
+# include "vec/ft_vec.h"
+# include "array/ft_array.h"
+// # include "img/ft_img.h"
+// # include "geo/ft_geo.h"
+# include "math/ft_math.h"
 
 /*
 	LIBC
@@ -40,7 +44,10 @@ void				ft_memswap(void *b1, void *b2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memdup(const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
-void				*ft_memset(void *s, int c, size_t n);
+uint64_t			*ft_memset64(uint64_t *dest, uint64_t src, size_t n);
+uint32_t			*ft_memset32(uint32_t *dest, uint32_t src, size_t n);
+uint16_t			*ft_memset16(uint16_t *dest, uint16_t src, size_t n);
+void				*ft_memset(void *dest, uint8_t src, size_t n);
 void				*ft_realloc(void *ptr, size_t from, size_t to);
 void				*ft_reallocarray(void *ptr, size_t from, size_t nmemb,
 						size_t size);
@@ -84,20 +91,6 @@ t_list				*ft_lstswp_front_where(t_list **lst, t_lst_pred pred,
 						void *pred_data);
 
 /*
-	MATH
-*/
-
-unsigned long long	ft_abs(long long num, long long min);
-long long			ft_max(long long a, long long b);
-long long			ft_min(long long a, long long b);
-t_bool				ft_safe_mult(long long a, long long b, long long max,
-						long long *result);
-t_bool				ft_safe_umult(unsigned long long a, unsigned long long b,
-						unsigned long long max);
-unsigned long long	ft_umax(unsigned long long a, unsigned long long b);
-unsigned long long	ft_umin(unsigned long long a, unsigned long long b);
-
-/*
 	OTHER
 */
 
@@ -107,15 +100,11 @@ size_t				ft_putfill_fd(char c, int fd, size_t fill);
 size_t				ft_putnbr_fd(int n, int fd);
 size_t				ft_putstr_fd(const char *s, int fd);
 size_t				ft_putstrsl_fd(t_str_slice strsl, int fd);
-void				set_bit(char *byte, char pos);
-void				unset_bit(char *byte, char pos);
-void				toggle_bit(char *byte, char pos);
-t_bool				get_bit(char byte, char pos);
-t_bool				itob(long long i);
 t_bool				ptr_is_null(const void *ptr);
+t_bool				ptr_ptr_is_null(const void *ptr);
 
 /*
-	STRING GENERIC
+	CSTRING
 */
 
 char				*ft_itoa(int n);

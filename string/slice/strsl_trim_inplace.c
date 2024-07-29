@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:48:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 15:11:09 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 
 /// @brief Removes leading and trailing whitespace from a stringview.
 /// @param s The stringview to trim.

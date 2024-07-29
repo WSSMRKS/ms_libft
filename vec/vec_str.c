@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:16:19 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/14 15:46:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec.h"
+#include "ft_vec.h"
 #include <stdlib.h>
 
 void	map_str_into_cstr(const void *from, void *to)
@@ -25,7 +25,7 @@ void	map_str_to_aliased_cstr(const void *from, void *to)
 
 /// @brief Transforms a vec of strings to a vec of cstrings.
 /// @param strs Vec of strings to be turned into a vec of cstrings.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_strs_into_cstrs(t_vec *strs)
 {
 	t_vec	tmp;
@@ -35,24 +35,24 @@ t_bool	vec_strs_into_cstrs(t_vec *strs)
 	if (tmp.mem_err || vec_contains(&tmp, ptr_is_null))
 	{
 		vec_destroy(&tmp, iter_ptr_free);
-		return (false);
+		return (FALSE);
 	}
 	*strs = tmp;
-	return (true);
+	return (TRUE);
 }
 
 /// @brief Transforms a vec of strings to a vec of aliased cstrings.
 /// @param strs Vec of strings.
 /// @param out Vec of aliased cstrings.
 /// @warning `out` may *NOT* be an alias of `strs`.
-/// @return True if successful, false otherwise.
+/// @return True if successful, FALSE otherwise.
 t_bool	vec_strs_to_aliased_cstrs(const t_vec *strs, t_vec *out)
 {
 	*out = vec_map(strs, map_str_to_aliased_cstr, sizeof(char *));
 	if (out->mem_err)
 	{
 		vec_destroy(out, 0);
-		return (false);
+		return (FALSE);
 	}
-	return (true);
+	return (TRUE);
 }

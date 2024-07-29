@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:36:15 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/18 21:55:03 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 size_t	str_count(const t_str *str, size_t (*count)(const char *))
 {
@@ -36,9 +36,9 @@ t_bool	str_contains(const t_str *str, t_bool (*test)(const char *))
 	while (i < str->len)
 	{
 		if (test(buf + i++))
-			return (true);
+			return (TRUE);
 	}
-	return (false);
+	return (FALSE);
 }
 
 t_bool	str_find(const t_str *str, t_bool (*test)(const char *), size_t *at)
@@ -53,9 +53,9 @@ t_bool	str_find(const t_str *str, t_bool (*test)(const char *), size_t *at)
 		if (test(buf + i))
 		{
 			*at = i;
-			return (true);
+			return (TRUE);
 		}
 		i++;
 	}
-	return (false);
+	return (FALSE);
 }

@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/15 07:33:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/06/28 02:19:16 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "env.h"
+#include "ft_env.h"
 
 /// @brief Get the directories from the PATH env var.
 /// @param envp The env vars.
@@ -66,20 +66,20 @@ static void	rm_trailing_slash_iter(void *element)
 /// @brief Split the PATH env var value into directories.
 /// @param path_value The value of the PATH env var.
 /// @param out The output t_vec of t_str_slice.
-/// @return True if the path was split successfully, false otherwise.
+/// @return True if the path was split successfully, FALSE otherwise.
 t_bool	split_env_path(t_str_slice path_value, t_vec *out)
 {
 	if (path_value.str == 0)
 	{
 		*out = vec_empty(sizeof(t_str_slice));
-		return (false);
+		return (FALSE);
 	}
 	*out = strsl_split(path_value, cstr_slice(":", 1));
 	if (out->mem_err)
 	{
 		vec_destroy(out, 0);
-		return (false);
+		return (FALSE);
 	}
 	vec_iter(out, rm_trailing_slash_iter);
-	return (true);
+	return (TRUE);
 }

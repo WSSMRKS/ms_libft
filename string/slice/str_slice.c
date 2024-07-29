@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:15:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/05/07 16:08:18 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 13:43:51 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_slice.h"
+#include "ft_str_slice.h"
 #include <stdlib.h>
 
 /// @brief Creates a stringview from a cstr.
@@ -48,8 +48,8 @@ t_str_slice	str_view(const t_str *str)
 /// @return The stringview.
 t_str_slice	str_slice(const t_str *str, size_t start, size_t end)
 {
-	start = ft_umin(start, str->len);
-	end = ft_umax(start, ft_umin(end, str->len));
+	start = usizemin(start, str->len);
+	end = usizemax(start, usizemin(end, str->len));
 	return ((t_str_slice){.len = end - start, .str = cstr_ref(str) + start});
 }
 
