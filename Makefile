@@ -177,7 +177,33 @@ ENV_FILES = \
 ARRAY_FILES = \
 	array/array.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES) $(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES) $(VEC_FILES) $(FS_FILES) $(ENV_FILES) $(ARRAY_FILES)
+GEO_FILES = \
+	geo/point.c\
+	geo/point2.c\
+	geo/rect.c\
+	geo/rect2.c\
+	geo/size.c\
+	geo/upoint_cmp.c\
+	geo/upoint.c\
+	geo/upoint2.c\
+	geo/urect.c\
+	geo/urect2.c\
+
+IMG_FILES = \
+	img/color.c\
+	img/img_view_blend.c\
+	img/img_view_copy.c\
+	img/img_view_draw.c\
+	img/img_view_transform.c\
+	img/img_view_transform2.c\
+	img/img_view.c\
+	img/img.c\
+	img/img2.c\
+
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES)\
+	$(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES)\
+	$(VEC_FILES) $(FS_FILES) $(ENV_FILES) $(ARRAY_FILES) $(GEO_FILES)\
+	$(IMG_FILES)
 
 OBJ = $(SRCS:.c=.o)
 

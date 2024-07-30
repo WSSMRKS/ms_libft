@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/20 15:21:53 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/07/29 14:04:12 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include "fs/ft_fs.h"
 # include "vec/ft_vec.h"
 # include "array/ft_array.h"
-// # include "img/ft_img.h"
-// # include "geo/ft_geo.h"
+# include "img/ft_img.h"
+# include "geo/ft_geo.h"
 # include "math/ft_math.h"
 
 /*
