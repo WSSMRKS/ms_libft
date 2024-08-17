@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include "unistd.h"
 
-size_t	ft_putendl_fd(const char *s, int fd)
+size_t	ft_putendl_fd(const char *s, int32_t fd)
 {
 	return (ft_putstr_fd(s, fd) + write(fd, "\n", 1));
 }

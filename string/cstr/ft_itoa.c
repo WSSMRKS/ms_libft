@@ -12,9 +12,9 @@
 
 #include <stdlib.h>
 
-static int	numlen(int n)
+static int32_t	numlen(int32_t n)
 {
-	int	len;
+	int32_t	len;
 
 	len = 0;
 	if (n <= 0)
@@ -27,10 +27,10 @@ static int	numlen(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int32_t n)
 {
 	char	*out;
-	int		len;
+	int32_t		len;
 	long	n_long;
 
 	len = numlen(n);

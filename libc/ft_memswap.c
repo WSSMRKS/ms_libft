@@ -17,13 +17,16 @@ void	ft_memswap(void *b1, void *b2, size_t n)
 	char	*ptr1;
 	char	*ptr2;
 	char	tmp;
+	size_t	i;
 
 	ptr1 = b1;
 	ptr2 = b2;
-	while (n--)
+	i = 0;
+	while (i < n)
 	{
 		tmp = *ptr1;
 		*ptr1++ = *ptr2;
 		*ptr2++ = tmp;
+		i++;
 	}
 }

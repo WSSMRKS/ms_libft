@@ -50,7 +50,7 @@ const char	*strsl_rchr(t_str_slice s, char c);
 t_bool		strsl_eq(t_str_slice s1, t_str_slice s2);
 t_bool		strsl_ends_with(t_str_slice s, t_str_slice pattern);
 t_bool		strsl_starts_with(t_str_slice s, t_str_slice pattern);
-t_bool		strsl_atoi(t_str_slice s, t_str_slice base, int *out,
+t_bool		strsl_atoi(t_str_slice s, t_str_slice base, int32_t *out,
 				t_overflow_behavior ofb);
 t_vec		strsl_split_where(t_str_slice s, size_t (*pattern)(t_str_slice s));
 t_vec		strsl_split(t_str_slice s, t_str_slice pattern);

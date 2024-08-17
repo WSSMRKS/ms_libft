@@ -36,7 +36,7 @@ typedef struct s_padding
 typedef struct s_spec
 {
 	const char	*spec_str;
-	int			fmt_fn_index;
+	int32_t			fmt_fn_index;
 }				t_spec;
 
 typedef struct s_fmt
@@ -47,18 +47,18 @@ typedef struct s_fmt
 	t_bool		alternate_form;
 	char		*pos_nbr_sign;
 	t_padding	pad;
-	int			precision;
+	int32_t			precision;
 }				t_fmt;
 
 typedef t_str	(*t_fmt_fn)(va_list *, t_fmt);
 
-int				ft_printf(const char *s, ...);
+int32_t				ft_printf(const char *s, ...);
 
-int				ft_printf_fd(int fd, const char *s, ...);
+int32_t				ft_printf_fd(int32_t fd, const char *s, ...);
 
-int				print_formatted_arg(const char **fmt_begin, va_list *arg,
-					int fd);
-int				return_with_va_end(int code, va_list *args);
+int32_t				print_formatted_arg(const char **fmt_begin, va_list *arg,
+					int32_t fd);
+int32_t				return_with_va_end(int32_t code, va_list *args);
 
 t_str			fmt_c(va_list *args, t_fmt fmt);
 t_str			fmt_str(va_list *args, t_fmt fmt);

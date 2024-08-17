@@ -59,7 +59,7 @@ static char	*next_line(t_state *st, size_t len)
 	return (str);
 }
 
-static t_list	*new_state_node(int fd)
+static t_list	*new_state_node(int32_t fd)
 {
 	t_list	*out;
 	t_state	*state;
@@ -75,10 +75,10 @@ static t_list	*new_state_node(int fd)
 
 static t_bool	match_fd(t_list *node, void *fd)
 {
-	return (((t_state *)(node->content))->fd == *(int *)fd);
+	return (((t_state *)(node->content))->fd == *(int32_t *)fd);
 }
 
-char	*_get_next_line(int fd, t_bool destroy)
+char	*_get_next_line(int32_t fd, t_bool destroy)
 {
 	static t_list	*list;
 	t_list			*state;
@@ -107,7 +107,7 @@ char	*_get_next_line(int fd, t_bool destroy)
 	return (0);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int32_t fd)
 {
 	return (_get_next_line(fd, FALSE));
 }

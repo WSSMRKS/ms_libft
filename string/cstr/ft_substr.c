@@ -22,7 +22,7 @@
  * @return The substring.
  *         NULL if the allocation fails.
  */
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, uint32_t start, size_t len)
 {
 	char	*out;
 	size_t	s_len;

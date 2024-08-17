@@ -34,7 +34,7 @@ t_bool		str_try_grow(t_str *str, size_t min_growth);
 t_bool		str_identical(const t_str *str1, const t_str *str2);
 t_bool		str_eq(const t_str *str1, const t_str *str2);
 t_bool		str_starts_with(t_str str, const t_str *pattern);
-t_bool		str_atoi(const t_str *str, t_str_slice base, int *out,
+t_bool		str_atoi(const t_str *str, t_str_slice base, int32_t *out,
 				t_overflow_behavior ofb);
 const char	*str_chr(const t_str *str, char c);
 const char	*str_rchr(const t_str *str, char c);
@@ -42,8 +42,8 @@ void		str_insert(t_str *str, size_t at, char c);
 void		str_insertn(t_str *str, size_t at, char c, size_t n);
 void		str_insertstr(t_str *str, size_t at, t_str_slice s);
 void		str_insertstrn(t_str *str, size_t at, t_str_slice s, size_t n);
-t_str		str_itoa(int num, t_str_slice base);
-void		str_itoa_cat(int num, t_str_slice base, t_str *out);
+t_str		str_itoa(int32_t num, t_str_slice base);
+void		str_itoa_cat(int32_t num, t_str_slice base, t_str *out);
 t_str		str_clone_from(t_str_slice s);
 t_str		str_from_parts(char *str, size_t len);
 t_str		str_from(char *str, size_t new_len);

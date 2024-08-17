@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <unistd.h>
 
-size_t	ft_putstr_fd(const char *s, int fd)
+size_t	ft_putstr_fd(const char *s, int32_t fd)
 {
 	size_t	len;
 
@@ -23,7 +22,7 @@ size_t	ft_putstr_fd(const char *s, int fd)
 	return (write(fd, s, len));
 }
 
-size_t	ft_putstrsl_fd(t_str_slice strsl, int fd)
+size_t	ft_putstrsl_fd(t_str_slice strsl, int32_t fd)
 {
 	return (write(fd, strsl.str, strsl.len));
 }

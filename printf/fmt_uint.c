@@ -38,9 +38,9 @@ void	ulltoa_base_radix(t_str *out, unsigned long long num, const char *base,
 t_str	fmt_uint(va_list *args, t_fmt fmt)
 {
 	t_str			out;
-	unsigned int	num;
+	uint32_t	num;
 
-	num = va_arg(*args, unsigned int);
+	num = va_arg(*args, uint32_t);
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789", 10);

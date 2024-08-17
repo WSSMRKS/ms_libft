@@ -12,10 +12,15 @@
 
 #ifndef FT_TYPES_H
 # define FT_TYPES_H
+# pragma once
 
 # include <stddef.h>
 # include <stdint.h>
 # include <unistd.h>
+
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
 
 # define FALSE	0
 # define TRUE	1

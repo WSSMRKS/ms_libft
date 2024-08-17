@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-void	get_next_line_finish(int fd)
+void	get_next_line_finish(int32_t fd)
 {
 	_get_next_line(fd, TRUE);
 }

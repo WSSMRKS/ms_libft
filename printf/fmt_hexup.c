@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 
 static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
-		unsigned int num)
+		uint32_t num)
 {
 	if (str->len >= fmt.pad.min_width)
 		return ;
@@ -36,9 +36,9 @@ static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
 t_str	fmt_hexup(va_list *args, t_fmt fmt)
 {
 	t_str			out;
-	unsigned int	num;
+	uint32_t	num;
 
-	num = va_arg(*args, unsigned int);
+	num = va_arg(*args, uint32_t);
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789ABCDEF", 16);

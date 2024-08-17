@@ -21,6 +21,7 @@ static t_str_slice	split_next(t_str_slice *s, size_t (*pattern)(t_str_slice s))
 	out = strsl_trunc(*s, 0);
 	while (out.len < s->len && !pattern(strsl_move(*s, out.len)))
 		out.len++;
+	*s = strsl_move(*s, out.len);
 	return (out);
 }
 
@@ -33,15 +34,12 @@ t_vec	strsl_split_where(t_str_slice s, size_t (*pattern)(t_str_slice s))
 {
 	t_vec		out;
 	t_str_slice	next;
-	size_t		i;
 
-	i = 0;
 	out = vec_empty(sizeof(t_str_slice));
-	while (i < s.len)
+	while (s.len != 0)
 	{
 		next = split_next(&s, pattern);
 		vec_push(&out, &next);
-		i++;
 	}
 	if (out.len > 0 && ((t_str_slice *)vec_get_last(&out))->len == 0)
 		vec_remove_last(&out);

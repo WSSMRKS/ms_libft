@@ -13,10 +13,10 @@
 #include "../../libft.h"
 #include <stdlib.h>
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(uint32_t, char))
 {
 	char			*out;
-	unsigned int	i;
+	uint32_t	i;
 
 	out = malloc(ft_strlen(s) + 1);
 	if (!out)
