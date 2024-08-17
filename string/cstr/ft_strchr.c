@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "../../libft.h"
+
+char	*ft_strchr(const char *s, int32_t c)
 {
 	while (*s)
 		if (*s++ == (char)c)
@@ -22,7 +24,7 @@ char	*ft_strchr(const char *s, int c)
 
 /// returns pointer to first occurence of a char in s which is not c
 /// or 0 if no such not matching char exists
-char	*ft_str_notchr(const char *s, int c)
+char	*ft_str_notchr(const char *s, int32_t c)
 {
 	while (*s)
 		if (*s++ != (char)c)

@@ -24,7 +24,7 @@
 /// FALSE otherwise.
 /// @note Different from `find_file` in that `out` will only
 /// be set when returning TRUE.
-t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
+t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int32_t mode,
 		t_str *out)
 {
 	if (!find_file(path, dirs, mode, out))
@@ -55,7 +55,7 @@ t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
 /// FALSE otherwise.
 /// @note Different from `find_file` in that `out` will only
 /// be set when returning TRUE.
-t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int mode,
+t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int32_t mode,
 		t_str *out)
 {
 	if (!find_file_on_path(path, envp, mode, out))

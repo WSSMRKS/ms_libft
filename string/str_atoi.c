@@ -20,7 +20,7 @@
 /// @return True if the conversion was successful.
 /// @note Will skip leading/trailing whitespace and accept an optional sign.
 /// @note Will return FALSE if the string is empty or contains invalid chars.
-t_bool	str_atoi(const t_str *str, t_str_slice base, int *out,
+t_bool	str_atoi(const t_str *str, t_str_slice base, int32_t *out,
 		t_overflow_behavior ofb)
 {
 	return (strsl_atoi(str_view(str), base, out, ofb));

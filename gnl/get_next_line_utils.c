@@ -22,7 +22,7 @@ void	del_state(void *content)
 	free(st);
 }
 
-t_state	*new_state(int fd)
+t_state	*new_state(int32_t fd)
 {
 	t_state	*out;
 

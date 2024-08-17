@@ -13,7 +13,7 @@
 #include "../../libft.h"
 #include <stdlib.h>
 
-char	**ft_split_recursion(const char *s, char c, int i, size_t len)
+char	**ft_split_recursion(const char *s, char c, int32_t i, size_t len)
 {
 	char	**out;
 	char	*str;

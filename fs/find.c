@@ -54,7 +54,7 @@ static t_bool	prep_find_file(t_str_slice path, const t_vec *dirs,
 /// @note If the file was found, but is missing access perms
 /// (`errno` = `EACCES`), then `out` will contain the file path
 /// but the function will still return FALSE.
-t_bool	find_file(t_str_slice path, const t_vec *dirs, int mode, t_str *out)
+t_bool	find_file(t_str_slice path, const t_vec *dirs, int32_t mode, t_str *out)
 {
 	t_vec	try_files;
 	t_str	*i_file;
@@ -91,7 +91,7 @@ t_bool	find_file(t_str_slice path, const t_vec *dirs, int mode, t_str *out)
 /// @note If the file was found, but is missing access perms
 /// (`errno` = `EACCES`), then `out` will contain the file path
 /// but the function will still return FALSE.
-t_bool	find_file_on_path(t_str_slice path, char *const *envp, int mode,
+t_bool	find_file_on_path(t_str_slice path, char *const *envp, int32_t mode,
 		t_str *out)
 {
 	t_vec	env_path_dirs;

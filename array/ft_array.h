@@ -16,7 +16,29 @@
 
 # include "../libft.h"
 
+typedef void	(*t_vec_iteri)(t_vec *vec, size_t i, void *extra);
+/// @brief A comparator function used for determining the order of elements.
+/// @return 0 if a == b, < 0 if a less than b, > 0 if a bigger than b.
+typedef int32_t	(*t_comparator)(const void *a, const void *b);
+
+typedef struct s_qsort_state
+{
+	t_comparator	cmp;
+	/// @brief Clone of the pivot element. (temp alloc)
+	void			*pivot;
+	size_t			element_size;
+}					t_qsort_state;
+
+typedef struct mid_partition
+{
+	size_t	lt;
+	size_t	gt;
+}			t_mid_partition;
+
 void	array_free(void *array, size_t len, size_t element_size,
 			void (*destroy)(void *));
+t_bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp);
+t_bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
+			t_comparator cmp);
 
 #endif

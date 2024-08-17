@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+#include "../../libft.h"
+
+void	ft_striteri(char *s, void (*f)(uint32_t, char *))
 {
-	unsigned int	i;
+	uint32_t	i;
 
 	i = 0;
 	while (*s)

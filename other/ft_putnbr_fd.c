@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-size_t	ft_putnbr_fd(int n, int fd)
+size_t	ft_putnbr_fd(int32_t n, int32_t fd)
 {
 	long	n_long;
 	size_t	out_width;

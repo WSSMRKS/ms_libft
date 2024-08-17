@@ -17,14 +17,14 @@
 /// @param base The base to use for the conversion.
 /// @param out The output string.
 /// @warning Check the error flag for memory allocation errors.
-static void	_str_itoa_recursive(unsigned int num, t_str_slice base, t_str *out)
+static void	_str_itoa_recursive(uint32_t num, t_str_slice base, t_str *out)
 {
 	if (num >= base.len)
 		_str_itoa_recursive(num / base.len, base, out);
 	str_push(out, base.str[num % base.len]);
 }
 
-static void	_str_itoa(int num, t_str_slice base, t_str *out)
+static void	_str_itoa(int32_t num, t_str_slice base, t_str *out)
 {
 	if (num == INT32_MIN)
 		str_pushstr(out, cstr_slice("-2147483648", 11));
@@ -42,7 +42,7 @@ static void	_str_itoa(int num, t_str_slice base, t_str *out)
 /// @param base The base to use for the conversion.
 /// @param out The output string.
 /// @warning Check the error flag for memory allocation errors.
-void	str_itoa_cat(int num, t_str_slice base, t_str *out)
+void	str_itoa_cat(int32_t num, t_str_slice base, t_str *out)
 {
 	_str_itoa(num, base, out);
 }
@@ -52,7 +52,7 @@ void	str_itoa_cat(int num, t_str_slice base, t_str *out)
 /// @param base The base to use for the conversion.
 /// @return The string representation of the integer.
 /// @warning Check the error flag for memory allocation errors.
-t_str	str_itoa(int num, t_str_slice base)
+t_str	str_itoa(int32_t num, t_str_slice base)
 {
 	t_str	out;
 

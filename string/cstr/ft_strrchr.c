@@ -12,7 +12,7 @@
 
 #include "../../libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int32_t c)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 
 /// returns pointer to first occurence of a char of s from the back which
 /// is not c or 0 if no such not matching char exists
-char	*ft_strr_notchr(const char *s, int c)
+char	*ft_strr_notchr(const char *s, int32_t c)
 {
 	size_t	i;
 

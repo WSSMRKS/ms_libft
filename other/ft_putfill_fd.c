@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-size_t	ft_putfill_fd(char c, int fd, size_t fill)
+size_t	ft_putfill_fd(char c, int32_t fd, size_t fill)
 {
 	size_t	put_len;
 

@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <unistd.h>
 
-static int	fmt_fn_index(const char *s)
+static int32_t	fmt_fn_index(const char *s)
 {
 	const char			*fn_pos;
 	static const char	specifiers[9] = {'c', 's', 'p', 'd', 'i', 'u', 'x', 'X',
@@ -42,11 +42,11 @@ static t_spec	find_specifier(const char *s)
 	return (specifier);
 }
 
-int	print_formatted_arg(const char **fmt_begin, va_list *arg, int fd)
+int32_t	print_formatted_arg(const char **fmt_begin, va_list *arg, int32_t fd)
 {
 	t_fmt					fmt;
 	t_str					formatted_arg;
-	int						put_width;
+	int32_t						put_width;
 	static const t_fmt_fn	fmt_functions[9] = {fmt_c, fmt_str, fmt_ptr,
 		fmt_int, fmt_int, fmt_uint, fmt_hex, fmt_hexup, percent_char};
 
@@ -68,17 +68,17 @@ int	print_formatted_arg(const char **fmt_begin, va_list *arg, int fd)
 	return (put_width);
 }
 
-int	return_with_va_end(int code, va_list *args)
+int32_t	return_with_va_end(int32_t code, va_list *args)
 {
 	va_end(*args);
 	return (code);
 }
 
-int	ft_printf(const char *s, ...)
+int32_t	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int		total_put_width;
-	int		put_width;
+	int32_t		total_put_width;
+	int32_t		put_width;
 
 	va_start(args, s);
 	total_put_width = 0;

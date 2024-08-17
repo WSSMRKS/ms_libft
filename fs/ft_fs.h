@@ -27,12 +27,12 @@
 // t_bool	is_writable(const char *path);
 // t_bool	is_executable(const char *path);
 
-t_bool	find_file(t_str_slice path, const t_vec *dirs, int mode, t_str *out);
-t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int mode,
+t_bool	find_file(t_str_slice path, const t_vec *dirs, int32_t mode, t_str *out);
+t_bool	find_file_perror(t_str_slice path, const t_vec *dirs, int32_t mode,
 			t_str *out);
-t_bool	find_file_on_path(t_str_slice path, char *const *envp, int mode,
+t_bool	find_file_on_path(t_str_slice path, char *const *envp, int32_t mode,
 			t_str *out);
-t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int mode,
+t_bool	find_file_on_path_perror(t_str_slice path, char *const *envp, int32_t mode,
 			t_str *out);
 t_bool	dirs_join_file(const t_vec *dirs, t_str_slice file, t_vec *out);
 

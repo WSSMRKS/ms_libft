@@ -23,7 +23,6 @@ t_vec	vec_empty(size_t element_size)
 	vec.len = 0;
 	vec.heap = FALSE;
 	vec.mem_err = FALSE;
-	vec._small_buf[0] = 0;
 	vec.element_size = element_size;
 	return (vec);
 }

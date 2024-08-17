@@ -13,7 +13,7 @@
 #include "../../libft.h"
 #include <stdlib.h>
 
-static int	set_contains(const char *set, char c)
+static int32_t	set_contains(const char *set, char c)
 {
 	while (*set)
 		if (*set++ == (char)c)

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../libft.h"
 
-size_t	ft_putchar_fd(char c, int fd)
+size_t	ft_putchar_fd(char c, int32_t fd)
 {
 	return (write(fd, &c, 1));
 }

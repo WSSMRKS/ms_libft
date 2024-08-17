@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-static int	get_and_skip_sign(const char **nptr)
+static int32_t	get_and_skip_sign(const char **nptr)
 {
 	if (**nptr == '-')
 	{
@@ -24,10 +24,10 @@ static int	get_and_skip_sign(const char **nptr)
 	return (1);
 }
 
-int	ft_atoi(const char *nptr)
+int32_t	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	nbr;
+	int32_t	sign;
+	int32_t	nbr;
 
 	while (ft_isspace(*nptr))
 		nptr++;
