@@ -1,17 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/31 15:29:49 by kwurster          #+#    #+#             */
+/*   Updated: 2024/08/31 16:13:44 by kwurster         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_array.h"
-#include <stdlib.h>
 
 static void	swap(void *arr, size_t a, size_t b, size_t element_size)
 {
-	ft_memswap(arr + (a * element_size),
-			arr + (b * element_size), element_size);
+	ft_memswap(arr + (a * element_size), arr + (b * element_size),
+		element_size);
 }
 
 static int32_t	cmp(void *arr, size_t a, size_t b, t_qsort_state *st)
 {
-	return (st->cmp(arr + (a * st->element_size),
-				arr + (b * st->element_size)));
+	return (st->cmp(arr + (a * st->element_size), arr + (b
+				* st->element_size)));
 }
 
 static void	get_pivot(void *arr, size_t len, t_qsort_state *st)
@@ -61,7 +71,7 @@ static t_mid_partition	partition(void *arr, size_t len, t_qsort_state *st)
 	return ((t_mid_partition){lt, gt});
 }
 
-static void	quicksort(void *arr, size_t len, t_qsort_state *st)
+void	quicksort(void *arr, size_t len, t_qsort_state *st)
 {
 	t_mid_partition	mid;
 
@@ -70,40 +80,4 @@ static void	quicksort(void *arr, size_t len, t_qsort_state *st)
 	mid = partition(arr, len, st);
 	quicksort(arr, mid.lt, st);
 	quicksort(arr + (mid.gt + 1) * st->element_size, len - mid.gt - 1, st);
-}
-
-/// @brief Sorts an array using the quicksort algorithm.
-/// @param arr The array to sort.
-/// @param len The number of elements in the array.
-/// @param element_size The size of each element in the array.
-/// @param cmp The comparator function used to compare elements.
-/// @return TRUE if the array was successfully sorted, otherwise FALSE.
-/// @note May fail due to malloc failure.
-t_bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp)
-{
-	t_qsort_state	st;
-
-	st.cmp = cmp;
-	st.element_size = element_size;
-	st.pivot = malloc(element_size);
-	if (!st.pivot)
-		return (FALSE);
-	quicksort(arr, len, &st);
-	free(st.pivot);
-	return (TRUE);
-}
-
-t_bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
-			t_comparator cmp)
-{
-	size_t	i;
-
-	i = 1;
-	while (i < len)
-	{
-		if (cmp(arr + (i - 1) * element_size, arr + i * element_size) > 0)
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
 }

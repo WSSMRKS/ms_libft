@@ -37,7 +37,7 @@ void	ulltoa_base_radix(t_str *out, unsigned long long num, const char *base,
 
 t_str	fmt_uint(va_list *args, t_fmt fmt)
 {
-	t_str			out;
+	t_str		out;
 	uint32_t	num;
 
 	num = va_arg(*args, uint32_t);

@@ -16,8 +16,8 @@
 int32_t	ft_printf_fd(int32_t fd, const char *s, ...)
 {
 	va_list	args;
-	int32_t		total_put_width;
-	int32_t		put_width;
+	int32_t	total_put_width;
+	int32_t	put_width;
 
 	va_start(args, s);
 	total_put_width = 0;

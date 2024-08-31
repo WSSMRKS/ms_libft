@@ -19,7 +19,7 @@
 /// @param has_sign Whether the number has a sign.
 void	add_precision_leading_zeroes(t_str *str, t_fmt fmt, t_bool has_sign)
 {
-	int32_t		num_len;
+	int32_t	num_len;
 	size_t	insert_index;
 
 	num_len = str->len;
@@ -59,7 +59,7 @@ void	swap_sign_with_leading_zero(t_str *str, t_fmt fmt, t_bool is_neg)
 t_str	fmt_int(va_list *args, t_fmt fmt)
 {
 	t_str	out;
-	int32_t		num;
+	int32_t	num;
 
 	num = va_arg(*args, int32_t);
 	out = str_empty();

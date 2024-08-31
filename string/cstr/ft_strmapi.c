@@ -15,7 +15,7 @@
 
 char	*ft_strmapi(const char *s, char (*f)(uint32_t, char))
 {
-	char			*out;
+	char		*out;
 	uint32_t	i;
 
 	out = malloc(ft_strlen(s) + 1);

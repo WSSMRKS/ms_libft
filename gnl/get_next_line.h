@@ -23,7 +23,7 @@ typedef struct s_state
 	char	*buf;
 	char	*buf_pos;
 	ssize_t	remaining;
-	int32_t		fd;
+	int32_t	fd;
 }			t_state;
 
 char		*_get_next_line(int32_t fd, t_bool destroy);

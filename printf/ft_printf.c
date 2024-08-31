@@ -46,7 +46,7 @@ int32_t	print_formatted_arg(const char **fmt_begin, va_list *arg, int32_t fd)
 {
 	t_fmt					fmt;
 	t_str					formatted_arg;
-	int32_t						put_width;
+	int32_t					put_width;
 	static const t_fmt_fn	fmt_functions[9] = {fmt_c, fmt_str, fmt_ptr,
 		fmt_int, fmt_int, fmt_uint, fmt_hex, fmt_hexup, percent_char};
 
@@ -77,8 +77,8 @@ int32_t	return_with_va_end(int32_t code, va_list *args)
 int32_t	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int32_t		total_put_width;
-	int32_t		put_width;
+	int32_t	total_put_width;
+	int32_t	put_width;
 
 	va_start(args, s);
 	total_put_width = 0;
