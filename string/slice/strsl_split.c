@@ -78,9 +78,11 @@ t_vec	strsl_split(t_str_slice s, t_str_slice pattern)
 
 	i = 0;
 	out = vec_empty(sizeof(t_str_slice));
-	while (i < s.len)
+	while (TRUE)
 	{
 		next = splitstr_next(&s, pattern);
+		if (next.len == 0)
+			break ;
 		vec_push(&out, &next);
 		i++;
 	}

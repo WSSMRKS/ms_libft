@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arr_qsort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/31 15:29:49 by kwurster          #+#    #+#             */
+/*   Updated: 2024/08/31 16:21:10 by kwurster         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "test.h"
 
@@ -34,7 +45,7 @@ static t_bool	_test_arr_qsort(t_bool test_empty)
 {
 	uint8_t		*arr;
 	uint32_t	len;
-	t_bool	sorted;
+	t_bool		sorted;
 
 	len = rndm() & 0xFFF;
 	arr = malloc((size_t)len);
@@ -50,7 +61,7 @@ static t_bool	_test_arr_qsort(t_bool test_empty)
 	return (sorted);
 }
 
-t_bool	test_arr_qsort()
+t_bool	test_arr_qsort(void)
 {
 	size_t	i;
 

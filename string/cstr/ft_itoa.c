@@ -30,7 +30,7 @@ static int32_t	numlen(int32_t n)
 char	*ft_itoa(int32_t n)
 {
 	char	*out;
-	int32_t		len;
+	int32_t	len;
 	long	n_long;
 
 	len = numlen(n);

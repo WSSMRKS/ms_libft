@@ -75,7 +75,7 @@ t_bool	split_env_path(t_str_slice path_value, t_vec *out)
 		return (FALSE);
 	}
 	*out = strsl_split(path_value, cstr_slice(":", 1));
-	if (out->mem_err)
+	if (out->len == 0 || out->mem_err)
 	{
 		vec_destroy(out, 0);
 		return (FALSE);

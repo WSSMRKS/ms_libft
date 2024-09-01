@@ -177,6 +177,7 @@ ENV_FILES = \
 ARRAY_FILES = \
 	array/array.c\
 	array/sort.c\
+	array/sort2.c\
 
 GEO_FILES = \
 	geo/point.c\

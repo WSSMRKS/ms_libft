@@ -35,7 +35,7 @@ static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
 
 t_str	fmt_hexup(va_list *args, t_fmt fmt)
 {
-	t_str			out;
+	t_str		out;
 	uint32_t	num;
 
 	num = va_arg(*args, uint32_t);
