@@ -184,12 +184,15 @@ GEO_FILES = \
 	geo/point2.c\
 	geo/rect.c\
 	geo/rect2.c\
+	geo/rect3.c\
 	geo/size.c\
 	geo/upoint_cmp.c\
 	geo/upoint.c\
 	geo/upoint2.c\
 	geo/urect.c\
 	geo/urect2.c\
+	geo/urect3.c\
+	geo/point3.c\
 
 IMG_FILES = \
 	img/color.c\
