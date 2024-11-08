@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:37:35 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 14:10:55 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:00:58 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 
 # include "../libft.h"
 
-# define SSIZE_MAX PTRDIFF_MAX
-# define SSIZE_MIN PTRDIFF_MIN
+# ifndef SSIZE_MAX
+#  define SSIZE_MAX PTRDIFF_MAX
+# endif
+# ifndef SSIZE_MIN
+#  define SSIZE_MIN PTRDIFF_MIN
+# endif
 
 int8_t		i8abs(int8_t num);
 int16_t		i16abs(int16_t num);
