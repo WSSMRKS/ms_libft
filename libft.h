@@ -118,8 +118,8 @@ int32_t			ft_printf_fd(int32_t fd, const char *s, ...);
 	MS_ADDON
 */
 
-int	ft_free_2d(char **tofree);
-int	ft_free_3d(char ***tofree);
-
+int		ft_free_2d(char **tofree);
+int		ft_free_3d(char ***tofree);
+char	*ft_multistrjoin(int nb_strings, char const *s1, ...);
 
 #endif
