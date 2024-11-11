@@ -6,46 +6,46 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 04:05:45 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/30 21:25:51 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_img.h"
 #include <stdlib.h>
 
-t_bool	img_alloc(t_img *img, uint32_t width, uint32_t height, t_bool zero)
+bool	img_alloc(t_img *img, uint32_t width, uint32_t height, bool zero)
 {
 	size_t	alloc;
 
 	img->px = 0;
 	if (!(usizemult(width, height, &img->px_len)
 			&& usizemult(img->px_len, sizeof(uint32_t), &alloc)))
-		return (FALSE);
+		return (false);
 	img->px = malloc(alloc);
 	if (img->px == 0)
-		return (FALSE);
+		return (false);
 	if (zero)
 		ft_bzero(img->px, alloc);
 	img->urect = urect(width, height);
-	return (TRUE);
+	return (true);
 }
 
-t_bool	img_malloc(t_img *img, uint32_t width, uint32_t height)
+bool	img_malloc(t_img *img, uint32_t width, uint32_t height)
 {
-	return (img_alloc(img, width, height, FALSE));
+	return (img_alloc(img, width, height, false));
 }
 
-t_bool	img_calloc(t_img *img, uint32_t width, uint32_t height)
+bool	img_calloc(t_img *img, uint32_t width, uint32_t height)
 {
-	return (img_alloc(img, width, height, TRUE));
+	return (img_alloc(img, width, height, true));
 }
 
-t_bool	img_clone(t_imgview src, t_img *out)
+bool	img_clone(t_imgview src, t_img *out)
 {
 	if (!img_malloc(out, src.width, src.height))
-		return (FALSE);
+		return (false);
 	imgview_copy(src, imgview(out));
-	return (TRUE);
+	return (true);
 }
 
 t_img	img(uint32_t *px, uint32_t width, uint32_t height)

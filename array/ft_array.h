@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.h                                            :+:      :+:    :+:   */
+/*   ft_array.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:50:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:08:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct mid_partition
 
 void	array_free(void *array, size_t len, size_t element_size,
 			void (*destroy)(void *));
-t_bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp);
-t_bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
+bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp);
+bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
 			t_comparator cmp);
 
 #endif

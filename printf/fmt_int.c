@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 23:27:33 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 12:18:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /// @param str The string consisting only of the number.
 /// @param fmt The format struct.
 /// @param has_sign Whether the number has a sign.
-void	add_precision_leading_zeroes(t_str *str, t_fmt fmt, t_bool has_sign)
+void	add_precision_leading_zeroes(t_str *str, t_fmt fmt, bool has_sign)
 {
 	int32_t	num_len;
 	size_t	insert_index;
@@ -37,7 +37,7 @@ void	add_precision_leading_zeroes(t_str *str, t_fmt fmt, t_bool has_sign)
 /// @param str The string.
 /// @param fmt The format struct.
 /// @param is_neg Whether the number is negative.
-void	swap_sign_with_leading_zero(t_str *str, t_fmt fmt, t_bool is_neg)
+void	swap_sign_with_leading_zero(t_str *str, t_fmt fmt, bool is_neg)
 {
 	char	*sign;
 	char	*buf_sign;
@@ -71,7 +71,7 @@ t_str	fmt_int(va_list *args, t_fmt fmt)
 		add_precision_leading_zeroes(&out, fmt, num < 0
 			|| *fmt.pos_nbr_sign != 0);
 	}
-	add_padding(&out, fmt, TRUE);
+	add_padding(&out, fmt, true);
 	if (fmt.precision < 0 && fmt.pad.fill_char == '0' && !fmt.pad.pad_end)
 		swap_sign_with_leading_zero(&out, fmt, num < 0);
 	return (out);

@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 21:02:06 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	str_destroy(t_str *str)
 	if (str->heap)
 	{
 		free(str->_large_str);
-		str->heap = FALSE;
+		str->heap = false;
 	}
 	str->len = 0;
 	str->_small_str[0] = 0;
-	str->mem_err = FALSE;
+	str->mem_err = false;
 }

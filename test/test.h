@@ -7,7 +7,7 @@
 # include <stdio.h>
 # include <stdio.h>
 
-typedef	t_bool (*test_fn)(void);
+typedef	bool (*test_fn)(void);
 
 # define ARR_QSORT_U8_TCOUNT 5000
 
@@ -21,6 +21,6 @@ void		rndm_bytes(uint8_t *bytes, size_t n);
 uint32_t	rndm();
 void 		rndm_bytes_close();
 
-t_bool	test_arr_qsort();
+bool	test_arr_qsort();
 
 #endif

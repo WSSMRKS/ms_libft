@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:00:54 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:44:10 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ t_str_slice	strsl_move(t_str_slice s, size_t n)
 /// @brief Moves a stringview.
 /// @param s The stringview to move.
 /// @param n The amount of characters to move by.
-/// @return FALSE if the stringview's len or n are 0.
-t_bool	strsl_move_inplace(t_str_slice *s, size_t n)
+/// @return false if the stringview's len or n are 0.
+bool	strsl_move_inplace(t_str_slice *s, size_t n)
 {
 	n = usizemin(n, s->len);
 	s->str += n;

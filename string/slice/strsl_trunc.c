@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:49:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:44:21 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ t_str_slice	strsl_trunc(t_str_slice s, size_t new_len)
 /// @brief Sets the length of a stringview.
 /// @param s The stringview to change the length of.
 /// @param new_len The new length of the stringview.
-/// @return FALSE if the stringview's len or new_len are 0.
-t_bool	strsl_trunc_inplace(t_str_slice *s, size_t new_len)
+/// @return false if the stringview's len or new_len are 0.
+bool	strsl_trunc_inplace(t_str_slice *s, size_t new_len)
 {
 	new_len = usizemin(s->len, new_len);
 	s->len = new_len;

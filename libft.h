@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 14:04:12 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void			get_next_line_finish(int32_t fd);
 	LIST
 */
 
-typedef t_bool	(*t_lst_pred)(t_list *, void *);
+typedef bool	(*t_lst_pred)(t_list *, void *);
 
 t_list			*ft_lst_first_where(t_list *lst, t_lst_pred pred,
 					void *pred_data);
@@ -100,8 +100,8 @@ size_t			ft_putfill_fd(char c, int32_t fd, size_t fill);
 size_t			ft_putnbr_fd(int32_t n, int32_t fd);
 size_t			ft_putstr_fd(const char *s, int32_t fd);
 size_t			ft_putstrsl_fd(t_str_slice strsl, int32_t fd);
-t_bool			ptr_is_null(const void *ptr);
-t_bool			ptr_ptr_is_null(const void *ptr);
+bool			ptr_is_null(const void *ptr);
+bool			ptr_ptr_is_null(const void *ptr);
 
 /*
 	CSTRING

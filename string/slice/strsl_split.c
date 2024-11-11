@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:19:21 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ t_vec	strsl_split(t_str_slice s, t_str_slice pattern)
 
 	i = 0;
 	out = vec_empty(sizeof(t_str_slice));
-	while (TRUE)
+	while (true)
 	{
 		next = splitstr_next(&s, pattern);
 		if (next.len == 0)

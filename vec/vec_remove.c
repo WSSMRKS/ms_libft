@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:45:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void	vec_trunc(t_vec *vec, size_t n)
 void	vec_clear(t_vec *vec)
 {
 	vec->len = 0;
-	vec->mem_err = FALSE;
+	vec->mem_err = false;
 }

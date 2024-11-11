@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 03:44:30 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/30 21:25:44 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # define TRANSPARENT 0xFF
 
 t_img		img(uint32_t *px, uint32_t width, uint32_t height);
-t_bool		img_alloc(t_img *img, uint32_t width, uint32_t height, t_bool zero);
-t_bool		img_malloc(t_img *img, uint32_t width, uint32_t height);
-t_bool		img_calloc(t_img *img, uint32_t width, uint32_t height);
-t_bool		img_clone(t_imgview src, t_img *out);
+bool		img_alloc(t_img *img, uint32_t width, uint32_t height, bool zero);
+bool		img_malloc(t_img *img, uint32_t width, uint32_t height);
+bool		img_calloc(t_img *img, uint32_t width, uint32_t height);
+bool		img_clone(t_imgview src, t_img *out);
 void		img_destroy(t_img *img);
 
 t_imgview	imgview(const t_img *img);
@@ -50,8 +50,8 @@ void		imgview_rotate180(t_imgview src, t_imgview dest);
 void		imgview_rotate270(t_imgview src, t_imgview dest);
 void		imgview_rotate180_inplace(t_imgview img);
 
-t_bool		is_transparent(uint32_t color);
-t_bool		is_opaque(uint32_t color);
+bool		is_transparent(uint32_t color);
+bool		is_opaque(uint32_t color);
 uint32_t	blend_colors(uint32_t bg, uint32_t color);
 
 #endif

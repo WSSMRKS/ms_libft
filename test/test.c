@@ -16,7 +16,7 @@ typedef enum e_sort_op
 	rrr
 }				t_sort_op;
 
-const t_test	*find_test(char *test, t_bool iter_reset)
+const t_test	*find_test(char *test, bool iter_reset)
 {
 	static size_t	i = 0;
 	const static t_test tests[] = {
@@ -44,14 +44,14 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (i < (size_t)argc)
 	{
-		const t_test *test = find_test(argv[i], TRUE);
+		const t_test *test = find_test(argv[i], true);
 		while (test != 0)
 		{
 			if (test->test())
 				ft_printf("%s: OK\n", test->name);
 			else
 				ft_printf("%s: FAIL\n", test->name);
-			test = find_test(argv[i], FALSE);
+			test = find_test(argv[i], false);
 		}
 		i++;
 	}

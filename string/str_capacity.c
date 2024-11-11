@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:48:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:43:20 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,45 +20,45 @@ static void	heap_arr_to_stack_arr(t_str *str)
 	temp = str->_large_str;
 	ft_strlcpy(str->_small_str, temp, FT_SMALL_STR);
 	str->len = usizemin(str->len, FT_SMALL_STR - 1);
-	str->heap = FALSE;
+	str->heap = false;
 	free(temp);
 }
 
-static t_bool	stack_arr_to_heap_arr(t_str *str, size_t capacity)
+static bool	stack_arr_to_heap_arr(t_str *str, size_t capacity)
 {
 	char	*temp;
 
 	temp = malloc(capacity);
 	if (temp == 0)
-		return (FALSE);
+		return (false);
 	ft_strlcpy(temp, str->_small_str, capacity);
 	str->_large_str = temp;
-	str->heap = TRUE;
-	return (TRUE);
+	str->heap = true;
+	return (true);
 }
 
-static t_bool	resize_heap_arr(t_str *str, size_t n)
+static bool	resize_heap_arr(t_str *str, size_t n)
 {
 	char	*temp;
 
 	temp = ft_reallocstring(str->_large_str, n);
 	if (temp == 0)
-		return (FALSE);
+		return (false);
 	str->_large_str = temp;
-	return (TRUE);
+	return (true);
 }
 
 /// @brief Changes the capacity of the string.
 /// @param str String to change the capacity of.
 /// @param n New capacity.
 /// @note The capacity can't be less than FT_SMALL_STR.
-/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @return true if the operation was successful, false otherwise.
 /// @warning Check the error flag for memory allocation errors.
-t_bool	str_try_set_capacity(t_str *str, size_t n)
+bool	str_try_set_capacity(t_str *str, size_t n)
 {
-	t_bool	success;
+	bool	success;
 
-	success = TRUE;
+	success = true;
 	n = usizemax(n, FT_SMALL_STR);
 	if (n == FT_SMALL_STR)
 	{
@@ -76,7 +76,7 @@ t_bool	str_try_set_capacity(t_str *str, size_t n)
 		str->len = usizemin(str->len, n - 1);
 	}
 	else
-		str->mem_err = TRUE;
+		str->mem_err = true;
 	return (success);
 }
 

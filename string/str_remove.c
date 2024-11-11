@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:56:53 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:43:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ void	str_clear(t_str *str)
 {
 	cstr_mut(str)[0] = 0;
 	str->len = 0;
-	str->mem_err = FALSE;
+	str->mem_err = false;
 }

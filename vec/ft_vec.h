@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 06:19:16 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/22 15:25:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ size_t			vec_capacity(const t_vec *vec);
 void			vec_clear(t_vec *vec);
 t_vec			vec_clone(const t_vec *vec);
 t_vec			vec_clone_sized(const t_vec *vec, size_t new_len);
-t_bool			vec_contains(const t_vec *vec, t_bool (*test)(const void *));
+bool			vec_contains(const t_vec *vec, bool (*test)(const void *));
 void			vec_copy(t_vec *dst, const t_vec *src);
 void			vec_copy_sized(t_vec *dst, const t_vec *src, size_t new_len);
 size_t			vec_count(const t_vec *vec, size_t (*count)(const void *));
 void			vec_cat(t_vec *dst, const t_vec *src);
 void			vec_cat_sized(t_vec *dst, const t_vec *src, size_t n);
-t_bool			vec_cmp(const t_vec *vec1, const t_vec *vec2);
+bool			vec_cmp(const t_vec *vec1, const t_vec *vec2);
 t_str			vec_debug(t_vec *vec, void (*debug)(const void *, t_str *));
 void			vec_destroy(t_vec *vec, t_vec_iter destroy);
 t_str			vec_display(t_vec *vec, void (*display)(const void *, t_str *));
 t_vec			vec_empty(size_t element_size);
 t_vec			vec_empty_with_capacity(size_t element_size, size_t n);
 t_vec			vec_extract_range(t_vec *vec, size_t start, size_t end);
-t_bool			vec_find(const t_vec *vec, t_bool (*test)(const void *),
+bool			vec_find(const t_vec *vec, bool (*test)(const void *),
 					size_t *at);
-t_bool			vec_identical(const t_vec *vec1, const t_vec *vec2);
+bool			vec_identical(const t_vec *vec1, const t_vec *vec2);
 void			vec_insert(t_vec *vec, size_t index, void *data);
 void			vec_insertarr(t_vec *vec, size_t index, void *arr, size_t len);
 void			vec_insertn(t_vec *vec, size_t index, void *data, size_t n);
@@ -95,24 +95,24 @@ void			vec_remove_at(t_vec *vec, size_t index);
 void			vec_remove_last(t_vec *vec);
 void			vec_remove_range(t_vec *vec, size_t start, size_t end);
 void			vec_reverse(t_vec *vec);
-t_bool			vec_rotate(t_vec *vec, size_t n);
-t_bool			vec_rrotate(t_vec *vec, size_t n);
+bool			vec_rotate(t_vec *vec, size_t n);
+bool			vec_rrotate(t_vec *vec, size_t n);
 void			vec_shiftleft(t_vec *vec, size_t n);
 void			vec_shiftright(t_vec *vec, size_t n);
-t_bool			vec_shrink_to_fit(t_vec *vec);
+bool			vec_shrink_to_fit(t_vec *vec);
 void			vec_swap(t_vec *vec1, t_vec *vec2);
 void			vec_swap_at(t_vec *vec1, size_t index1, t_vec *vec2,
 					size_t index2);
 void			vec_trunc(t_vec *vec, size_t n);
-t_bool			vec_try_grow(t_vec *vec, size_t min_growth);
-t_bool			vec_try_set_capacity(t_vec *vec, size_t n);
+bool			vec_try_grow(t_vec *vec, size_t min_growth);
+bool			vec_try_set_capacity(t_vec *vec, size_t n);
 
 void			iter_str_destroy(void *ele);
 void			iter_ptr_free(void *ptr);
 
 void			*vec_get_next_uninit(t_vec *vec);
 void			*vec_get_next_uninit_incr_len(t_vec *vec);
-t_bool			vec_push_null(t_vec *vec);
+bool			vec_push_null(t_vec *vec);
 
 void			map_cstr_into_str(const void *from, void *to);
 void			map_cstr_to_cloned_str(const void *from, void *to);
@@ -123,17 +123,17 @@ void			map_strsl_to_cloned_cstr(const void *from, void *to);
 void			map_strsl_to_cloned_str(const void *from, void *to);
 void			map_cstr_clone(const void *from, void *to);
 void			map_str_clone(const void *from, void *to);
-t_bool			vec_cstrs_into_strs(t_vec *cstrs);
-t_bool			vec_cstrs_to_cloned_strs(const t_vec *cstrs, t_vec *out);
-t_bool			vec_strs_into_cstrs(t_vec *strs);
-t_bool			vec_strs_to_str_slices(const t_vec *strs, t_vec *out);
-t_bool			vec_strs_to_aliased_cstrs(const t_vec *strs, t_vec *out);
-t_bool			vec_strsls_to_cloned_cstrs(const t_vec *slices, t_vec *out);
-t_bool			vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out);
-t_bool			vec_cstrs_clone(const t_vec *cstrs, t_vec *out);
-t_bool			vec_strs_clone(const t_vec *strs, t_vec *out);
+bool			vec_cstrs_into_strs(t_vec *cstrs);
+bool			vec_cstrs_to_cloned_strs(const t_vec *cstrs, t_vec *out);
+bool			vec_strs_into_cstrs(t_vec *strs);
+bool			vec_strs_to_str_slices(const t_vec *strs, t_vec *out);
+bool			vec_strs_to_aliased_cstrs(const t_vec *strs, t_vec *out);
+bool			vec_strsls_to_cloned_cstrs(const t_vec *slices, t_vec *out);
+bool			vec_strsls_to_cloned_strs(const t_vec *slices, t_vec *out);
+bool			vec_cstrs_clone(const t_vec *cstrs, t_vec *out);
+bool			vec_strs_clone(const t_vec *strs, t_vec *out);
 
 void			iter_str_append(t_vec *vec, size_t i, void *to_append);
-t_bool			vec_strs_append_to_all(t_vec *strs, t_str_slice to_append);
+bool			vec_strs_append_to_all(t_vec *strs, t_str_slice to_append);
 
 #endif

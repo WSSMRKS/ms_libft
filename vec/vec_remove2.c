@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:54:13 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 12:18:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	vec_remove(t_vec *vec, const void *element)
 		return ;
 	buf = vec_get(vec);
 	i = vec->len - 1;
-	while (TRUE)
+	while (true)
 	{
 		if (!ft_memcmp(buf + i * vec->element_size, element, vec->element_size))
 			vec_remove_at(vec, i);

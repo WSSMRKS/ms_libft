@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:15:12 by kwurster          #+#    #+#             */
-/*   Updated: 2024/08/31 16:15:22 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	quicksort(void *arr, size_t len, t_qsort_state *st);
 /// @param len The number of elements in the array.
 /// @param element_size The size of each element in the array.
 /// @param cmp The comparator function used to compare elements.
-/// @return TRUE if the array was successfully sorted, otherwise FALSE.
+/// @return true if the array was successfully sorted, otherwise false.
 /// @note May fail due to malloc failure.
-t_bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp)
+bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp)
 {
 	t_qsort_state	st;
 
@@ -30,13 +30,13 @@ t_bool	arr_qsort(void *arr, size_t len, size_t element_size, t_comparator cmp)
 	st.element_size = element_size;
 	st.pivot = malloc(element_size);
 	if (!st.pivot)
-		return (FALSE);
+		return (false);
 	quicksort(arr, len, &st);
 	free(st.pivot);
-	return (TRUE);
+	return (true);
 }
 
-t_bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
+bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
 		t_comparator cmp)
 {
 	size_t	i;
@@ -45,8 +45,8 @@ t_bool	arr_is_sorted(void *arr, size_t len, size_t element_size,
 	while (i < len)
 	{
 		if (cmp(arr + (i - 1) * element_size, arr + i * element_size) > 0)
-			return (FALSE);
+			return (false);
 		i++;
 	}
-	return (TRUE);
+	return (true);
 }

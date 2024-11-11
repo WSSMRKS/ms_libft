@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:36:15 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:18:50 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	str_count(const t_str *str, size_t (*count)(const char *))
 	return (out);
 }
 
-t_bool	str_contains(const t_str *str, t_bool (*test)(const char *))
+bool	str_contains(const t_str *str, bool (*test)(const char *))
 {
 	size_t		i;
 	const char	*buf;
@@ -36,12 +36,12 @@ t_bool	str_contains(const t_str *str, t_bool (*test)(const char *))
 	while (i < str->len)
 	{
 		if (test(buf + i++))
-			return (TRUE);
+			return (true);
 	}
-	return (FALSE);
+	return (false);
 }
 
-t_bool	str_find(const t_str *str, t_bool (*test)(const char *), size_t *at)
+bool	str_find(const t_str *str, bool (*test)(const char *), size_t *at)
 {
 	size_t		i;
 	const char	*buf;
@@ -53,9 +53,9 @@ t_bool	str_find(const t_str *str, t_bool (*test)(const char *), size_t *at)
 		if (test(buf + i))
 		{
 			*at = i;
-			return (TRUE);
+			return (true);
 		}
 		i++;
 	}
-	return (FALSE);
+	return (false);
 }

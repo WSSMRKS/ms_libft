@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 17:34:31 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 12:18:38 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static void	parse_flags(const char **s, t_fmt *fmt)
 	while (**s && *s != fmt->specifier.spec_str)
 	{
 		if (**s == FLAG_PAD_END)
-			fmt->pad.pad_end = TRUE;
+			fmt->pad.pad_end = true;
 		else if (**s == FLAG_SIGN_PLUS)
 			fmt->pos_nbr_sign = "+";
 		else if (**s == FLAG_SIGN_SPACE && *fmt->pos_nbr_sign == 0)
 			fmt->pos_nbr_sign = " ";
 		else if (**s == FLAG_ALT)
-			fmt->alternate_form = TRUE;
+			fmt->alternate_form = true;
 		else if (**s == FLAG_PAD_ZERO)
 			fmt->pad.fill_char = '0';
 		else
@@ -54,10 +54,10 @@ void	parse_formatting(const char *s, t_fmt *fmt)
 			s++;
 	}
 	if (s != fmt->specifier.spec_str)
-		fmt->bad_fmt = TRUE;
+		fmt->bad_fmt = true;
 }
 
-void	add_padding(t_str *str, t_fmt fmt, t_bool allow_zero)
+void	add_padding(t_str *str, t_fmt fmt, bool allow_zero)
 {
 	if (str->len >= fmt.pad.min_width)
 		return ;

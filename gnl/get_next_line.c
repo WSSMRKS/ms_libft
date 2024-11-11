@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:17:24 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/18 21:37:06 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ static t_list	*new_state_node(int32_t fd)
 	return (out);
 }
 
-static t_bool	match_fd(t_list *node, void *fd)
+static bool	match_fd(t_list *node, void *fd)
 {
 	return (((t_state *)(node->content))->fd == *(int32_t *)fd);
 }
 
-char	*_get_next_line(int32_t fd, t_bool destroy)
+char	*_get_next_line(int32_t fd, bool destroy)
 {
 	static t_list	*list;
 	t_list			*state;
@@ -109,5 +109,5 @@ char	*_get_next_line(int32_t fd, t_bool destroy)
 
 char	*get_next_line(int32_t fd)
 {
-	return (_get_next_line(fd, FALSE));
+	return (_get_next_line(fd, false));
 }

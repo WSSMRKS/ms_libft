@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:37:04 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:10:23 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ t_str	fmt_str(va_list *args, t_fmt fmt)
 			out_len = fmt.precision;
 		out = str_clone_from(cstr_slice(s, out_len));
 	}
-	add_padding(&out, fmt, FALSE);
+	add_padding(&out, fmt, false);
 	return (out);
 }

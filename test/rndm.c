@@ -28,7 +28,7 @@ uint32_t	rndm()
 	return val;
 }
 
-static void _rndm_bytes(uint8_t *bytes, size_t n, t_bool close)
+static void _rndm_bytes(uint8_t *bytes, size_t n, bool close)
 {
 	static int fd = open("/dev/urandom", O_RDONLY);
 	if (close)
@@ -52,11 +52,11 @@ static void _rndm_bytes(uint8_t *bytes, size_t n, t_bool close)
 
 void rndm_bytes(uint8_t *bytes, size_t n)
 {
-    _rndm_bytes(bytes, n, FALSE);
+    _rndm_bytes(bytes, n, false);
 }
 
 void rndm_bytes_close()
 {
-	_rndm_bytes(0, 0, TRUE);
+	_rndm_bytes(0, 0, true);
 }
 #endif

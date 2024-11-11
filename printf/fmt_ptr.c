@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:39:17 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:11:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero)
+static void	add_padding_hex(t_str *str, t_fmt fmt, bool allow_zero)
 {
 	if (str->len >= fmt.pad.min_width)
 		return ;
@@ -41,14 +41,14 @@ t_str	fmt_ptr(va_list *args, t_fmt fmt)
 	if (!ptr)
 	{
 		out = str_clone_from(cstr_slice("(nil)", 5));
-		add_padding(&out, fmt, FALSE);
+		add_padding(&out, fmt, false);
 	}
 	else
 	{
 		out = str_clone_from(cstr_slice("0x", 2));
 		ulltoa_base_radix(&out, (unsigned long long)ptr, "0123456789abcdef",
 			16);
-		add_padding_hex(&out, fmt, TRUE);
+		add_padding_hex(&out, fmt, true);
 	}
 	return (out);
 }

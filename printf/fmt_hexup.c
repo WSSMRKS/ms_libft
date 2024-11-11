@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	add_padding_hex(t_str *str, t_fmt fmt, t_bool allow_zero,
+static void	add_padding_hex(t_str *str, t_fmt fmt, bool allow_zero,
 		uint32_t num)
 {
 	if (str->len >= fmt.pad.min_width)
@@ -42,9 +42,9 @@ t_str	fmt_hexup(va_list *args, t_fmt fmt)
 	out = str_empty();
 	sanitize_fmt_unsigned(&fmt);
 	ulltoa_base_radix(&out, num, "0123456789ABCDEF", 16);
-	add_precision_leading_zeroes(&out, fmt, FALSE);
+	add_precision_leading_zeroes(&out, fmt, false);
 	if (num != 0 && fmt.alternate_form)
 		str_pushstr_front(&out, cstr_slice("0X", 2));
-	add_padding_hex(&out, fmt, TRUE, num);
+	add_padding_hex(&out, fmt, true, num);
 	return (out);
 }

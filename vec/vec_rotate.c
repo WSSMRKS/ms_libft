@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:26:47 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	vec_shiftright(t_vec *vec, size_t n)
 /// @brief Rotate the vec by 'n' elements to the right.
 /// @param vec The vec to rotate.
 /// @param n The number of elements to rotate by.
-/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @return true if the operation was successful, false otherwise.
 /// @warning Will not rotate elements if memory allocation fails.
-t_bool	vec_rotate(t_vec *vec, size_t n)
+bool	vec_rotate(t_vec *vec, size_t n)
 {
 	t_vec	temp;
 
@@ -56,9 +56,9 @@ t_bool	vec_rotate(t_vec *vec, size_t n)
 /// @brief Rotate the vec by 'n' elements to the left.
 /// @param vec The vec to rotate.
 /// @param n The number of elements to rotate by.
-/// @return TRUE if the operation was successful, FALSE otherwise.
+/// @return true if the operation was successful, false otherwise.
 /// @warning Will not rotate elements if memory allocation fails.
-t_bool	vec_rrotate(t_vec *vec, size_t n)
+bool	vec_rrotate(t_vec *vec, size_t n)
 {
 	t_vec	temp;
 

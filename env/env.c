@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:00:27 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:19:16 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /// @param envp The env vars.
 /// @param out The output t_vec of t_str_slice.
 /// @return True if the directories were extracted successfully.
-t_bool	get_env_path_dirs(char *const *envp, t_vec *out)
+bool	get_env_path_dirs(char *const *envp, t_vec *out)
 {
 	return (split_env_path(get_value(get_var(envp, cstr_slice("PATH", 4))),
 			out));
@@ -66,20 +66,20 @@ static void	rm_trailing_slash_iter(void *element)
 /// @brief Split the PATH env var value into directories.
 /// @param path_value The value of the PATH env var.
 /// @param out The output t_vec of t_str_slice.
-/// @return True if the path was split successfully, FALSE otherwise.
-t_bool	split_env_path(t_str_slice path_value, t_vec *out)
+/// @return True if the path was split successfully, false otherwise.
+bool	split_env_path(t_str_slice path_value, t_vec *out)
 {
 	if (path_value.str == 0)
 	{
 		*out = vec_empty(sizeof(t_str_slice));
-		return (FALSE);
+		return (false);
 	}
 	*out = strsl_split(path_value, cstr_slice(":", 1));
 	if (out->len == 0 || out->mem_err)
 	{
 		vec_destroy(out, 0);
-		return (FALSE);
+		return (false);
 	}
 	vec_iter(out, rm_trailing_slash_iter);
-	return (TRUE);
+	return (true);
 }

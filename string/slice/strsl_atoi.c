@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 00:44:55 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int32_t	handle_next_char(int32_t *out, char c, int32_t sign,
 
 	base_match = strsl_chr(base, c);
 	if (!base_match)
-		return (FALSE);
+		return (false);
 	digit = (int32_t)(base_match - base.str);
 	if (*out > INT32_MAX / (int32_t)base.len)
 		return (2);
@@ -63,7 +63,7 @@ static int32_t	handle_next_char(int32_t *out, char c, int32_t sign,
 	}
 	*out *= base.len;
 	*out += digit;
-	return (TRUE);
+	return (true);
 }
 
 static void	skip_whitespace(t_str_slice *s)
@@ -77,10 +77,10 @@ static void	skip_whitespace(t_str_slice *s)
 /// @param base The base to use for the conversion.
 /// @param out The integer to write to.
 /// @param ofb The overflow behavior.
-/// @return True if the conversion was successful, FALSE otherwise.
+/// @return True if the conversion was successful, false otherwise.
 /// @note Will skip leading/trailing whitespace and accept an optional sign.
-/// @note Will return FALSE if the string is empty or contains invalid chars.
-t_bool	strsl_atoi(t_str_slice s, t_str_slice base, int32_t *out,
+/// @note Will return false if the string is empty or contains invalid chars.
+bool	strsl_atoi(t_str_slice s, t_str_slice base, int32_t *out,
 		t_overflow_behavior ofb)
 {
 	int32_t	sign;
@@ -90,7 +90,7 @@ t_bool	strsl_atoi(t_str_slice s, t_str_slice base, int32_t *out,
 	sign = handle_sign(&s);
 	*out = 0;
 	if (s.len == 0 || !ft_isdigit(*s.str))
-		return (FALSE);
+		return (false);
 	code = 1;
 	while (s.len && code == 1)
 	{
@@ -99,7 +99,7 @@ t_bool	strsl_atoi(t_str_slice s, t_str_slice base, int32_t *out,
 			strsl_move_inplace(&s, 1);
 	}
 	if (code == 2 && ofb == OFB_ERROR)
-		return (FALSE);
+		return (false);
 	if (code != 2)
 		*out *= sign;
 	skip_whitespace(&s);

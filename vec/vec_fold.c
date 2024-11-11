@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:56:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ size_t	vec_count(const t_vec *vec, size_t (*count)(const void *))
 	return (out);
 }
 
-t_bool	vec_contains(const t_vec *vec, t_bool (*test)(const void *))
+bool	vec_contains(const t_vec *vec, bool (*test)(const void *))
 {
 	size_t	i;
 
@@ -61,13 +61,13 @@ t_bool	vec_contains(const t_vec *vec, t_bool (*test)(const void *))
 	while (i < vec->len)
 	{
 		if (test(vec_get_at(vec, i)))
-			return (TRUE);
+			return (true);
 		i++;
 	}
-	return (FALSE);
+	return (false);
 }
 
-t_bool	vec_find(const t_vec *vec, t_bool (*test)(const void *), size_t *at)
+bool	vec_find(const t_vec *vec, bool (*test)(const void *), size_t *at)
 {
 	size_t		i;
 	const void	*current;
@@ -79,7 +79,7 @@ t_bool	vec_find(const t_vec *vec, t_bool (*test)(const void *), size_t *at)
 		if (test(current))
 		{
 			*at = i;
-			return (TRUE);
+			return (true);
 		}
 		current += vec->element_size;
 		i++;

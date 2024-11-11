@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 00:46:37 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/30 05:57:59 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,11 @@
 # include <stddef.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
-
-# define FALSE	0
-# define TRUE	1
-
-/// bool is defined as int32 for maximum compatibility
-typedef int32_t	t_bool;
 
 typedef struct s_list
 {
@@ -72,15 +67,15 @@ typedef struct s_vec
 	union
 	{
 		/// @brief Small vec buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
+		/// @warning May only be modified/read directly if 'heap' = false.
 		char		_small_buf[FT_SMALL_VEC];
 		struct
 		{
 			/// @brief Heap allocated vec buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			char	*_large_buf;
 			/// @brief Capacity of the heap vec buffer (number of elements).
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			/// Use 'vec_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};
@@ -130,15 +125,15 @@ typedef struct s_str
 	union
 	{
 		/// @brief Small string buffer.
-		/// @warning May only be modified/read directly if 'heap' = FALSE.
+		/// @warning May only be modified/read directly if 'heap' = false.
 		char		_small_str[FT_SMALL_STR];
 		struct
 		{
 			/// @brief Heap allocated string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			char	*_large_str;
 			/// @brief Capacity of the heap string buffer.
-			/// @warning May only be modified/read directly if 'heap' = TRUE.
+			/// @warning May only be modified/read directly if 'heap' = true.
 			/// Use 'str_capacity()' instead for a safe read.
 			size_t	_capacity;
 		};

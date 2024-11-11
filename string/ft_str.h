@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/16 17:23:43 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void		str_cat(t_str *dst, t_str_slice src);
 void		str_destroy(t_str *str);
 t_str		str_empty(void);
 t_str		str_empty_with_capacity(size_t n);
-t_bool		str_try_grow(t_str *str, size_t min_growth);
-t_bool		str_identical(const t_str *str1, const t_str *str2);
-t_bool		str_eq(const t_str *str1, const t_str *str2);
-t_bool		str_starts_with(t_str str, const t_str *pattern);
-t_bool		str_atoi(const t_str *str, t_str_slice base, int32_t *out,
+bool		str_try_grow(t_str *str, size_t min_growth);
+bool		str_identical(const t_str *str1, const t_str *str2);
+bool		str_eq(const t_str *str1, const t_str *str2);
+bool		str_starts_with(t_str str, const t_str *pattern);
+bool		str_atoi(const t_str *str, t_str_slice base, int32_t *out,
 				t_overflow_behavior ofb);
 const char	*str_chr(const t_str *str, char c);
 const char	*str_rchr(const t_str *str, char c);
@@ -59,18 +59,18 @@ void		str_pushstrn(t_str *str, t_str_slice s, size_t n);
 void		str_pushstrn_front(t_str *str, t_str_slice s, size_t n);
 char		str_remove(t_str *str, size_t at);
 void		str_remove_range(t_str *str, size_t start, size_t end);
-t_bool		str_try_set_capacity(t_str *str, size_t n);
-t_bool		str_shrink_to_fit(t_str *str);
+bool		str_try_set_capacity(t_str *str, size_t n);
+bool		str_shrink_to_fit(t_str *str);
 void		str_trim(t_str *str);
 void		str_trim_end(t_str *str);
 void		str_trim_start(t_str *str);
 void		str_trunc(t_str *str, size_t new_len);
 
 size_t		str_count(const t_str *str, size_t (*count)(const char *));
-t_bool		str_contains(const t_str *str, t_bool (*test)(const char *));
-t_bool		str_find(const t_str *str, t_bool (*test)(const char *),
+bool		str_contains(const t_str *str, bool (*test)(const char *));
+bool		str_find(const t_str *str, bool (*test)(const char *),
 				size_t *at);
 
-t_bool		str_mem_err(const void *str);
+bool		str_mem_err(const void *str);
 
 #endif

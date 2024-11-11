@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 07:39:56 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/30 16:10:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ t_str	fmt_uint(va_list *args, t_fmt fmt)
 	ulltoa_base_radix(&out, num, "0123456789", 10);
 	if (!(num == 0 && fmt.precision == 0))
 	{
-		add_precision_leading_zeroes(&out, fmt, FALSE);
+		add_precision_leading_zeroes(&out, fmt, false);
 		str_pushstr_front(&out, cstr_view(fmt.pos_nbr_sign));
 	}
-	add_padding(&out, fmt, TRUE);
+	add_padding(&out, fmt, true);
 	if (fmt.precision < 0 && fmt.pad.fill_char == '0' && !fmt.pad.pad_end)
-		swap_sign_with_leading_zero(&out, fmt, FALSE);
+		swap_sign_with_leading_zero(&out, fmt, false);
 	return (out);
 }

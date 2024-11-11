@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 21:02:06 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:19:29 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:33 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	vec_destroy(t_vec *vec, t_vec_iter destroy)
 	if (vec->heap)
 	{
 		free(vec->_large_buf);
-		vec->heap = FALSE;
+		vec->heap = false;
 	}
 	vec->len = 0;
-	vec->mem_err = FALSE;
+	vec->mem_err = false;
 }

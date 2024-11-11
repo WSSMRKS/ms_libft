@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/07/29 13:43:28 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_str	str_from_parts(char *str, size_t len)
 {
 	if (str)
 		return ((t_str){.len = len, ._capacity = len + 1, ._large_str = str,
-			.heap = TRUE, .mem_err = FALSE});
+			.heap = true, .mem_err = false});
 	return (str_empty());
 }
 
@@ -50,7 +50,7 @@ t_str	str_from(char *str, size_t new_len)
 		out._capacity = actual_len + 1;
 		str[new_len] = 0;
 		out._large_str = str;
-		out.heap = TRUE;
+		out.heap = true;
 	}
 	return (out);
 }

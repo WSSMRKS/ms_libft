@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:37:35 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/08 13:00:58 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ uint32_t	u32min(uint32_t var1, uint32_t var2);
 uint64_t	u64min(uint64_t var1, uint64_t var2);
 size_t		usizemin(size_t var1, size_t var2);
 
-t_bool		i8mult(int8_t var1, int8_t var2, int8_t *out);
-t_bool		i16mult(int16_t var1, int16_t var2, int16_t *out);
-t_bool		i32mult(int32_t var1, int32_t var2, int32_t *out);
-t_bool		i64mult(int64_t var1, int64_t var2, int64_t *out);
-t_bool		isizemult(ssize_t var1, ssize_t var2, ssize_t *out);
-t_bool		u8mult(uint8_t var1, uint8_t var2, uint8_t *out);
-t_bool		u16mult(uint16_t var1, uint16_t var2, uint16_t *out);
-t_bool		u32mult(uint32_t var1, uint32_t var2, uint32_t *out);
-t_bool		u64mult(uint64_t var1, uint64_t var2, uint64_t *out);
-t_bool		usizemult(size_t var1, size_t var2, size_t *out);
+bool		i8mult(int8_t var1, int8_t var2, int8_t *out);
+bool		i16mult(int16_t var1, int16_t var2, int16_t *out);
+bool		i32mult(int32_t var1, int32_t var2, int32_t *out);
+bool		i64mult(int64_t var1, int64_t var2, int64_t *out);
+bool		isizemult(ssize_t var1, ssize_t var2, ssize_t *out);
+bool		u8mult(uint8_t var1, uint8_t var2, uint8_t *out);
+bool		u16mult(uint16_t var1, uint16_t var2, uint16_t *out);
+bool		u32mult(uint32_t var1, uint32_t var2, uint32_t *out);
+bool		u64mult(uint64_t var1, uint64_t var2, uint64_t *out);
+bool		usizemult(size_t var1, size_t var2, size_t *out);
 
 #endif

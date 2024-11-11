@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:40:11 by kwurster          #+#    #+#             */
-/*   Updated: 2024/06/28 02:22:27 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 /// @param s1
 /// @param s2
 /// @return True if the slices are equal.
-t_bool	strsl_eq(t_str_slice s1, t_str_slice s2)
+bool	strsl_eq(t_str_slice s1, t_str_slice s2)
 {
 	if (s1.str == s2.str)
-		return (TRUE);
+		return (true);
 	if (s1.len != s2.len)
-		return (FALSE);
+		return (false);
 	return (ft_memcmp(s1.str, s2.str, s1.len) == 0);
 }
 
@@ -29,7 +29,7 @@ t_bool	strsl_eq(t_str_slice s1, t_str_slice s2)
 /// @param s The string slice to check.
 /// @param pattern The pattern to check for.
 /// @return True if the string slice starts with the pattern.
-t_bool	strsl_starts_with(t_str_slice s, t_str_slice pattern)
+bool	strsl_starts_with(t_str_slice s, t_str_slice pattern)
 {
 	if (s.len < pattern.len)
 		return (0);
@@ -40,7 +40,7 @@ t_bool	strsl_starts_with(t_str_slice s, t_str_slice pattern)
 /// @param s The string slice to check.
 /// @param pattern The pattern to check for.
 /// @return True if the string slice ends with the pattern.
-t_bool	strsl_ends_with(t_str_slice s, t_str_slice pattern)
+bool	strsl_ends_with(t_str_slice s, t_str_slice pattern)
 {
 	if (s.len < pattern.len)
 		return (0);
