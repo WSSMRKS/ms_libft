@@ -6,13 +6,13 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:31:22 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:19 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:38:56 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_putchar_fd(char c, int32_t fd)
+ssize_t	ft_putchar_fd(char c, int32_t fd)
 {
 	return (write(fd, &c, 1));
 }
