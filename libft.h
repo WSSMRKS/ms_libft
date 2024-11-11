@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:29:15 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/11/11 15:43:50 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,8 @@ int32_t			ft_printf_fd(int32_t fd, const char *s, ...);
 	MS_ADDON
 */
 
-int	ft_free_2d(char **tofree);
-int	ft_free_3d(char ***tofree);
-
+int		ft_free_2d(char **tofree);
+int		ft_free_3d(char ***tofree);
+char	*ft_multistrjoin(int nb_strings, char const *s1, ...);
 
 #endif
