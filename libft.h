@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:40:24 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,12 @@ t_list			*ft_lstswp_front_where(t_list **lst, t_lst_pred pred,
 	OTHER
 */
 
-size_t			ft_putchar_fd(char c, int32_t fd);
-size_t			ft_putendl_fd(const char *s, int32_t fd);
-size_t			ft_putfill_fd(char c, int32_t fd, size_t fill);
-size_t			ft_putnbr_fd(int32_t n, int32_t fd);
-size_t			ft_putstr_fd(const char *s, int32_t fd);
-size_t			ft_putstrsl_fd(t_str_slice strsl, int32_t fd);
+ssize_t			ft_putchar_fd(char c, int32_t fd);
+ssize_t			ft_putendl_fd(const char *s, int32_t fd);
+ssize_t			ft_putfill_fd(char c, int32_t fd, size_t fill);
+ssize_t			ft_putnbr_fd(int32_t n, int32_t fd);
+ssize_t			ft_putstr_fd(const char *s, int32_t fd);
+ssize_t			ft_putstrsl_fd(t_str_slice strsl, int32_t fd);
 bool			ptr_is_null(const void *ptr);
 bool			ptr_ptr_is_null(const void *ptr);
 
