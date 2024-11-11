@@ -6,11 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:48:44 by maweiss           #+#    #+#             */
-/*   Updated: 2024/09/25 10:51:12 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:05:08 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include "stdarg.h"
+#include "stdlib.h"
 
 /*join as many strings as needed.
 res = ft_multistrjoin(int nb_strings, char const *s1, s2, sn, ...)
