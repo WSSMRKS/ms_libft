@@ -6,11 +6,12 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 10:37:19 by maweiss           #+#    #+#             */
-/*   Updated: 2024/06/03 11:54:24 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:04:40 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include "stdlib.h"
 
 int	ft_free_2d(char **tofree)
 {
