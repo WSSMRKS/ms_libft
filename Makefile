@@ -209,10 +209,15 @@ IMG_FILES = \
 	img/img.c\
 	img/img2.c\
 
+MS_ADDON = \
+	ms_addon/ft_free_2d.c \
+	ms_addon/ft_free_3d.c \
+	ms_addon/ft_multistrjoin.c \
+
 SRCS = $(LIBC_FILES) $(GNL_FILES) $(LIST_FILES) $(MATH_FILES) $(OTHER_FILES)\
 	$(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES)\
 	$(VEC_FILES) $(FS_FILES) $(ENV_FILES) $(ARRAY_FILES) $(GEO_FILES)\
-	$(IMG_FILES)
+	$(IMG_FILES) $(MS_ADDON)
 
 OBJ = $(SRCS:.c=.o)
 
