@@ -48,9 +48,9 @@ t_vec			vec_extract_range(t_vec *vec, size_t start, size_t end);
 bool			vec_find(const t_vec *vec, bool (*test)(const void *),
 					size_t *at);
 bool			vec_identical(const t_vec *vec1, const t_vec *vec2);
-void			vec_insert(t_vec *vec, size_t index, void *data);
+bool			vec_insert(t_vec *vec, size_t index, void *data);
 void			vec_insertarr(t_vec *vec, size_t index, void *arr, size_t len);
-void			vec_insertn(t_vec *vec, size_t index, void *data, size_t n);
+bool			vec_insertn(t_vec *vec, size_t index, void *data, size_t n);
 void			vec_insertvec(t_vec *vec, size_t index, const t_vec *data);
 void			vec_insertvec_sized(t_vec *vec, size_t index, const t_vec *data,
 					size_t n);
@@ -66,8 +66,8 @@ t_vec			vec_new_repeat(void *arr, size_t element_size, size_t len,
 					size_t n);
 t_vec			vec_pop(t_vec *vec);
 t_vec			vec_pop_front(t_vec *vec);
-void			vec_push(t_vec *vec, void *data);
-void			vec_push_front(t_vec *vec, void *data);
+bool			vec_push(t_vec *vec, void *data);
+bool			vec_push_front(t_vec *vec, void *data);
 void			vec_pusharr(t_vec *vec, void *arr, size_t len);
 void			vec_pusharr_front(t_vec *vec, void *arr, size_t len);
 void			vec_pusharrn(t_vec *vec, void *arr, size_t len, size_t n);

@@ -16,16 +16,17 @@
 /// @param vec Vec to push to.
 /// @param data Data to push.
 /// @warning Check the error flag for memory allocation errors.
-void	vec_push(t_vec *vec, void *data)
+bool	vec_push(t_vec *vec, void *data)
 {
 	if (!data)
-		return ;
+		return (true);
 	if (vec->len == vec_capacity(vec))
 		if (!vec_try_grow(vec, 1))
-			return ;
+			return (false);
 	ft_memcpy(vec_get(vec) + vec->len * vec->element_size, data,
 		vec->element_size);
 	vec->len++;
+	return (true);
 }
 
 /// @brief Pushes an element n times to the end of the vec.

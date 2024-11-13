@@ -16,9 +16,9 @@
 /// @param vec The vec to insert into.
 /// @param index The index to insert at.
 /// @param data The data to insert.
-void	vec_insert(t_vec *vec, size_t index, void *data)
+bool	vec_insert(t_vec *vec, size_t index, void *data)
 {
-	vec_insertn(vec, index, data, 1);
+	return (vec_insertn(vec, index, data, 1));
 }
 
 /// @brief Inserts n elements at the given index.
@@ -26,17 +26,17 @@ void	vec_insert(t_vec *vec, size_t index, void *data)
 /// @param index The index to insert at.
 /// @param data The data to insert.
 /// @param n The number of elements to insert.
-void	vec_insertn(t_vec *vec, size_t index, void *data, size_t n)
+bool	vec_insertn(t_vec *vec, size_t index, void *data, size_t n)
 {
 	char	*buf;
 	size_t	cap;
 
 	if (!data || index > vec->len)
-		return ;
+		return (true);
 	cap = vec_capacity(vec);
 	if (vec->len + n > cap)
 		if (!vec_try_grow(vec, vec->len + n - cap))
-			return ;
+			return (false);
 	buf = vec_get(vec);
 	ft_memmove(buf + (index + n) * vec->element_size, buf + index
 		* vec->element_size, (vec->len - index) * vec->element_size);
@@ -44,6 +44,7 @@ void	vec_insertn(t_vec *vec, size_t index, void *data, size_t n)
 	while (n--)
 		ft_memcpy(buf + (index + n) * vec->element_size, data,
 			vec->element_size);
+	return (true);
 }
 
 /// @brief Inserts an array at the given index.
