@@ -20,7 +20,7 @@ void	iter_str_destroy(void *ele)
 
 void	iter_ptr_free(void *ptr)
 {
-	free(*(char **)ptr);
+	free(*(void **)ptr);
 }
 
 bool	vec_push_null(t_vec *vec)

@@ -16,9 +16,9 @@
 /// @param vec The vec to push to.
 /// @param data The data to push.
 /// @warning Check the error flag for memory allocation errors.
-void	vec_push_front(t_vec *vec, void *data)
+bool	vec_push_front(t_vec *vec, void *data)
 {
-	vec_insert(vec, 0, data);
+	return (vec_insert(vec, 0, data));
 }
 
 /// @brief Pushes n elements to the front of the vec.
