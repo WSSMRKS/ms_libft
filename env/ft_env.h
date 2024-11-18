@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 09:57:41 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:14:15 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ bool		get_env_path_dirs(char *const *envp, t_vec *out);
 bool		split_env_path(t_str_slice path_value, t_vec *out);
 t_str_slice	get_var(char *const *envp, t_str_slice var);
 t_str_slice	get_value(t_str_slice env_var);
+
+char		*ft_hostname(void);
 
 #endif

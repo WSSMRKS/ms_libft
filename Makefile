@@ -173,6 +173,7 @@ FS_FILES = \
 
 ENV_FILES = \
 	env/env.c\
+	env/hostname.c\
 
 ARRAY_FILES = \
 	array/array.c\
