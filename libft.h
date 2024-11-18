@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:40:24 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:40:52 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int32_t			ft_toupper(int32_t c);
 
 char			*get_next_line(int32_t fd);
 void			get_next_line_finish(int32_t fd);
+bool			get_next_line2(int32_t fd, char **out);
 
 /*
 	LIST
