@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:56:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:59:36 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ bool	str_eq(const t_str *str1, const t_str *str2)
 /// @param str The string to check.
 /// @param pattern The pattern to check for.
 /// @return true if the string starts with the pattern, false otherwise.
-bool	str_starts_with(t_str str, const t_str *pattern)
+bool	str_starts_with(const t_str *str, const t_str *pattern)
 {
-	if (str.len < pattern->len)
+	if (str->len < pattern->len)
 		return (false);
-	return (ft_memcmp(cstr_ref(&str), cstr_ref(pattern), pattern->len) == 0);
+	return (ft_memcmp(cstr_ref(str), cstr_ref(pattern), pattern->len) == 0);
 }

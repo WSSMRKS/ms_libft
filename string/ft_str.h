@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/18 17:22:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:59:54 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_str		str_empty_with_capacity(size_t n);
 bool		str_try_grow(t_str *str, size_t min_growth);
 bool		str_identical(const t_str *str1, const t_str *str2);
 bool		str_eq(const t_str *str1, const t_str *str2);
-bool		str_starts_with(t_str str, const t_str *pattern);
+bool		str_starts_with(const t_str *str, const t_str *pattern);
 bool		str_atoi(const t_str *str, t_str_slice base, int32_t *out,
 				t_overflow_behavior ofb);
 const char	*str_chr(const t_str *str, char c);
