@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:11:52 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:22:28 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ t_str	str_from(char *str, size_t new_len)
 		out.heap = true;
 	}
 	return (out);
+}
+
+t_str	str_from2(char *str)
+{
+	return (str_from(str, ft_strlen(str)));
 }

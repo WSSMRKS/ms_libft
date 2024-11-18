@@ -6,7 +6,7 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:58:42 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:17:34 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:22:41 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void		str_itoa_cat(int32_t num, t_str_slice base, t_str *out);
 t_str		str_clone_from(t_str_slice s);
 t_str		str_from_parts(char *str, size_t len);
 t_str		str_from(char *str, size_t new_len);
+t_str		str_from2(char *str);
 t_str		str_repeat_from(t_str_slice s, size_t n);
 char		str_pop(t_str *str);
 void		str_push(t_str *str, char c);
