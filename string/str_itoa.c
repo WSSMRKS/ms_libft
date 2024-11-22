@@ -60,3 +60,21 @@ t_str	str_itoa(int32_t num, t_str_slice base)
 	_str_itoa(num, base, &out);
 	return (out);
 }
+
+/// @brief Inserts the string representation of an integer into another string.
+/// @param num The integer to convert.
+/// @param base The base to use for the conversion.
+/// @param out The output string.
+/// @param at The index to insert the string at.
+/// @warning Check the error flag for memory allocation errors.
+bool	str_insert_itoa(int num, t_str_slice base, t_str *out, size_t at)
+{
+	t_str	str;
+
+	str = str_itoa(num, base);
+	if (str.mem_err)
+		out->mem_err = true;
+	str_insertstr(out, at, str_view(&str));
+	str_destroy(&str);
+	return (out->mem_err);
+}
