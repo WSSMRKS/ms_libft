@@ -50,8 +50,8 @@ void	vec_remove_range(t_vec *vec, size_t start, size_t end)
 	end = usizemin(end, vec->len);
 	buf = vec_get(vec);
 	if (end < vec->len)
-		ft_memmove(buf + start * vec->element_size, buf + end * vec->element_size, (vec->len - end)
-			* vec->element_size);
+		ft_memmove(buf + start * vec->element_size, buf
+			+ end * vec->element_size, (vec->len - end) * vec->element_size);
 	vec->len -= end - start;
 }
 

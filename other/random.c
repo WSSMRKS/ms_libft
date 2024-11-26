@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstswp_front_where.c                            :+:      :+:    :+:   */
+/*   random.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 20:35:51 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:13 by kwurster         ###   ########.fr       */
+/*   Created: 2024/11/26 08:21:30 by kwurster          #+#    #+#             */
+/*   Updated: 2024/11/26 08:25:32 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <fcntl.h>
 
-t_list	*ft_lstswp_front_where(t_list **lst, t_lst_pred pred, void *pred_data)
+bool	ft_rand(uint8_t *bytes, size_t n)
 {
-	t_list	*target;
-	t_list	*prev;
+	int	fd;
 
-	if (!*lst || pred(*lst, pred_data))
-		return (*lst);
-	prev = ft_lst_first_where_next(*lst, pred, pred_data);
-	if (!prev)
-		return (0);
-	target = prev->next;
-	prev->next = target->next;
-	target->next = *lst;
-	*lst = target;
-	return (*lst);
+	fd = open("/dev/urandom", O_RDONLY);
+	if (fd == -1)
+		return (false);
+	if (read(fd, bytes, n) < 0)
+	{
+		close(fd);
+		return (false);
+	}
+	close(fd);
+	return (true);
 }

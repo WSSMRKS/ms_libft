@@ -23,11 +23,60 @@
 # define STDOUT 1
 # define STDERR 2
 
+# ifndef LIST_SKIP_STEP
+#  define LIST_SKIP_STEP 4
+# endif
+
+# ifndef DEBUG_LIST
+#  define DEBUG_LIST false
+# endif
+
+typedef struct s_list_iter	t_list_iter;
+typedef struct s_node		t_node;
+
+typedef void				(*t_list_destructor_fn)(void *data);
+typedef bool				(*t_list_find_fn)(const void *data,
+	const void *key);
+
+/// A node in a doubly linked skip-list
+typedef struct s_node
+{
+	void	*data;
+	t_node	*next;
+	t_node	*prev;
+	t_node	*next_skip;
+}	t_node;
+
+/// A doubly linked skip-list
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_node					*head;
+	t_node					*tail;
+	size_t					len;
+	t_list_destructor_fn	destructor;
+}							t_list;
+
+/// A function to advance the iterator, setting current to the next item or
+/// NULL if there is no valid next item.
+/// It also sets the index (which is in the inclusive range -1(SIZE_MAX) - len).
+/// @param iter The iterator to advance.
+/// @param n The number of elements to advance by.
+/// @return True if the iterator was advanced to a valid item or
+/// false if the end was reached.
+/// @warning Must be valid for iterators where iter->current == NULL to start.
+typedef bool				(*t_list_iter_adv_fn)(t_list_iter *iter, size_t n,
+	bool rev);
+
+/// An iterator for a doubly linked skip-list
+/// @warning Modify the list only through the iterator, otherwise the iterator
+/// will have undefined behaviour.
+typedef struct s_list_iter
+{
+	t_node				*current;
+	size_t				index;
+	t_list				*list;
+	t_list_iter_adv_fn	adv_fn;
+}	t_list_iter;
 
 typedef enum e_overflow_behavior
 {

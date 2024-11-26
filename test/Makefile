@@ -5,7 +5,6 @@ CFLAGS = -Wall -Wextra -Werror -O3 -flto
 LIBFTDIR = ../
 
 SRCS = \
-	rndm.c\
 	test.c\
 	arr_qsort.c\
 
@@ -22,9 +21,6 @@ $(NAME): $(OBJ)
 
 debug: CFLAGS += -DDEBUG
 debug: all
-
-# bonus: CFLAGS += -DBONUS
-# bonus: all
 
 clean:
 	$(MAKE) -C $(LIBFTDIR) clean

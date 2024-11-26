@@ -26,20 +26,22 @@ GNL_FILES = \
 	gnl/get_next_line.c\
 	gnl/get_next_line_finish.c\
 
-LST_FILES = \
-	lst/ft_lst_first_where_next.c\
-	lst/ft_lst_first_where.c\
-	lst/ft_lstadd_back.c\
-	lst/ft_lstadd_front.c\
-	lst/ft_lstclear.c\
-	lst/ft_lstdel_first.c\
-	lst/ft_lstdelone.c\
-	lst/ft_lstiter.c\
-	lst/ft_lstlast.c\
-	lst/ft_lstmap.c\
-	lst/ft_lstnew.c\
-	lst/ft_lstsize.c\
-	lst/ft_lstswp_front_where.c\
+LIST_FILES = \
+	list/list_create.c\
+	list/list_add.c\
+	list/list_add0_ref.c\
+	list/list_util.c\
+	list/list_add_ref.c\
+	list/list_add0.c\
+	list/list_pop.c\
+	list/list_pop2.c\
+	list/list_remove.c\
+	list/list_get_node.c\
+	list/list_get2_node.c\
+	list/list_get.c\
+	list/list_get2.c\
+	list/list_find.c\
+	list/list_find2.c\
 
 MATH_FILES = \
 	math/iabs.c\
@@ -57,6 +59,7 @@ OTHER_FILES = \
 	other/ft_putnbr_fd.c\
 	other/ft_putstr_fd.c\
 	other/util.c\
+	other/random.c\
 
 CSTR_FILES = \
 	string/cstr/ft_itoa.c\
@@ -206,7 +209,7 @@ IMG_FILES = \
 	img/img.c\
 	img/img2.c\
 
-SRCS = $(LIBC_FILES) $(GNL_FILES) $(LST_FILES) $(MATH_FILES) $(OTHER_FILES)\
+SRCS = $(LIBC_FILES) $(GNL_FILES) $(LIST_FILES) $(MATH_FILES) $(OTHER_FILES)\
 	$(CSTR_FILES) $(STRING_SLICE_FILES) $(STRING_FILES) $(FT_PRINTF_FILES)\
 	$(VEC_FILES) $(FS_FILES) $(ENV_FILES) $(ARRAY_FILES) $(GEO_FILES)\
 	$(IMG_FILES)

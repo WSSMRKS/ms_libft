@@ -1,27 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/22 17:43:16 by kwurster          #+#    #+#             */
+/*   Updated: 2024/11/26 08:39:47 by kwurster         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "test.h"
-
-typedef enum e_sort_op
-{
-	sa,
-	sb,
-	ss,
-	pa,
-	pb,
-	ra,
-	rb,
-	rr,
-	rra,
-	rrb,
-	rrr
-}				t_sort_op;
+#include "ft_test.h"
 
 const t_test	*find_test(char *test, bool iter_reset)
 {
-	static size_t	i = 0;
-	const static t_test tests[] = {
-		{"arr_qsort", test_arr_qsort},
-		{0, 0}
+	static size_t		i = 0;
+	const static t_test	tests[] = {
+	{"arr_qsort", test_arr_qsort},
+	{0, 0}
 	};
 
 	if (iter_reset)
@@ -37,14 +33,15 @@ const t_test	*find_test(char *test, bool iter_reset)
 
 int	main(int argc, char **argv)
 {
-	size_t	i;
+	size_t			i;
+	const t_test	*test;
 
 	argc--;
 	argv++;
 	i = 0;
 	while (i < (size_t)argc)
 	{
-		const t_test *test = find_test(argv[i], true);
+		test = find_test(argv[i], true);
 		while (test != 0)
 		{
 			if (test->test())
@@ -55,5 +52,4 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	ft_printf("sort_op_size: %u", (uint32_t)sizeof(t_sort_op));
 }

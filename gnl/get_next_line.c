@@ -59,49 +59,37 @@ static char	*next_line(t_state *st, size_t len)
 	return (str);
 }
 
-static t_list	*new_state_node(int32_t fd)
+static bool	match_fd(const void *data, const void *key)
 {
-	t_list	*out;
-	t_state	*state;
+	const t_state	*state;
+	const int32_t	*fd;
 
-	state = new_state(fd);
-	if (!state)
-		return (0);
-	out = ft_lstnew(state);
-	if (!out)
-		del_state(state);
-	return (out);
-}
-
-static bool	match_fd(t_list *node, void *fd)
-{
-	return (((t_state *)(node->content))->fd == *(int32_t *)fd);
+	state = data;
+	fd = key;
+	return (state->fd == *fd);
 }
 
 char	*_get_next_line(int32_t fd, bool destroy)
 {
-	static t_list	*list;
-	t_list			*state;
+	static t_list	list = {NULL, NULL, 0, .destructor = del_state};
+	t_state			*state;
 	char			*out;
 
-	state = ft_lstswp_front_where(&list, match_fd, &fd);
-	if (!state)
+	if (!list_find(&list, &fd, match_fd, (void **)&state))
 	{
-		state = new_state_node(fd);
-		if (!state)
+		if (!list_push_front(&list, new_state(fd)))
 			return (0);
-		ft_lstadd_front(&list, state);
+		list_get_front(&list, (void **)&state);
 	}
 	if (destroy)
 	{
-		ft_lstdel_first(&list, del_state);
+		list_remove_at(&list, list_find2_index(&list, &fd, match_fd));
 		return (0);
 	}
-	((t_state *)state->content)->fd = fd;
-	out = next_line(state->content, 0);
+	out = next_line(state, 0);
 	if (out && *out)
 		return (out);
-	ft_lstdel_first(&list, del_state);
+	list_remove_at(&list, list_find2_index(&list, &fd, match_fd));
 	if (out && !*out)
 		free(out);
 	return (0);

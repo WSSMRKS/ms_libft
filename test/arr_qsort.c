@@ -6,11 +6,11 @@
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 15:29:49 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/11 15:18:41 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/11/26 08:39:47 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "ft_test.h"
 
 static int32_t	cmp_u8(const void *a, const void *b)
 {
@@ -26,33 +26,19 @@ static int32_t	cmp_u8(const void *a, const void *b)
 	return (0);
 }
 
-// static void	print_u8_array(uint8_t *arr, size_t len)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		ft_printf("%u ", arr[i]);
-// 		i++;
-// 		if (i % 5 == 0)
-// 			ft_printf("\n");
-// 	}
-// 	ft_printf("\n");
-// }
-
 static bool	_test_arr_qsort(bool test_empty)
 {
 	uint8_t		*arr;
 	uint32_t	len;
 	bool		sorted;
 
-	len = rndm() & 0xFFF;
+	ft_rand((uint8_t *)&len, sizeof(len));
+	len = len & 0xFFF;
 	arr = malloc((size_t)len);
 	ft_printf("qsort arr len: %u\n", (uint32_t)len);
 	if (arr == 0)
 		return (false);
-	rndm_bytes(arr, len);
+	ft_rand(arr, len);
 	if (test_empty)
 		len = 0;
 	arr_qsort(arr, len, 1, cmp_u8);

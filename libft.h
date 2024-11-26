@@ -24,6 +24,7 @@
 # include "img/ft_img.h"
 # include "geo/ft_geo.h"
 # include "math/ft_math.h"
+# include "list/ft_list.h"
 
 /*
 	LIBC
@@ -68,30 +69,6 @@ void			get_next_line_finish(int32_t fd);
 bool			get_next_line2(int32_t fd, char **out);
 
 /*
-	LIST
-*/
-
-typedef bool	(*t_lst_pred)(t_list *, void *);
-
-t_list			*ft_lst_first_where(t_list *lst, t_lst_pred pred,
-					void *pred_data);
-t_list			*ft_lst_first_where_next(t_list *lst, t_lst_pred pred,
-					void *pred_data);
-void			ft_lstadd_back(t_list **lst, t_list *node);
-void			ft_lstadd_front(t_list **lst, t_list *node);
-void			ft_lstclear(t_list **lst, void (*del)(void *));
-void			ft_lstdel_first(t_list **lst, void (*del)(void *));
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
-t_list			*ft_lstnew(void *content);
-int32_t			ft_lstsize(t_list *lst);
-t_list			*ft_lstswp_front_where(t_list **lst, t_lst_pred pred,
-					void *pred_data);
-
-/*
 	OTHER
 */
 
@@ -103,6 +80,7 @@ ssize_t			ft_putstr_fd(const char *s, int32_t fd);
 ssize_t			ft_putstrsl_fd(t_str_slice strsl, int32_t fd);
 bool			ptr_is_null(const void *ptr);
 bool			ptr_ptr_is_null(const void *ptr);
+bool			ft_rand(uint8_t *bytes, size_t n);
 
 /*
 	CSTRING

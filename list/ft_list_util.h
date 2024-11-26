@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_list_util.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwurster <kwurster@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 14:21:01 by kwurster          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:11 by kwurster         ###   ########.fr       */
+/*   Created: 2024/11/26 04:40:09 by kwurster          #+#    #+#             */
+/*   Updated: 2024/11/26 08:12:08 by kwurster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef FT_LIST_UTIL_H
+# define FT_LIST_UTIL_H
 
-void	ft_lstadd_back(t_list **lst, t_list *node)
-{
-	if (!*lst)
-	{
-		*lst = node;
-		return ;
-	}
-	ft_lstlast(*lst)->next = node;
-}
+# include "ft_list.h"
+
+t_node	*create_node(const void *data);
+void	update_skip_pointers_after_add(t_list *list, t_node *new_node,
+			size_t index);
+void	update_skip_pointers_before_remove(t_list *list, t_node *node,
+			size_t index);
+
+#endif

@@ -20,6 +20,7 @@ void	get_next_line_finish(int32_t fd)
 bool	get_next_line2(int32_t fd, char **out)
 {
 	char	*line;
+
 	line = _get_next_line(fd, false);
 	if (!line && out)
 		*out = 0;
