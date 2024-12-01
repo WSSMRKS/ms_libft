@@ -75,6 +75,7 @@ char	*_get_next_line(int32_t fd, bool destroy)
 	t_state			*state;
 	char			*out;
 
+	state = NULL;
 	if (!list_find(&list, &fd, match_fd, (void **)&state))
 	{
 		if (!list_push_front(&list, new_state(fd)))
