@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: wssmrks <wssmrks@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:57 by kwurster          #+#    #+#             */
-/*   Updated: 2024/11/18 16:40:52 by kwurster         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:24:19 by wssmrks          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ int32_t			ft_printf_fd(int32_t fd, const char *s, ...);
 	MS_ADDON
 */
 
-int		ft_free_2d(char **tofree);
-int		ft_free_3d(char ***tofree);
-char	*ft_multistrjoin(int nb_strings, char const *s1, ...);
+int				ft_free_2d(char **tofree);
+int				ft_free_3d(char ***tofree);
+char			*ft_multistrjoin(int nb_strings, char const *s1, ...);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_multistrjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: wssmrks <wssmrks@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:48:44 by maweiss           #+#    #+#             */
-/*   Updated: 2024/11/11 16:05:08 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/12/08 17:23:52 by wssmrks          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ char	*ft_multistrjoin(int nb_strings, char const *s1, ...)
 	if (nb_strings == 1 || !res)
 		return (res);
 	va_start(args, s1);
-	while(i++ < nb_strings -1)
+	while (i++ < nb_strings -1)
 	{
 		tmp = va_arg(args, char *);
 		free_me = res;
 		res = ft_strjoin(res, tmp);
 		free(free_me);
 		if (!res)
-			break;
+			break ;
 	}
 	va_end(args);
 	return (res);
